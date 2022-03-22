@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Author : Francesco
-# Copyright (c) .
+# Copyright (c) 
 # Script :
 
 # cat _config_main_edit.yml _config_dev.yml > _config.yml
