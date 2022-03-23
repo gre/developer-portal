@@ -7,7 +7,7 @@ author:
 toc: true
 layout: doc
 ---
-
+  
 ## Global architecture overview
 
 --- This is my contribution
