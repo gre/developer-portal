@@ -10,9 +10,6 @@ layout: doc
   
 ## Global architecture overview
 
---- This is my contribution  
---- 2022 03 23 FC
-
 <!-- ------------- Image ------------- -->
 [![App architecture](../images/general-architecture-live.png)](../images/general-architecture-live.png)
 <!-- --------------------------------- -->
