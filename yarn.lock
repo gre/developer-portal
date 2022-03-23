@@ -171,7 +171,7 @@
   "resolved" "https://registry.npmjs.org/interpret/-/interpret-1.4.0.tgz"
   "version" "1.4.0"
 
-"is-core-module@^2.8.0":
+"is-core-module@^2.8.1":
   "integrity" "sha512-SdNCUs284hr40hFTFP6l0IfZ/RSrMXF3qgoRHd3/79unUTvrFO/JoXwkGm+5J/Oe3E/b5GsnG330uUNgRpu1PA=="
   "resolved" "https://registry.npmjs.org/is-core-module/-/is-core-module-2.8.1.tgz"
   "version" "2.8.1"
@@ -184,9 +184,9 @@
   "version" "0.0.1"
 
 "jshint@^2.10.2":
-  "integrity" "sha512-zlVQz8XAl1ODXEOVMPkDNuntPebPIE39Xn7ex/JAI9+TmBIf/fcUuj58FaLCC88rOHy8leq0N5ChBB+V5fmpzA=="
-  "resolved" "https://registry.npmjs.org/jshint/-/jshint-2.13.3.tgz"
-  "version" "2.13.3"
+  "integrity" "sha512-HO3bosL84b2qWqI0q+kpT/OpRJwo0R4ivgmxaO848+bo10rc50SkPnrtwSFXttW0ym4np8jbJvLwk5NziB7jIw=="
+  "resolved" "https://registry.npmjs.org/jshint/-/jshint-2.13.4.tgz"
+  "version" "2.13.4"
   dependencies:
     "cli" "~1.0.0"
     "console-browserify" "1.1.x"
@@ -194,7 +194,6 @@
     "htmlparser2" "3.8.x"
     "lodash" "~4.17.21"
     "minimatch" "~3.0.2"
-    "shelljs" "0.3.x"
     "strip-json-comments" "1.0.x"
 
 "linguist-languages@^7.14.0":
@@ -208,23 +207,23 @@
   "version" "4.17.21"
 
 "minimatch@^3.0.4", "minimatch@~3.0.2":
-  "integrity" "sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA=="
-  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-3.0.4.tgz"
-  "version" "3.0.4"
+  "integrity" "sha512-6FsRAQsxQ61mw+qP1ZzbL9Bc78x2p5OqNgNpnoAFLTrX8n5Kxph0CsnhmKKNXTWjXqU5L0pGPR7hYk+XWZr60Q=="
+  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-3.0.8.tgz"
+  "version" "3.0.8"
   dependencies:
     "brace-expansion" "^1.1.7"
 
-"minimist@^1.1.0", "minimist@^1.2.0", "minimist@^1.2.5":
-  "integrity" "sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw=="
-  "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.5.tgz"
-  "version" "1.2.5"
+"minimist@^1.1.0", "minimist@^1.2.0", "minimist@^1.2.6":
+  "integrity" "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
+  "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
+  "version" "1.2.6"
 
 "mkdirp@~0.5.1":
-  "integrity" "sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ=="
-  "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.5.tgz"
-  "version" "0.5.5"
+  "integrity" "sha512-FP+p8RB8OWpF3YZBCrP5gtADmtXApB5AMLn+vdyA+PyxCjrCs00mjyUozssO33cwDeT3wNGdLxJ5M//YqtHAJw=="
+  "resolved" "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.6.tgz"
+  "version" "0.5.6"
   dependencies:
-    "minimist" "^1.2.5"
+    "minimist" "^1.2.6"
 
 "monokai.scss@^1.0.0":
   "integrity" "sha512-pW3M5E+ylJOufbX9iNkW1euidyQnsxKHPAE+SqEKBCR5UjLJhGucVns9/sRZSGK11nkpmdKNhG2FdIBipllyGg=="
@@ -271,11 +270,11 @@
     "resolve" "^1.1.6"
 
 "resolve@^1.1.6":
-  "integrity" "sha512-3wCbTpk5WJlyE4mSOtDLhqQmGFi0/TD9VPwmiolnk8U0wRgMEktqCXd3vy5buTO3tljvalNvKrjHEfrd2WpEKA=="
-  "resolved" "https://registry.npmjs.org/resolve/-/resolve-1.21.0.tgz"
-  "version" "1.21.0"
+  "integrity" "sha512-Hhtrw0nLeSrFQ7phPp4OOcVjLPIeMnRlr5mcnVuMe7M/7eBn98A3hmFRLoFo3DLZkivSYwhRUJTyPyWAk56WLw=="
+  "resolved" "https://registry.npmjs.org/resolve/-/resolve-1.22.0.tgz"
+  "version" "1.22.0"
   dependencies:
-    "is-core-module" "^2.8.0"
+    "is-core-module" "^2.8.1"
     "path-parse" "^1.0.7"
     "supports-preserve-symlinks-flag" "^1.0.0"
 
@@ -294,11 +293,6 @@
     "glob" "^7.0.0"
     "interpret" "^1.0.0"
     "rechoir" "^0.6.2"
-
-"shelljs@0.3.x":
-  "integrity" "sha1-NZbmMHp4FUT1kfN9phg2DzHbV7E="
-  "resolved" "https://registry.npmjs.org/shelljs/-/shelljs-0.3.0.tgz"
-  "version" "0.3.0"
 
 "simple-jekyll-search@^1.7.2":
   "integrity" "sha512-4SdHfAjEe9mngvj4wt8A7OsF9Rl3+onHY1ruQC+bUnecbNbdvzVcAbL+UH5mE+v2CWgUb95dyZjHhyqUGSa2hA=="
@@ -330,14 +324,14 @@
     "cpr" "^2.2.0"
 
 "uglify-js@^3.4.10":
-  "integrity" "sha512-qZukoSxOG0urUTvjc2ERMTcAy+BiFh3weWAkeurLwjrCba73poHmG3E36XEjd/JGukMzwTL7uCxZiAexj8ppvQ=="
-  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.14.5.tgz"
-  "version" "3.14.5"
+  "integrity" "sha512-6iCVm2omGJbsu3JWac+p6kUiOpg3wFO2f8lIXjfEb8RrmLjzog1wTPMmwKB7swfzzqxj9YM+sGUM++u1qN4qJg=="
+  "resolved" "https://registry.npmjs.org/uglify-js/-/uglify-js-3.15.3.tgz"
+  "version" "3.15.3"
 
 "uikit@^3.0.3":
-  "integrity" "sha512-4yhzUltc80JmGl/xcTs2Bjtf9/Qa5a8XnHYoWTMDTkKx/WqeMDwFm850E+RnH7iV/X4sUjI+3zsgmgic5/reJw=="
-  "resolved" "https://registry.npmjs.org/uikit/-/uikit-3.10.0.tgz"
-  "version" "3.10.0"
+  "integrity" "sha512-KD/iHOD3l77AzSEqGT5UyKfm2I6YDPKceYniMpYSGhr4ZQhaXmjjz1qFfwrDtLxPigChU8gI60Y00geF+cFsVA=="
+  "resolved" "https://registry.npmjs.org/uikit/-/uikit-3.13.1.tgz"
+  "version" "3.13.1"
 
 "watch@^0.13.0":
   "integrity" "sha1-/MbSs/DoxzSC61Qjmhn9W8+adTw="
