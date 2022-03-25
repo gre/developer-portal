@@ -11,9 +11,9 @@ layout: doc
 
 ![High level flow](../images/high-level-flow.png "High level flow")
 
-The Exchange Application is an application for Ledger’s devices (Nano S and Nano X) that has been developed specifically to manage and secure swap operations (crypto-to-crypto transfer). 
+The Exchange Application is an application for Ledger’s devices (Nano S, Nano X and Nano S Plus) that has been developed specifically to manage and secure swap operations (crypto-to-crypto transfer). 
 
-The trade between the provider and the user is secured by going through Ledger Live back-end and the Exchange app installed on the Hardware Wallet. The provider signs the trade data, in order to let the Ledger’s device (Nano S or Nano X) display it to the user. Since the Ledger’s device (Nano S or Nano X)  is the single source of truth, the user can trust and sign the transaction on the device, thus allowing the provider to complete the transaction. The provider is accredited by Ledger so that the Nano device can trust the provider data.
+The trade between the provider and the user is secured by going through Ledger Live back-end and the Exchange app installed on the Hardware Wallet. The provider signs the trade data, in order to let the Ledger’s device (Nano S, Nano X or Nano S Plus) display it to the user. Since the Ledger’s device (Nano S, Nano X or Nano S Plus)  is the single source of truth, the user can trust and sign the transaction on the device, thus allowing the provider to complete the transaction. The provider is accredited by Ledger so that the Nano device can trust the provider data.
 
 ## Detailed flow
 

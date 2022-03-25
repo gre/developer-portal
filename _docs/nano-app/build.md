@@ -8,16 +8,13 @@ author:
 layout: doc
 ---
 
-
-
-
-[Ledger App Builder](https://github.com/LedgerHQ/ledger-app-builder) is a container image which contains all dependencies to compile an application for Nano S/X.
+[Ledger App Builder](https://github.com/LedgerHQ/ledger-app-builder) is a container image which holds the all dependencies to compile an application for Nano hardware wallets.
 
 <!--  -->
 {% include alert.html style="important" text="If you chose to build your app differently, please make sure you can still compile it with Ledger App Builder, as it will be required for deployment." %}
 <!--  -->
 
-To use the container image, you need to either install [Docker](https://docs.docker.com/get-docker/), [Podman](https://podman.io/), or [Buildah](https://buildah.io/) and apply the following steps.
+To use the container image, you need to either install [Docker](https://docs.docker.com/get-docker/), [Podman](https://podman.io/), or [Buildah](https://buildah.io/) and do the following steps.
 
 <!-- ------------- Image ------------- -->
 <div class="uk-text-center">
@@ -80,15 +77,26 @@ $ sudo docker run --rm -ti -v "$(realpath .):/app" ledger-app-builder:latest
 root@656be163fe84:/app# make
 ```
 
-#### For the Nano X
+#### For the Nano X and Nano S Plus
 
-For Nano X, specify the `BOLOS_SDK` environment variable before building your app, in the source folder of the app:
+For Nano X and S Plus, specify the `BOLOS_SDK` environment variable before building your app, in the source folder of the app:
+
+For Nano X:
 
 ```bash
 $ # docker can be replaced with podman or buildah without sudo
 $ sudo docker run --rm -ti -v "$(realpath .):/app" ledger-app-builder:latest
 root@656be163fe84:/app# BOLOS_SDK=$NANOX_SDK make
 ```
+
+For Nano S Plus:
+
+```bash
+$ # docker can be replaced with podman or buildah without sudo
+$ sudo docker run --rm -ti -v "$(realpath .):/app" ledger-app-builder:latest
+root@656be163fe84:/app# BOLOS_SDK=$NANOSP_SDK make
+```
+
 
 <!--  -->
 {% include alert.html style="note" text="If you change the <code>BOLOS_SDK</code> variable between two builds, you can first use <code>make clean</code> to avoid errors." %}
@@ -107,7 +115,7 @@ root@656be163fe84:/app# make scan-build
 
 ### 2.3 Exit the image
 
-The build generates several files in your application folder and especially the `app.elf` that can be loaded to a [physical Nano S](../load) or an [emulated Nano X or S with Speculos](../../speculos/installation/build).
+The build generates several files in your application folder and especially the `app.elf` that can be loaded to a [Nano S or S Plus](../load) or into the [Nano X or S Emulator (Speculos)](../../speculos/installation/build).
 
-You can exit the image, with the command `exit`.
+You can exit the image, with the `exit` command.
 

@@ -1,5 +1,5 @@
 ---
-title: Load the app to a Nano S
+title: Load the application
 subtitle:
 tags: [compile, load app to nano, side loading, ledgerblue, make load, make delete]
 category: Nano Application
@@ -11,11 +11,11 @@ layout: doc
 
 
 <!--  -->
-{% include alert.html style="tip" text="The <b>Nano X</b> does not support side loading, therefore you must use the device emulator <b>Speculos</b> for loading to work. See how to <a href='../../speculos/installation/build'>install</a> and <a href='../../speculos/user/usage'>use</a> it. For the Nano S, you can read the following instructions." %}
+{% include alert.html style="tip" text="The <b>Nano X</b> does not support side loading, therefore you must use the device emulator <b>Speculos</b> for loading to work. See how to <a href='../../speculos/installation/build'>install</a> and <a href='../../speculos/user/usage'>use</a> it. For the Nano S, you can read the following instructions. This documentation will soon be adapted for the Nano S Plus." %}
 <!--  -->
 
 <!--  -->
-{% include alert.html style="important" text="If you are a Mac or a Windows user, you should use a Linux Virtual Machine to load the application to a Nano S." %}
+{% include alert.html style="important" text="If you are a Mac or a Windows user, you should use a Linux Virtual Machine to load the application to a Nano S or Nano S Plus." %}
 <!--  -->
 
 ## 1. Define the udev rules
@@ -71,7 +71,7 @@ deactivate
 {% include alert.html style="important" text="The Nano S SDK must first be locally cloned and stored in <code>BOLOS_SDK</code> for the loading to work." %}
 <!--  -->
 
-Use the following commands:
+Use the following commands for the Nano S:
 
 ```bash
 git clone https://github.com/LedgerHQ/nanos-secure-sdk.git nanos-secure-sdk

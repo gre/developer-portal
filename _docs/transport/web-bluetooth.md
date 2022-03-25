@@ -15,7 +15,7 @@ Before starting, make sure you have gone through the [prerequisites](../prerequi
 
 ## Web App Bluetooth (only Nano X)
 
-The Ledger Nano S does not have the Bluetooth functionality. This tutorial will only work with a Ledger Nano X.
+The Ledger Nano S and S Plus do not have the Bluetooth functionality. This tutorial will only work with a Ledger Nano X.
 
 Please be aware that the Bluetooth implementation is only supported by a few browsers.
 You can check the [browser support](https://caniuse.com/web-bluetooth) for the Web Bluetooth.

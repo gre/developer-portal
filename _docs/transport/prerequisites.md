@@ -67,7 +67,7 @@ Then Ledger Live will ask you to allow the Ledger device, just press the two but
 
 ## Nano App Installation
 
-Now you can install the Ethereum and bitcoin application into your Ledger Nano S/X.
+Now you can install the Ethereum and bitcoin application into your Ledger Nano S/X/S Plus.
 In this integration, we will use the Ethereum and Bitcoin application.
 
 
@@ -84,7 +84,7 @@ We will present there the creation of a bitcoin account but it is the same for a
 
 To create your Bitcoin account:
 
-- Launch the Bitcoin application on your Ledger Nano S/X
+- Launch the Bitcoin application on your Ledger Nano S/X/S Plus
 
 - Open the Bitcoin app on your ledger device
 

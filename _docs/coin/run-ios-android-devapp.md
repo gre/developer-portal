@@ -18,7 +18,7 @@ For iOS: [Building iOS build](../build-ios-devapp).
 For Android: [Building Android build](../build-android-devapp).
 
 
-## Connecting to Nano S / X
+## Connecting to Nano S / X / S Plus
 
 In this part, we'll connect a Ledger Nano S to the application, using the ledger-live-common proxy feature.
 

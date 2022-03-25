@@ -37,7 +37,7 @@ All integrated coins are implemented in a `src/families` dedicated folder which 
 
 ### Hardware prerequisites
 
-- A physical device (Ledger Nano S or Ledger Nano X)
+- A physical device (Ledger Nano S, Nano X or Nano S Plus)
 - <i>MyCoin</i> app installed on device
 
 ### Installation

@@ -41,7 +41,7 @@ There are 2 mandatory icons that should be provided for Ledger to release an app
 - Black and white only
 - Safe area: 2px
 
- Nano X icons are 14x14 px in size. Developers can create their Nano X icons from the 16x16 px Nano S one with the following command on Linux (install the package **imagemagick** first): `convert nanos_app_<token>.gif -crop 14x14+1+1 +repage -negate nanox_app_<token>.gif`
+ Nano X and S Plus icons are 14x14 px in size. Developers can create their Nano X or S Plus icons from the 16x16 px Nano S one with the following command on Linux (install the package **imagemagick** first): `convert nanos_app_<token>.gif -crop 14x14+1+1 +repage -negate nanox_app_<token>.gif`
 
 #### Manager icon
 

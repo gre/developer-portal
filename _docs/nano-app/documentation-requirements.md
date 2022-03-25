@@ -30,7 +30,7 @@ It is required for third party teams to provide and host a complete tutorial for
 
 Your documentation must follow the requirements below  so that Ledger uses a solid common documentaion basis.
 [Ledger Customer Support](https://support.ledgerwallet.com/hc/en-us) will write and publish an article ([example](https://support.ledgerwallet.com/hc/en-us/articles/360007583514-Ontology-ONT-)) that describes:
-- Short introduction: what the app does, what crypto assets it can manage, using what service. Who has developed it. Ledger Nano S and Nano X supported?
+- Short introduction: what the app does, what crypto assets it can manage, using what service. Who has developed it. Ledger Nano S, Nano X and Nano S Plus supported?
 - Requirements: What’s needed before starting.
 - Installation instructions: How to install the app using Ledger Live.
 - Next steps: link to third party documentation and where to get support.
