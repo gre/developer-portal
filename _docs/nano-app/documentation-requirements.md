@@ -14,9 +14,15 @@ layout: doc
 |-----------------------|------------------------|------------------------|------------------------|
 |  This requirement is: |    <b>Mandatory</b>    |   <b>Mandatory</b>     |   <b>Mandatory</b>     |
 
-The requirement is to submit the documentation in a Google Doc format for review or an URL to the already published documentation. If it is already published, ensure it follows the instructions below.
+The requirement is to document your app's APDUs and status words on the app's repository (A) and to submit the user's documentation in a Google Doc format for review or an URL to the already published documentation (B). If it is already published, ensure it follows the instructions below.
 
-## Introduction
+## A. APDUs and Status words
+
+Take example on the [Bitcoin Nano app documentation](https://github.com/LedgerHQ/app-bitcoin-new/blob/develop/doc/bitcoin.md) to document your app's APDUs and status words. There is no obligation that you use the same status words as the Bitcoin app; this document is only presented as a good model to follow.
+
+## B. Users documentation
+
+### Introduction
 
 Documentation is important for the Approval of your app, as your app will not be released without it.
 
@@ -26,7 +32,7 @@ It is required for third party teams to provide and host a complete tutorial for
 {% include alert.html style="important" text="Without approval of your documentation, your app will not be released." %}
 <!--  -->
 
-## Ledger Documentation
+### Ledger Documentation
 
 Your documentation must follow the requirements below  so that Ledger uses a solid common documentaion basis.
 [Ledger Customer Support](https://support.ledgerwallet.com/hc/en-us) will write and publish an article ([example](https://support.ledgerwallet.com/hc/en-us/articles/360007583514-Ontology-ONT-)) that describes:
@@ -36,7 +42,7 @@ Your documentation must follow the requirements below  so that Ledger uses a sol
 - Next steps: link to third party documentation and where to get support.
 
 
-## Content
+### Content
 
 The article ([example](https://blog.cyberrepublic.org/2020/06/15/how-to-use-your-ledger-device-with-the-elastos-light-wallet/)) must describe:
 - Short introduction: what the app and service do, what crypto assets they can manage, why to use a Ledger device, where to get support.
@@ -55,7 +61,7 @@ The article ([example](https://blog.cyberrepublic.org/2020/06/15/how-to-use-your
 - Support: where to get help if needed (mail address, Slack/Reddit/Telegram communities). 
 - Since you will host the final version of the document you are required to prepare the URL address and include it clearly in the Google Doc.
 
-## Style
+### Style
 
 - Write short and concise sentences.
 - Write clear section titles.
@@ -67,3 +73,4 @@ The article ([example](https://blog.cyberrepublic.org/2020/06/15/how-to-use-your
 - **Referring to crypto assets**: name, ticker, crypto asset(s), coin(s), cryptocurrency.
 <i>Please avoid: money</i>.
 - Be sure to check [this article](https://blog.cyberrepublic.org/2020/06/15/how-to-use-your-ledger-device-with-the-elastos-light-wallet/) for an example.
+
