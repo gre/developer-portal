@@ -368,12 +368,6 @@ import type {
   TransactionCommonRaw,
 } from "../../types/transaction";
 
-// for legacy
-export type CoreStatics = Record<any,any>;
-export type CoreAccountSpecifics = Record<any,any>;
-export type CoreOperationSpecifics = Record<any,any>;
-export type CoreCurrencySpecifics = Record<any,any>;
-
 /**
  * MyCoin account resources
  */
@@ -418,12 +412,7 @@ export type TransactionRaw = TransactionCommonRaw & {
 export type MyCoinPreloadData = {
   somePreloadedData: Record<any, any>,
 };
-
-export const reflect = (_declare: *) => {};
 ```
-<!--  -->
-{% include alert.html style="success" text="Core types should be exported for legacy compatibility with existing libcore integrations." %}
-<!--  -->
 
 
 
@@ -904,7 +893,7 @@ If you need to disconnect from your API after using it, update `src/api/index.ts
 
 ### JS Bridge
 
-We call it JS Bridge because historically we used to write the support of blockchain in C++, this is referenced as libcore in the code. We are working to get rid of libcore and importing everything on Javascript. So it's a bridge in JavaScript for the currency to communicate with the Live environment 
+We call it JS Bridge because historically we used to write the support of blockchain in C++. It's a bridge in JavaScript for the currency to communicate with the Live environment 
 
 `src/families/mycoin/bridge/js.ts` is the entry point of a coin integration. It must export two bridges:
 
