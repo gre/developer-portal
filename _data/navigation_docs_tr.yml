@@ -25,6 +25,7 @@
 - title: Architecture
   docs:
   - transport/application-architecture
+  - nano-app/open-close-info-on-apps
   - transport/architecture-dataflow
 
 - title: End-2-end Tutorials
