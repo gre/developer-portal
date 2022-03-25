@@ -14,6 +14,10 @@ Once you have finished your work and you have collected all the App items (use t
 
 Make sure you thoroughly complete the form to ensure a speedy release process.
 
+<!--  -->
+{% include alert.html style="important" text="The integration process will only start if you answer accurately to all the questions." %}
+<!--  -->
+
 This is the end of your process.  
 From here on, all communications will take place on Discord.  
 Thank you.  
