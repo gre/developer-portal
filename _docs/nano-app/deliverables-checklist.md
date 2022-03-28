@@ -42,6 +42,7 @@ The numbering below follows the one in the Requirements chapter.
 
 - I have read the [coding guidelines](../display-management)
 - Nano App source code (GitHub repository)
+- A link to the pull request to currencies.ts
 - My app repository has a test folder that contains the Unit Tests list and the functional Tests
 - The App has been fully tested with a companion wallet (CLI or GUI)
 - Two icons for the Nano and for the Ledger Live Manager in Adobe Illustrator format (see [Design Guidelines](../design-requirements))
@@ -54,6 +55,7 @@ The numbering below follows the one in the Requirements chapter.
 
 ### 5- Documentation
 
+- Document in the App's repository the list of the app's APDUs and status words
 - Link to a Google doc tutorial about how to install and use your app (see [Third Party Applications Support](../support-requirements))
     - The doc must include the link to the published tutorial hosted on third party website 
 

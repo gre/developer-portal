@@ -4,7 +4,7 @@
     <textarea id="comment" name="Comment" placeholder="Comment" minlength="20" required="required" class="comment-box"></textarea>
     <input type="hidden" id="page" name="Page" value="{{ page.title }}">
     <input type="hidden" id="category" name="Category" value="{{ page.category }}">
-    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+    <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response" value="g-recaptcha-response">
     <br>
     <input type="checkbox" id="dev" name="Developer"><label class="comment-disclaimer" for="checkbox">I am a developer.</label>
     <br>
@@ -65,7 +65,7 @@ document.getElementById("participation").addEventListener('change', function() {
     fetch('https://formkeep.com/f/90e16cbb8870', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({ "g-recaptcha-response": document.getElementById("g-recaptcha-response").name, "Comment": document.getElementById("comment").value, "Page": document.getElementById("page").value, "Category": document.getElementById("category").value, "Mail": mail, "Participation": document.getElementById("participation").checked, "Developer": document.getElementById("dev").checked })
+        body: JSON.stringify({ "g-recaptcha-response": document.getElementById("g-recaptcha-response").value, "Comment": document.getElementById("comment").value, "Page": document.getElementById("page").value, "Category": document.getElementById("category").value, "Mail": mail, "Participation": document.getElementById("participation").checked, "Developer": document.getElementById("dev").checked })
     })
   });
   
