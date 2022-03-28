@@ -18,7 +18,7 @@ The requirement is to document your app's APDUs and status words on the app's re
 
 ## A. APDUs and Status words
 
-Take example on the [Bitcoin Nano app documentation](https://github.com/LedgerHQ/app-bitcoin-new/blob/develop/doc/bitcoin.md) to document your app's APDUs and status words. There is no obligation that you use the same status words as the Bitcoin app; this document is only presented as a good model to follow.
+Take example on the [Bitcoin Nano app documentation](https://github.com/LedgerHQ/app-bitcoin-new/blob/develop/doc/bitcoin.md) to list your app's APDUs and status words. There is no obligation that you use the same status words as the Bitcoin app; this document is only presented as a good model to follow.
 
 ## B. Users documentation
 
