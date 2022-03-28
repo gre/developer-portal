@@ -34,7 +34,7 @@ The output of this phase is a detailed proposition of choices made and discussed
 
 To submit the Technical Assessment for your Blockchain:  
 1.  Make a copy of this [Technical Assessment]( https://docs.google.com/document/d/1pIk-TtmVtgBeyrUY8EyVjknkk-zoVUAXdxyDHluJSiM) locally. <br> (Please do not request edit access of the original file).  
-2.  Carefully answer the questions in the form. <br> They will help you and Ledger to be more efficient in the intagration of your Coin.
+2.  Carefully answer the questions in the form. <br> They will help you and Ledger to be more efficient in the integration of your Coin.
 3.  After you have filled it in, please inform Ledger by contacting us in the usual way. 
 
 ***
