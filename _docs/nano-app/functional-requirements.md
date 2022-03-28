@@ -22,11 +22,9 @@ The requirement is to follow the guidelines for the app name and ticker, and to 
 Define the App name in the makefile with the same name you want to have displayed on the manager and on the device.
 
 ### Ticker
-Add the ticker with a pull request to the [the currencies.ts file](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/src/currencies.ts) in the ledgerjs repository and not directly in the makefile.
+Add the ticker with a pull request to the [the currencies.ts file](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/src/currencies.ts) in the ledgerjs repository and not directly in the app name.
 
-### Pull Request to currencies.ts
-
-Open a pull request and follow [this example](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/src/currencies.ts#:~:text=Record%3Cstring%2C%20CryptoCurrency%3E%20%3D%20%7B-,near%3A%20%7B,%7D%2C,-aeternity%3A%20%7B) to add your currency in the ledgerjs repository.
+You can follow [this example](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/src/currencies.ts#:~:text=Record%3Cstring%2C%20CryptoCurrency%3E%20%3D%20%7B-,near%3A%20%7B,%7D%2C,-aeternity%3A%20%7B).
 
 You will be asked for the pull request link in the submission form.
 
