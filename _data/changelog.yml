@@ -1,4 +1,18 @@
 # Changelog page source
+- title: Nano App documentation enhanced and updated
+  label:
+  date: March 18th, 2022
+  list:
+  - Publication of the <a href="../docs/nano-app/crypto-api/introduction/">Cryptography API and Syscalls</a>
+
+
+- title: Fostering the developer community
+  label:
+  date: November 24th, 2021
+  list:
+  - Opening of the <a href="https://discord.gg/Ledger">Ledger OP3N Discord server</a>
+
+
 - title: Update to V3
   label:
   date: November 8th, 2021
