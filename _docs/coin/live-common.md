@@ -1966,7 +1966,7 @@ If you need to add your own, they **must** respect those requirements:
 - No `<g>` or `transform`, `style` attributes...
 
 <!--  -->
-{% include alert.html style="important" text="Linear gradients, defs, masks, clip-path, filters and inline styles are <b>not</b> valid. Your PR won't be accepted if your icon contains such elements and it could slow the integation process down." %}
+{% include alert.html style="warning" text="Linear gradients, defs, masks, clip-path, filters and inline styles are <b>not</b> valid. Your PR won't be accepted if your icon contains such elements and it could slow the integation process down." %}
 <!--  -->
 
 Name should be the coin's ticker (e.g. `MYC.svg`) and must not conflict with an existing coin or token.
