@@ -1957,13 +1957,17 @@ See examples like sorting and filtering validators, subscribing to preloaded dat
 
 Icons are usually maintained by Ledger's design team, so you must first check that <i>MyCoin</i> icon is not already added in ledger-live-common, in [src/data/icons/svg](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/data/icons/svg). It contains cleaned-up versions of Cryptocurrency Icons from [cryptoicons.co](http://cryptoicons.co/), organized by ticker.
 
-If you need to add your own, they must respect those requirements:
-- Clean SVG with **only** `<path>` elements representing the crypto
+If you need to add your own, they **must** respect those requirements:
+- Clean SVG with **only** `<path>` elements, path, circle, ellipse, rect, polyline, line tags if needed
 - Size and viewport must be `24x24`
 - Icon should be `18x18` and centered / padded
-- Flat-styled, and must respect crypto color scheme (filled)
+- Flat-styled, and must respect crypto color scheme (add fill="black")
 - No background or decorative shape added
 - No `<g>` or `transform`, `style` attributes...
+
+<!--  -->
+{% include alert.html style="important" text="Linear gradients, defs, masks, clip-path, filters and inline styles are <b>not</b> valid. Your PR won't be accepted if your icon contains such elements and it could slow the integation process down." %}
+<!--  -->
 
 Name should be the coin's ticker (e.g. `MYC.svg`) and must not conflict with an existing coin or token.
 
