@@ -88,7 +88,7 @@ This time line shows the relative time of the steps (XS, S, M and L) you will go
 	</div>
 	<div class="uk-child-width-1-6@m">
 	    <div class="uk-card-default uk-card-hover border-xlight" style="padding:0px; width:200px;">
-			<a href="../sync">
+			<a href="../light-sync">
 			 <img alt="" src="../images/sync-light.png">
 			</a>
 	    </div>

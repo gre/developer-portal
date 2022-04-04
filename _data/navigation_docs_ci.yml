@@ -24,15 +24,9 @@
       docs:
       - coin/live-common
       - coin/address-derivation
-      - coin/types
-      - coin/api
-      - coin/js-bridge
+      - coin/light-sync
       - coin/sync
       - coin/send
-      - coin/cache
-      - coin/front-end
-      - coin/react-hooks
-      - coin/icon
   - coin/desktop-mobile
 
 

@@ -1,11 +1,132 @@
 ---
-title: JS Bridge - Send
+title: Send
 tags: [Ledger Live Common, typescript]
 category: Blockchain Support
 author:
 toc: true
 layout: doc
 ---
+
+## Starting with a mock
+
+A mock will help you test different UI flows on Desktop and Mobile.
+It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
+
+For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
+
+```ts
+import { BigNumber } from "bignumber.js";
+import {
+  NotEnoughBalance,
+  RecipientRequired,
+  InvalidAddress,
+  FeeTooHigh,
+} from "@ledgerhq/errors";
+import type { Transaction } from "../types";
+import type { AccountBridge, CurrencyBridge } from "../../../types";
+import {
+  scanAccounts,
+  signOperation,
+  broadcast,
+  sync,
+  isInvalidRecipient,
+} from "../../../bridge/mockHelpers";
+import { getMainAccount } from "../../../account";
+import { makeAccountBridgeReceive } from "../../../bridge/mockHelpers";
+
+const receive = makeAccountBridgeReceive();
+
+const createTransaction = (): Transaction => ({
+  family: "mycoin",
+  mode: "send",
+  amount: BigNumber(0),
+  recipient: "",
+  useAllAmount: false,
+  fees: null,
+});
+
+const updateTransaction = (t, patch) => ({ ...t, ...patch });
+
+const prepareTransaction = async (a, t) => t;
+
+const estimateMaxSpendable = ({ account, parentAccount, transaction }) => {
+  const mainAccount = getMainAccount(account, parentAccount);
+  const estimatedFees = transaction?.fees || BigNumber(5000);
+  return Promise.resolve(
+    BigNumber.max(0, mainAccount.balance.minus(estimatedFees))
+  );
+};
+
+const getTransactionStatus = (account, t) => {
+  const errors = {};
+  const warnings = {};
+  const useAllAmount = !!t.useAllAmount;
+
+  const estimatedFees = BigNumber(5000);
+
+  const totalSpent = useAllAmount
+    ? account.balance
+    : BigNumber(t.amount).plus(estimatedFees);
+
+  const amount = useAllAmount
+    ? account.balance.minus(estimatedFees)
+    : BigNumber(t.amount);
+
+  if (amount.gt(0) && estimatedFees.times(10).gt(amount)) {
+    warnings.amount = new FeeTooHigh();
+  }
+
+  if (totalSpent.gt(account.balance)) {
+    errors.amount = new NotEnoughBalance();
+  }
+
+  if (!t.recipient) {
+    errors.recipient = new RecipientRequired();
+  } else if (isInvalidRecipient(t.recipient)) {
+    errors.recipient = new InvalidAddress();
+  }
+
+  return Promise.resolve({
+    errors,
+    warnings,
+    estimatedFees,
+    amount,
+    totalSpent,
+  });
+};
+
+const accountBridge: AccountBridge<Transaction> = {
+  estimateMaxSpendable,
+  createTransaction,
+  updateTransaction,
+  getTransactionStatus,
+  prepareTransaction,
+  sync,
+  receive,
+  signOperation,
+  broadcast,
+};
+
+const currencyBridge: CurrencyBridge = {
+  scanAccounts,
+  preload: async () => {},
+  hydrate: () => {},
+};
+
+export default { currencyBridge, accountBridge };
+```
+
+
+## Account Bridge
+
+AccountBridge offers a generic abstraction to synchronize accounts and perform transactions.
+
+It is designed for the end user frontend interface and is agnostic of the way it runs, has multiple implementations and does not know how the data is even stored: in fact **it's just a set of stateless functions**.
+
+<!-- ------------- Image ------------- -->
+<!-- --------------------------------- -->
+![account bridge flow](../images/account-bridge-flow.png)
+
 
 ### Transactions
 
@@ -414,6 +535,68 @@ The `signOperation` function returns an Observable that will notify its subscrib
 It must notify it with the signedOperation, with `signature` (generally contains the whole blob to be broadcasted) and `operation`.
 
 This operation is an optimistic version of the `Operation` that would be displayed in the account history as a "Pending Operation" if the broadcast succeed. This pending operation is important to give feedback to the user, but may also be required for calculate the nonce (if relevant).
+
+### Front-end helpers
+
+Live Common is mainly dedicated to be used by Ledger Live front-ends (Desktop and Mobile), so it also contains utilities for react and displaying crypto-specific data.
+
+#### Device transaction fields
+
+When signing a transaction, the user is shown on his device all the parameters of this transaction through multiple screen, that he must check towards the value he entered, and compare with what Ledger Live is presenting.
+
+The list of all displayed fields on device are provided by the `getDeviceTransactionConfig` function, which must return all transaction fields for a given transaction.
+
+`src/families/mycoin/deviceTransactionConfig.ts`:
+```ts
+import type { AccountLike, Account, TransactionStatus } from "../../types";
+import type { Transaction } from "./types";
+import type { DeviceTransactionField } from "../../transaction";
+
+function getDeviceTransactionConfig({
+  transaction,
+  status: { estimatedFees },
+}: {
+  account: AccountLike;
+  parentAccount?: Account;
+  transaction: Transaction;
+  status: TransactionStatus;
+}): Array<DeviceTransactionField> {
+  const fields: Array<DeviceTransactionField> = [];
+
+  if (transaction.useAllAmount) {
+    fields.push({
+      type: "text",
+      label: "Method",
+      value: "Transfer All",
+    });
+  } else {
+    fields.push({
+      type: "text",
+      label: "Method",
+      value: "Transfer",
+    });
+    fields.push({
+      type: "amount",
+      label: "Amount",
+    });
+  }
+
+  if (!estimatedFees.isZero()) {
+    fields.push({
+      type: "fees",
+      label: "Fees",
+    });
+  }
+
+  return fields;
+}
+
+export default getDeviceTransactionConfig;
+```
+<!--  -->
+{% include alert.html style="important" text="Since a not-well-informed user could be tricked to sign transaction with wrong recipients, we never show the <code>destination</code> fields in Ledger Live applications, in order for users to get used to always verify it externally." %}
+<!--  -->
+
 
 ### Broadcast
 
