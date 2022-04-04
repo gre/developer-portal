@@ -31,7 +31,7 @@
   grecaptcha.ready(function() {
     grecaptcha.execute('6Lfk5BAdAAAAANDxAr8eMgKrodOOc3y-6HawPc1G', {action: 'comment-box'})
     .then(function(token) {
-        document.getElementById('g-recaptcha-response').name = token;
+        document.getElementById('g-recaptcha-response').value = token;
     });
   });
   </script>
