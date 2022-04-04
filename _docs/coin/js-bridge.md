@@ -7,7 +7,8 @@ toc: true
 layout: doc
 ---
 
-We call it JS Bridge because historically we used to write the support of blockchain in C++, this is referenced as libcore in the code. We are working to get rid of libcore and importing everything on Javascript. So it's a bridge in JavaScript for the currency to communicate with the Live environment 
+We call it JS Bridge because historically we used to write the support of blockchain in C++. It’s a bridge in JavaScript for the currency to communicate with the Live environment.
+
 
 `src/families/mycoin/bridge/js.ts` is the entry point of a coin integration. It must export two bridges:
 

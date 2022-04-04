@@ -127,12 +127,6 @@ import type {
   TransactionCommonRaw,
 } from "../../types/transaction";
 
-// for legacy
-export type CoreStatics = Record<any,any>;
-export type CoreAccountSpecifics = Record<any,any>;
-export type CoreOperationSpecifics = Record<any,any>;
-export type CoreCurrencySpecifics = Record<any,any>;
-
 /**
  * MyCoin account resources
  */
@@ -177,13 +171,7 @@ export type TransactionRaw = TransactionCommonRaw & {
 export type MyCoinPreloadData = {
   somePreloadedData: Record<any, any>,
 };
-
-export const reflect = (_declare: *) => {};
 ```
-<!--  -->
-{% include alert.html style="success" text="Core types should be exported for legacy compatibility with existing libcore integrations." %}
-<!--  -->
-
 
 
 Since some of thoses types will be serialized when stored or cached, you may need to define serialize/deserialize functions for those:
