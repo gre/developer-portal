@@ -81,24 +81,7 @@ Here is a typical family folder structure (TS integration):
 {% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live-common/tree/master/src/families/polkadot'>Polkadot integration</a>" %}
 <!--  -->
 
-
-
-## Generating families-specific imports
-
-All per-family imports are gathered in the [`src/generated`](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/generated) folder, for letting generic code to choose which implementation to use on a per-coin basis.
-
-You should not update those files manually, but call a dedicated script:
-
-```sh
-./scripts/sync-families-dispatch.sh
-```
-
-{% include alert.html style="tip" text="you may need to add <code>mycoin</code> to the <code>withoutNetworkInfo</code> in this script if you don't use a NetworkInfo type." %}
-
-
-**As soon as you add a file in the family (that is part of the generated folder) you will need to execute this script before building.** Otherwise, your implementation will not be known by the ledger-live-common library.
-
-## Building for Development
+## Building the CLI for Development
 
 Do not forget to build before testing:
 
