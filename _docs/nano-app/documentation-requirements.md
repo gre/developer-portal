@@ -18,9 +18,11 @@ The requirement is to document your app's APDUs and status words on the app's re
 
 ## A. APDUs and Status words
 
-Take example on the [Polkadot Nano app documentation](https://github.com/LedgerHQ/app-polkadot/blob/main/docs/APDUSPEC.md) to list your app's APDUs and status words. Follow the stated ranges in the SDKs for [Nano S](https://github.com/LedgerHQ/nanos-secure-sdk/blob/master/include/errors.h), [Nano S Plus](https://github.com/LedgerHQ/nanosplus-secure-sdk/blob/main/include/errors.h) and [Nano X](https://github.com/LedgerHQ/nanox-secure-sdk/blob/master/include/errors.h) or [Nano S for Rust apps](https://github.com/LedgerHQ/ledger-nanos-sdk/blob/master/nanos-secure-sdk/include/errors.h).
+Your Nano App repository must have a `docs` folder in which you will document the APDUs and corresponding errors, taking example on the [Bitcoin App](https://github.com/LedgerHQ/app-bitcoin-new/blob/develop/doc/bitcoin.md).
 
-Name this file `APDUSPEC.md` and put it under it in the `docs` folder of your app. 
+For the ranges available, follow the stated ranges in the SDKs for [Nano S](https://github.com/LedgerHQ/nanos-secure-sdk/blob/master/include/errors.h), [Nano S Plus](https://github.com/LedgerHQ/nanosplus-secure-sdk/blob/main/include/errors.h) and [Nano X](https://github.com/LedgerHQ/nanox-secure-sdk/blob/master/include/errors.h) or [Nano S for Rust apps](https://github.com/LedgerHQ/ledger-nanos-sdk/blob/master/nanos-secure-sdk/include/errors.h).
+
+Name this file `apdu.md` and put it under it in the `docs` folder of your app. 
 
 
 ## B. Users documentation
