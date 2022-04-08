@@ -594,7 +594,8 @@ function transactionToOperation(
     fee: BigNumber(transaction.fees || 0),
     value: getOperationValue(transaction, addr),
     type,
-    hash: transaction.hash,
+    // This is where you retrieve the hash of the transaction
+    hash: transaction.hash, 
     blockHash: null,
     blockHeight: transaction.blockNumber,
     date: new Date(transaction.timestamp),
@@ -639,9 +640,9 @@ export const getFees = async (unsigned: string): Promise<BigNumber> =>
  */
 export const submit = async (blob: string) =>
   withApi(async (api: typeof MyCoinApi) => {
+    // This is where you retrieve the hash of newly sent transaction
     const { hash, fees } = await api.submit(blob);
 
-    // Transaction hash is likely to be returned
     return { hash, fees: BigNumber(fees) };
   });
 ```
