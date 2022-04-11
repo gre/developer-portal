@@ -14,6 +14,11 @@
   - coin/speculos
   - coin/yalc
 
+
+- title: Setup
+  docs:
+  - coin/live-common
+
 - title: Adding a Coin
   docs:
   - coin/introduction
@@ -22,14 +27,13 @@
   - subfolderitems:
     - title: Adding *MyCoin* to ledger-live-common
       docs:
-      - coin/live-common
       - coin/address-derivation
       - coin/light-sync
       - coin/sync
       - coin/send
   - coin/desktop-mobile
 
-- title: Building locally 
+- title: Building Ledger Live locally 
   docs:
   - coin/ll-setup
 

@@ -1,5 +1,5 @@
 ---
-title: Setup
+title: Ledger Live Setup
 subtitle:
 tags: [Ledger Live Common, typescript, environment variables, local packages]
 category: Blockchain Support

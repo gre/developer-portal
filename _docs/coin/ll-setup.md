@@ -1,5 +1,5 @@
 ---
-title: Ledger Live Setup
+title: Ledger Live Mobile and Desktop Setup
 subtitle:
 tags:
 category: Blockchain Support
