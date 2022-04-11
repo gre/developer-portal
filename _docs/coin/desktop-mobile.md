@@ -8,8 +8,6 @@ toc: true
 layout: doc
 ---
 
-***
-
 ## Ledger Live Desktop
 
 1. Fork [github.com/LedgerHQ/ledger-live-desktop](https://github.com/LedgerHQ/ledger-live-desktop)

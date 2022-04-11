@@ -28,6 +28,7 @@
   - coin/sync
   - coin/send
   - coin/desktop-mobile
+  - coin/ll-setup
 
 - title: Testing
   docs:
