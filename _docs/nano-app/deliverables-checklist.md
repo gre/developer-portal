@@ -43,6 +43,7 @@ The numbering below follows the one in the Requirements chapter.
 - I have read the [coding guidelines](../display-management)
 - Nano App source code (GitHub repository)
 - A link to the pull request to currencies.ts
+- The name of your token as displayed in [CoinMarketCap](https://coinmarketcap.com/)
 - My app repository has a test folder that contains the Unit Tests list and the functional Tests
 - The App has been fully tested with a companion wallet (CLI or GUI)
 - Two icons for the Nano and for the Ledger Live Manager in Adobe Illustrator format (see [Design Guidelines](../design-requirements))
