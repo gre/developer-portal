@@ -1,5 +1,5 @@
 ---
-title: Adding *MyCoin* to CryptoAssets library
+title: 1 - Adding *MyCoin* to CryptoAssets library
 subtitle:
 tags: [define explorer, explorers, currency model, unit]
 category: Blockchain Support

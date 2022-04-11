@@ -1,5 +1,5 @@
 ---
-title: Light Sync
+title: 4 - Light Sync
 tags: [Ledger Live Common, typescript]
 category: Blockchain Support
 author:

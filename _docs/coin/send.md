@@ -1,5 +1,5 @@
 ---
-title: Send
+title: 6 - Send
 tags: [Ledger Live Common, typescript]
 category: Blockchain Support
 author:

@@ -1,5 +1,5 @@
 ---
-title: Full Sync
+title: 5 - Full Sync
 tags: [Ledger Live Common, typescript]
 category: Blockchain Support
 author:

@@ -28,8 +28,10 @@
       - coin/sync
       - coin/send
   - coin/desktop-mobile
-  - coin/ll-setup
 
+- title: Building locally 
+  docs:
+  - coin/ll-setup
 
 - title: Testing
   docs:

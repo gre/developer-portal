@@ -1,5 +1,5 @@
 ---
-title: Adding *MyCoin* Nano App JS Bindings
+title: 2 - Adding *MyCoin* Nano App JS Bindings
 subtitle:
 tags: [ledgerjs, getAddress, signTransaction]
 category: Blockchain Support

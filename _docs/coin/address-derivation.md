@@ -1,5 +1,5 @@
 ---
-title: Address derivation
+title: 3 - Address derivation
 subtitle:
 tags: [Ledger Live Common, typescript, environment variables, local packages]
 category: Blockchain Support
