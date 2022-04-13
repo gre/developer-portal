@@ -11,7 +11,7 @@ layout: doc
 
 
 <!--  -->
-{% include alert.html style="tip" text="The <b>Nano X</b> does not support side loading, therefore you must use the device emulator <b>Speculos</b> for loading to work. See how to <a href='../../speculos/installation/build'>install</a> and <a href='../../speculos/user/usage'>use</a> it. For the Nano S and Nano S Plus, you can read the following instructions." %}
+{% include alert.html style="warning" text="The <b>Nano X</b> does not support side loading, therefore you must use the device emulator <b>Speculos</b> for loading to work. See how to <a href='../../speculos/installation/build'>install</a> and <a href='../../speculos/user/usage'>use</a> it. For the Nano S and Nano S Plus, you can read the following instructions." %}
 <!--  -->
 
 <!--  -->
