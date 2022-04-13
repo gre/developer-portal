@@ -22,7 +22,7 @@ Your Nano App repository must have a `docs` folder in which you will document th
 
 For the ranges available, follow the stated ranges in the SDKs for [Nano S](https://github.com/LedgerHQ/nanos-secure-sdk/blob/master/include/errors.h), [Nano S Plus](https://github.com/LedgerHQ/nanosplus-secure-sdk/blob/main/include/errors.h) and [Nano X](https://github.com/LedgerHQ/nanox-secure-sdk/blob/master/include/errors.h) or [Nano S for Rust apps](https://github.com/LedgerHQ/ledger-nanos-sdk/blob/master/nanos-secure-sdk/include/errors.h).
 
-Name this file `apdu.md` and put it under it in the `docs` folder of your app. 
+Name this file `apdu.md` and put it under the `docs` folder of your app. 
 
 
 ## B. Users documentation
