@@ -84,7 +84,7 @@ In the first compilation, you may come across:
 2. `continue connecting` messages: type `yes`.
 3. a few `gcc` or `clang` warnings about the C code. This is (unfortunately) expected.
 
-If everything goes, you should end with:
+If everything goes well, you should end with:
 ```sh
 ...
 [LINK] bin/app.elf
