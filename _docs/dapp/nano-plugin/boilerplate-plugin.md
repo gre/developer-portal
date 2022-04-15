@@ -25,7 +25,7 @@ git clone https://github.com/LedgerHQ/ethereum-plugin-sdk
 ```
 
 <!--  -->
-{% include alert.html style="important" text="The SDk repository defaults on branch \"master\", which is synchronized with the Ethereum application latest stable version.
+{% include alert.html style="important" text="The SDK repository defaults on branch \"master\", which is synchronized with the Ethereum application latest stable version.
 
 If your want to work on a newer but unstable version, checkout the \"develop\" branch.
 " %}
