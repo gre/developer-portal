@@ -61,7 +61,7 @@ Other languages are possible (no details here).
 ## Need a team to build your Nano App?
 
 You need a Nano App but don't have an application developer in your team? The following companies have experience building Nano Apps, feel free to contact them to talk about your project:
-- [Blooo](https://blooo.io/)
+- [Blooo](https://blooo.io/en/)
 - [Obsidian Systems](https://obsidian.systems/)
 - [Vacuum Labs](https://vacuumlabs.com/)
 - [Zondax](https://zondax.ch/)
