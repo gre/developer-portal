@@ -22,6 +22,9 @@ left:
     - title: Emulator
       url: /docs/speculos/introduction
 
+  - title: Integration Stories
+    url: https://blog.ledger.com/tag/stories/
+
 # Navbar right menu navigation links
 
 right:
