@@ -11,7 +11,7 @@ layout: doc
 ### Derive Address from device
 
 <!--  -->
-{% include alert.html style="success" text="If your app <a href='../js-bindings'>JS bindings</a> are not yet published in <a href='https://github.com/LedgerHQ/ledgerjs'>LedgerJS</a>, use <a href='../yalc'>yalc</a> to link your local packages." %}
+{% include alert.html style="tip" text="If your app <a href='../js-bindings'>JS bindings</a> are not yet published in <a href='https://github.com/LedgerHQ/ledgerjs'>LedgerJS</a>, use <a href='../yalc'>yalc</a> to link your local packages." %}
 <!--  -->
 
 First and easiest step is to get an address from the device for <i>MyCoin</i>, by creating the `hw-getAddress.ts` Resolver:
