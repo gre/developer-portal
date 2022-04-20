@@ -1,5 +1,5 @@
 ---
-title: To be deleted - Adding *MyCoin* to Ledger Live Desktop and Mobile
+title: To be modified for Monorepo - Adding *MyCoin* to Ledger Live Desktop and Mobile
 subtitle:
 tags: [lld, llm]
 category: Blockchain Support
