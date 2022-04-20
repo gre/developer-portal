@@ -172,11 +172,11 @@ cd apps/ledger-live-desktop
 
 ### Scripts
 
-#### `pnpm install`
+**pnpm install**
 
 install dependencies.
 
-#### `pnpm start`
+**pnpm start**
 
 Runs your app in development mode.
 
@@ -186,21 +186,19 @@ Sometimes you may need to reset or clear the React Native packager's cache. To d
 pnpm start -- --reset-cache
 ```
 
-#### `pnpm test`
-
-#### `pnpm run ios`
+**pnpm run ios**
 
 or `open ios/ledgerlivemobile.xcworkspace`
 
-#### `pnpm run android`
+**pnpm run android**
 
 or open `android/` in Android Studio.
 
-#### `pnpm android:clean`
+**pnpm android:clean**
 
 Delete the application data for Ledger Live Mobile, equivalent to doing it manually through settings
 
-#### `pnpm android:import importDataString`
+**pnpm android:import importDataString**
 
 Passing a base64 encoded export string (the export from desktop) will trigger an import activity and allow
 easy data setting for development.
@@ -219,13 +217,13 @@ Optional environment variables you can put in `.env`, `.env.production` or `.env
 
 ### Maintenance
 
-#### Refresh the flow-typed from flow-typed Github
+**Refresh the flow-typed from flow-typed Github**
 
 ```
 pnpm sync-flowtyped
 ```
 
-#### Refresh the languages (when we add new languages)
+**Refresh the languages (when we add new languages)**
 
 ```
 pnpm sync-locales
@@ -233,7 +231,7 @@ pnpm sync-locales
 
 ### Debugging
 
-#### Javascript / React
+**Javascript / React**
 
 It's recommended to use [react-native-debugger](https://github.com/jhen0409/react-native-debugger) instead of Chrome dev tools as it features some additional React and Redux panels.
 
@@ -245,49 +243,49 @@ It's recommended to use [react-native-debugger](https://github.com/jhen0409/reac
 
 Keep in mind that doing so will run your Javascript code on a Chromium JS engine ([V8](https://v8.dev/)) on your computer, instead of iOS' system JS engine (JavaScript Core), or our bundled JS engine (JSC for now, soon to be replaced with [Hermes](https://github.com/facebook/hermes)) on Android.
 
-#### End to end testing
+**End to end testing**
 
 Refer to the e2e specific [README.md](e2e/README.md)
 
-#### Native code
+**Native code**
 
-##### XCode / Android studio
+- XCode / Android studio
 
-Run the app from the Apple or Google own IDE to get some native debugging features like breakpoints etc.
+  Run the app from the Apple or Google own IDE to get some native debugging features like breakpoints etc.
 
-#### And more
+**And more**
 
-##### Flipper 🐬
+- Flipper 
 
-[Flipper](https://fbflipper.com/) has been integrated in the project, so you can use it to get additional debugging information (like network monitoring) and find other useful data you could previously get from scattered places, here neatly presented in a single interface (like logs and crash reports for both platforms).
+  [Flipper](https://fbflipper.com/) has been integrated in the project, so you can use it to get additional debugging information (like network monitoring) and find other useful data you could previously get from scattered places, here neatly presented in a single interface (like logs and crash reports for both platforms).
 
-React Native integration seems pretty bleeding edge right now, so don't expect everything to work just yet.
+  React Native integration seems pretty bleeding edge right now, so don't expect everything to work just yet.
 
-- Install [Flipper](https://fbflipper.com/) on your computer
-- Launch it 🚀
-- Run Ledger Live Mobile in debug as usual
-- No need to enable remote debug!
+  - Install [Flipper](https://fbflipper.com/) on your computer
+  - Launch it 🚀
+  - Run Ledger Live Mobile in debug as usual
+  - No need to enable remote debug!
 
-#### Working on iOS or Android emulators
+**Working on iOS or Android emulators**
 
-##### Connection via HTTP bridge
+- Connection via HTTP bridge
 
-It is possible to run Ledger Live Mobile on an emulator and connect to a Nano that is plugged in via USB.
+  It is possible to run Ledger Live Mobile on an emulator and connect to a Nano that is plugged in via USB.
 
-- Install the [ledger-live cli](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/cli.md).
-- Plug in your Nano to your computer.
-- Run `ledger-live proxy`. A server starts and displays variable environments that can be used to build Ledger-Live Mobile. For example:
-  ```
-  DEVICE_PROXY_URL=ws://localhost:8435
-  DEVICE_PROXY_URL=ws://192.168.1.14:8435
-  Nano S proxy started on 192.168.1.14
-  ```
-- Either do `export DEVICE_PROXY_URL=the_adress_given_by_the_server` or paste this variable environment in the `.env` file at the root of the project (create it if it doesn't exist)
-- Build & run Ledger Live Mobile `pnpm ios` or `pnpm android`
-- When prompted to choose a Nano device in Ledger Live Mobile, you will see your Nano available with the adress from above, just select it and it should work normally.
+  - Install the [ledger-live cli](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/cli.md).
+  - Plug in your Nano to your computer.
+  - Run `ledger-live proxy`. A server starts and displays variable environments that can be used to build Ledger-Live Mobile. For example:
+    ```
+    DEVICE_PROXY_URL=ws://localhost:8435
+    DEVICE_PROXY_URL=ws://192.168.1.14:8435
+    Nano S proxy started on 192.168.1.14
+    ```
+  - Either do `export DEVICE_PROXY_URL=the_adress_given_by_the_server` or paste this variable environment in the `.env` file at the root of the project (create it if it doesn't exist)
+  - Build & run Ledger Live Mobile `pnpm ios` or `pnpm android`
+  - When prompted to choose a Nano device in Ledger Live Mobile, you will see your Nano available with the adress from above, just select it and it should work normally.
 
-#### Extra Docs 📄
+**Extra Docs**
 
-- [Deep Linking 🔗](./docs/linking.md)
-- [UI Theming 🎨](./docs/theming.md)
+- [Deep Linking](https://github.com/LedgerHQ/ledger-live/blob/42b6a71876e4ecd9fd8cf9f29b7e108c82a94abb/apps/ledger-live-mobile/docs/linking.md)
+- [UI Theming](https://github.com/LedgerHQ/ledger-live/blob/42b6a71876e4ecd9fd8cf9f29b7e108c82a94abb/apps/ledger-live-mobile/docs/theming.md)
 
