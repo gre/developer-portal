@@ -53,33 +53,28 @@ If <i>MyCoin</i> has a conventional derivation path (BIP44), Ledger Live should 
 Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/derivation.ts):
 
 1. Add a new derivation mode with `overridesDerivation`:
-
-```ts
-// const modes = Object.freeze({
-// ...
-  mycoinbip44h: { // Hardened BIP44 for MyCoin
-    overridesDerivation: "44'/8008'/<account>'/0'/<address>'",
-  },
-// });
-```
-
+  ```ts
+  // const modes = Object.freeze({
+  // ...
+    mycoinbip44h: { // Hardened BIP44 for MyCoin
+      overridesDerivation: "44'/8008'/<account>'/0'/<address>'",
+    },
+  // });
+  ```
 2. add the mode to family in `legacyDerivations`:
-
-```ts
-// const legacyDerivations: $Shape<CryptoCurrencyConfig<DerivationMode[]>> = {
-// ...
-  mycoin: ["mycoinbip44h"],
-// };
-```
-
+  ```ts
+  // const legacyDerivations: $Shape<CryptoCurrencyConfig<DerivationMode[]>> = {
+  // ...
+    mycoin: ["mycoinbip44h"],
+  // };
+  ```
 3. disable the default use of BIP44 in `disableBIP44`:
-
-```ts
-// const disableBIP44 = {
-// ...
-  mycoin: true,
-// };
-```
+  ```ts
+  // const disableBIP44 = {
+  // ...
+    mycoin: true,
+  // };
+  ```
 
 See [Derivation documentation](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/derivation.md) for further details.
 
