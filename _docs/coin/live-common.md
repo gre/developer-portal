@@ -42,13 +42,14 @@ All integrated coins are implemented in a `src/families` dedicated folder which 
 
 ### Installation
 
-- Clone project [https://github.com/LedgerHQ/ledger-live-common](https://github.com/LedgerHQ/ledger-live-common)
+- Clone project [https://github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
+- `cd libs/ledger-live-common`
 - `yarn install` will install all dependencies
 - `yalc publish --push` will build and link ledger-live-common
 
 ## Structure
 
-Your whole implementation of <i>MyCoin</i> must reside in a `mycoin` folder in `src/families/`, with the exception of some changes to apply in shared code.
+Your whole implementation of <i>MyCoin</i> must reside in a `mycoin` folder in `src/families/` with the exception of some changes to apply in shared code.
 
 Here is a typical family folder structure (TS integration):
 
@@ -78,7 +79,7 @@ Here is a typical family folder structure (TS integration):
 ```
 
 <!--  -->
-{% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live-common/tree/master/src/families/polkadot'>Polkadot integration</a>" %}
+{% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live/tree/master/libs/ledger-live-common/src/families/polkadot'>Polkadot integration</a>" %}
 <!--  -->
 
 ## Building the CLI for Development
@@ -118,7 +119,7 @@ or for LLD :
 EXPERIMENTAL_CURRENCIES=mycoin yarn start
 ```
 
-It will consider `mycoin` as supported (you can also add it to the supported currencies in `cli/src/ledger-live-common-setup-base.ts`).
+It will consider `mycoin` as supported (you can also add it to the supported currencies in `src/ledger-live-common-setup-base.ts`).
 
 **For clarity, we will omit this environment variable in this document.**
 
