@@ -118,7 +118,7 @@ See existing implementations for inspiration: [Polkadot types](https://github.co
 
 You will be implementing typescript types that will be used in your integration, like the Transaction type or the additional data needed to be added to the Account shared type, but also any other types that you will need (remember to always type your functions with typescript).
 
-`src/families/mycoin/types.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/types.ts`:
 
 ```ts
 import type { BigNumber } from "bignumber.js";
@@ -176,7 +176,7 @@ export type MyCoinPreloadData = {
 
 Since some of thoses types will be serialized when stored or cached, you may need to define serialize/deserialize functions for those:
 
-`src/families/mycoin/serialization.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/serialization.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -266,7 +266,7 @@ Since `Operation` will be stored as JSON, you will need to implement specific se
 
 We also would like the `Operation` and `Account` to be displayed in CLI with their specifics, so you must provide formatters to display them.
 
-`src/families/mycoin/account.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/account.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -366,7 +366,7 @@ export default {
 
 The same idea applies also to the `Transaction` type which needs to be serialized and formatted for CLI:
 
-`src/families/mycoin/transaction.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/transaction.ts`:
 
 ```ts
 import type { Transaction, TransactionRaw } from "./types";
@@ -440,7 +440,7 @@ The best way to implement your API in Live Common is to create a dedicated `api`
 
 You will likely need to export thoses functions, but implemention is up-to-developer:
 
-`src/families/mycoin/api/index.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/api/index.ts`:
 
 ```ts
 export {
@@ -762,7 +762,7 @@ export default { currencyBridge, accountBridge };
 
 You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
 
-The skeleton of `src/families/mycoin/bridge/js.ts` should look something like this:
+The skeleton of `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge/js.ts` should look something like this:
 
 ```ts
 import type { AccountBridge, CurrencyBridge } from "../../../types";
@@ -816,7 +816,7 @@ It is important to keep in mind that all currencies work independently and that 
 
 Hence, the more cryptocurrencies Ledger Live is using, the more requests and calculations are executed, which can take time.
 
-To avoid making the same requests several times, we recommend using a local cache in your implementation (e.g. fees estimations, some currency data to preload, etc in a `src/families/mycoin/cache.ts` file.
+To avoid making the same requests several times, we recommend using a local cache in your implementation (e.g. fees estimations, some currency data to preload, etc in a `ledger-live/libs/ledger-live-common/src/families/mycoin/cache.ts` file.
 
 We have a [`src/cache.ts`](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/cache.ts) helper for creating Least-Recently-Used caches anywhere if needed.
 
@@ -827,7 +827,7 @@ See for example the [Polkadot's cache implementation](https://github.com/LedgerH
 
 If you are adding specific features to Ledger Live (like staking), you may need to access data through React hooks, that could provide common logic reusable for React components.
 
-You are then free to add them in a `src/families/mycoin/react.ts` file.
+You are then free to add them in a `ledger-live/libs/ledger-live-common/src/families/mycoin/react.ts` file.
 
 See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/families/polkadot/react.ts).
 
@@ -845,13 +845,13 @@ It is designed for the end user frontend interface and is agnostic of the way it
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
-As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
+As you may see in `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
 
 ### Synchronization
 
 We usually group the `scanAccounts` and `sync` into the same file `js-synchronisation.ts` as they both use similar logic as a `getAccountShape` function passed to helpers.
 
-`src/families/mycoin/js-synchronisation.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-synchronisation.ts`:
 
 ```ts
 import type { Account } from "../../types";
@@ -914,7 +914,7 @@ Under the hood of the `makeSync` helper, the returned value is an Observable of 
 - the updater is called in a reducer, and allows to produce an immutable state by applying the update to the latest account instance (with reconciliation on Ledger Live Desktop)
 - it's an observable, so we can interrupt it when/if multiple updates occurs
 
-In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `src/families/mycoin/js-postSyncPatch.js` file.
+In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `ledger-live/libs/ledger-live-common/src/families/mycoin/js-postSyncPatch.js` file.
 
 ### Reconciliation
 

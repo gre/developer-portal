@@ -136,7 +136,7 @@ Everytime the transaction is updated through a patch (`updateTransaction`), its 
 
 In some cases, this transaction will need to be prepared to correctly check status (`prepareTransaction`), like fetching the network fees, transforming some parameters, or setting default values, ...
 
-`src/families/mycoin/js-transaction.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-transaction.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -219,7 +219,7 @@ This validation is done everytime the user updates the transaction (any input ch
 
 `errors` and `warnings` are key - value (error) objects that would have for each input (in the user perspective) the eventual error or notice that has been detected. To each key then it is expected that an input in Ledger Live Desktop and Mobile will exists to display the error.
 
-`src/families/mycoin/js-getTransactionStatus.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-getTransactionStatus.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -291,7 +291,7 @@ Those are user-dependent errors handled in the UI for each input displayed, and 
 
 But some errors can occur in a different context, and not be caused by user. Try as much as possible to handle all failing cases and throw coin-specific errors (if not generic error already exist), that you may define in an `errors.ts` file (for reusablity).
 
-`src/families/mycoin/errors.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/errors.ts`:
 
 ```ts
 import { createCustomErrorClass } from "@ledgerhq/errors";
@@ -313,7 +313,7 @@ export * from "./families/mycoin/errors";
 
 Also, to avoid repeating code and facilitate usage of checks and constants, gather all your coin-specific logic functions in a single file (calculations, getters, boolean checks...). This will also ease maintenance, for instance when the blockchain's logic changes (constants or additional checks added).
 
-`src/families/mycoin/logic.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/logic.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -364,7 +364,7 @@ export const getNonce = (a: Account): number => {
 
 The `Transaction` object is not exactly the transaction in the shape of the blockchain's protocol (which is generally serialized into a blob of bytes). So for convenience, you may implement a `buildTransaction` method to serialized it using <i>MyCoin</i> SDK, that could be reused for instance for estimating fees through the API.
 
-`src/families/mycoin/js-buildTransaction.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-buildTransaction.ts`:
 
 ```ts
 import type { Transaction } from "./types";
@@ -417,7 +417,7 @@ export const buildTransaction = async (a: Account, t: Transaction) => {
 
 This `buildTransaction` function would return an unsigned transaction blob that would be signed with the <i>MyCoin</i> App on device:
 
-`src/families/mycoin/js-signOperation.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-signOperation.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -546,7 +546,7 @@ When signing a transaction, the user is shown on his device all the parameters o
 
 The list of all displayed fields on device are provided by the `getDeviceTransactionConfig` function, which must return all transaction fields for a given transaction.
 
-`src/families/mycoin/deviceTransactionConfig.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/deviceTransactionConfig.ts`:
 ```ts
 import type { AccountLike, Account, TransactionStatus } from "../../types";
 import type { Transaction } from "./types";
@@ -602,7 +602,7 @@ export default getDeviceTransactionConfig;
 
 Once the transaction is signed, it must be broadcasted to MyCoin network. This is pretty easy if you correctly wrapped your API.
 
-`src/families/mycoin/js-broadcast.ts`
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-broadcast.ts`
 
 ```ts
 import type { Operation, SignedOperation } from "../../types";
@@ -639,7 +639,7 @@ The maximum spendable amount is the total balance in an account that is availabl
 
 See [https://support.ledger.com/hc/en-us/articles/360012960679-Maximum-spendable-amount](https://support.ledger.com/hc/en-us/articles/360012960679-Maximum-spendable-amount)
 
-`src/families/mycoin/js-estimateMaxSpendable.ts`
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-estimateMaxSpendable.ts`
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -683,7 +683,7 @@ export default estimateMaxSpendable;
 
 Here, we only return the spendableBalance, but without the fees. Since Fee estimation can be used elsewhere (like in the `prepareTransaction`), you can put it's logic in a dedicated `js-getFeesForTransaction.ts` file. Here is an example for a fee fetched from network from an unsigned transaction (a bit like Polkadot), but you can also have specific calculation, with fee-per-byte value provided by the blockchain.
 
-`src/families/mycoin/js-getFeesForTransaction.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-getFeesForTransaction.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -720,7 +720,7 @@ export default getEstimatedFees;
 
 Before being able to test a `send` operation with CLI you will need to bind arguments and infer a transaction from it. Since we defined a "mode" field in the transaction, this will be the only argument that will be necessary to test a send.
 
-`src/families/mycoin/cli-transaction.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/cli-transaction.ts`:
 
 ```ts
 import flatMap from "lodash/flatMap";

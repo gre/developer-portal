@@ -18,7 +18,7 @@ Before starting this step, make sure [you have setup your environment](../live-c
 
 First and easiest step is to get an address from the device for <i>MyCoin</i>, by creating the `hw-getAddress.ts` Resolver:
 
-`src/families/mycoin/hw-getAddress.js`:
+`ledger-live/apps/ledger-live-common/src/families/mycoin/hw-getAddress.js`:
 
 ```ts
 import type { Resolver } from "../../hw/getAddress/types";

@@ -120,7 +120,7 @@ export default { currencyBridge, accountBridge };
 
 You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
 
-The skeleton of `src/families/mycoin/bridge/js.ts` should look something like this:
+The skeleton of `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge/js.ts` should look something like this:
 
 ```ts
 import type { AccountBridge, CurrencyBridge } from "../../../types";
@@ -181,14 +181,14 @@ It is designed for the end user frontend interface and is agnostic of the way it
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
-As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
+As you may see in `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
 
 
 ### Synchronization
 
 We usually group the `scanAccounts` and `sync` into the same file `js-synchronisation.ts` as they both use similar logic as a `getAccountShape` function passed to helpers.
 
-`src/families/mycoin/js-synchronisation.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/js-synchronisation.ts`:
 
 ```ts
 import type { Account } from "../../types";
@@ -251,7 +251,7 @@ Under the hood of the `makeSync` helper, the returned value is an Observable of 
 - the updater is called in a reducer, and allows to produce an immutable state by applying the update to the latest account instance (with reconciliation on Ledger Live Desktop)
 - it's an observable, so we can interrupt it when/if multiple updates occurs
 
-In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `src/families/mycoin/js-postSyncPatch.js` file.
+In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `ledger-live/libs/ledger-live-common/src/families/mycoin/js-postSyncPatch.js` file.
 
 ### Reconciliation
 
@@ -306,7 +306,7 @@ This cache contains the JSON serialized response from `preload` which is then hy
 
 Live-Common features will then be able to reuse those data anywhere (e.g. validating transactions) with `getCurrentMyCoinPreloadData`, or by subscribing to `getMyCoinPreloadDataUpdates` observable.
 
-`src/families/mycoin/preload.ts`:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/preload.ts`:
 ```ts
 import { Observable, Subject } from "rxjs";
 import { log } from "@ledgerhq/logs";
