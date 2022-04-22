@@ -1,5 +1,5 @@
 ---
-title: 4 - Light Sync
+title: "4 - Add accounts: light sync"
 tags: [Ledger Live Common, typescript]
 category: Blockchain Support
 author:

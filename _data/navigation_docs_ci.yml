@@ -19,18 +19,15 @@
   docs:
   - coin/live-common
 
-- title: Adding a Coin
+- title: Coding
   docs:
   - coin/introduction
   - coin/cryptoassets-library
   - coin/js-bindings
-  - subfolderitems:
-    - title: Adding *MyCoin* to ledger-live-common
-      docs:
-      - coin/address-derivation
-      - coin/light-sync
-      - coin/sync
-      - coin/send
+  - coin/address-derivation
+  - coin/light-sync
+  - coin/sync
+  - coin/send
   - coin/desktop-mobile
 
 - title: Building Ledger Live locally 

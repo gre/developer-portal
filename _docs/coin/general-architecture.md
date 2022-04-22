@@ -108,7 +108,14 @@ This time line shows the relative time of the steps (XS, S, M and L) you will go
 			</a>
 	    </div>
 	</div>
+	<div class="uk-child-width-1-6@m">
+	    <div class="uk-card-default uk-card-hover border-xlight" style="padding:0px; width:200px;">
+			<a href="../desktop-mobile">
+			 <img alt="" src="../images/desktop-mobile.png">
+			</a>
+	    </div>
+	</div>
 </div>
 
-For any complementary implempentation (staking, tokens, NFTs), you will be guided by the Blockchain support team. 
+For any complementary implepentation (staking, tokens, NFTs), you will be guided by the Blockchain support team. 
 

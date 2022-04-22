@@ -1,5 +1,5 @@
 ---
-title: 5 - Full Sync
+title: "5 - Add accounts: full sync"
 tags: [Ledger Live Common, typescript]
 category: Blockchain Support
 author:
