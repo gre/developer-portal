@@ -30,10 +30,6 @@
   - coin/send
   - coin/desktop-mobile
 
-- title: Building Ledger Live locally 
-  docs:
-  - coin/ll-setup
-
 - title: Testing
   docs:
   - coin/tests
