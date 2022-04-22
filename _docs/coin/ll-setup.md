@@ -286,6 +286,6 @@ Refer to the e2e specific [README.md](e2e/README.md)
 
 **Extra Docs**
 
-- [Deep Linking](https://github.com/LedgerHQ/ledger-live/blob/42b6a71876e4ecd9fd8cf9f29b7e108c82a94abb/apps/ledger-live-mobile/docs/linking.md)
-- [UI Theming](https://github.com/LedgerHQ/ledger-live/blob/42b6a71876e4ecd9fd8cf9f29b7e108c82a94abb/apps/ledger-live-mobile/docs/theming.md)
+- [Deep Linking](https://github.com/LedgerHQ/ledger-live/tree/main/apps/ledger-live-mobile/docs/linking.md)
+- [UI Theming](https://github.com/LedgerHQ/ledger-live/tree/main/apps/ledger-live-mobile/docs/theming.md)
 
