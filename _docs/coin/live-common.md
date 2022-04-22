@@ -42,8 +42,7 @@ All integrated coins are implemented in a `src/families` dedicated folder which 
 
 ### Installation
 
-- Clone project [https://github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
-- `cd libs/ledger-live-common`
+- Clone project [https://github.com/LedgerHQ/ledger-live-common](https://github.com/LedgerHQ/ledger-live-common)
 - `yarn install` will install all dependencies
 - `yalc publish --push` will build and link ledger-live-common
 
