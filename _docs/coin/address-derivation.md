@@ -14,6 +14,8 @@ layout: doc
 {% include alert.html style="tip" text="If your app <a href='../js-bindings'>JS bindings</a> are not yet published in <a href='https://github.com/LedgerHQ/ledgerjs'>LedgerJS</a>, use <a href='../yalc'>yalc</a> to link your local packages." %}
 <!--  -->
 
+Before starting this step, make sure [you have setup your environment](../live-common/) to work with `ledger-live`.
+
 First and easiest step is to get an address from the device for <i>MyCoin</i>, by creating the `hw-getAddress.ts` Resolver:
 
 `src/families/mycoin/hw-getAddress.js`:

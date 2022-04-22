@@ -14,7 +14,7 @@ layout: doc
 
 ### 1. Is my TRC10 or TRC20 token listed?
 
-First, make sure your token isn’t already listed by checking this table of the [supported crypto-assets](https://github.com/LedgerHQ/ledger-live-desktop/blob/develop/cryptoassets.md).
+First, make sure your token isn’t already listed by checking this table of the [supported crypto-assets](https://github.com/LedgerHQ/ledger-live/blob/develop/apps/ledger-live-desktop/cryptoassets.md).
 
 <!--  -->
 {% include alert.html style="tip" text="The list of supported assets on the <a href='https://www.ledger.com/supported-crypto-assets/'>website</a> is managed through an internal Ledger process. For the moment it’s difficult to guarantee the exact mapping between tokens available on Ledger Live and listed on the website." %}

@@ -10,7 +10,7 @@ layout: doc
 We call it JS Bridge because historically we used to write the support of blockchain in C++. It’s a bridge in JavaScript for the currency to communicate with the Live environment.
 
 
-`src/families/mycoin/bridge/js.ts` is the entry point of a coin integration. It must export two bridges:
+`ledger-live/libs/ledger-live-common/src/families/mycoin/bridge/js.ts` is the entry point of a coin integration. It must export two bridges:
 
 - a CurrencyBridge
 - an AccountBridge
