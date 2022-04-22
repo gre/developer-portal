@@ -31,11 +31,11 @@ nvm install 12 (if not already done)
 nvm use 12
 ```
 
-Then clone the ledger-live-common repo:
+Then clone the ledger-live repo:
 
 ```sh
-git clone https://github.com/LedgerHQ/ledger-live-common
-cd ledger-live-common/cli
+git clone https://github.com/LedgerHQ/ledger-live
+cd libs/ledger-live-common/cli
 yarn
 ```
 

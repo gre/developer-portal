@@ -14,7 +14,7 @@ Using a local version of Ledger Live to test your integration can be time consum
 
 ### Set up
 
-Clone [ledger-live-common](https://github.com/LedgerHQ/ledger-live-common) repository
+Clone [ledger-live-common](https://github.com/LedgerHQ/ledger-live/libs/ledger-live-common) repository
 
 ```sh
 cd ledger-live-common

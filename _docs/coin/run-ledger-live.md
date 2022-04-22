@@ -10,9 +10,9 @@ layout: doc
 
 ## Getting started
 
-To start, fork and clone git@github.com:LedgerHQ/ledger-live-common.git
+To start, fork and clone git@github.com:LedgerHQ/ledger-live.git
 ```bash
-cd ledger-live-common
+cd ledger-live/libs/ledger-live-common
 yarn install
 yalc publish
 cd cli

@@ -110,7 +110,7 @@ NO_DEBUG_DEVICE=1
 NO_DEBUG_COUNTERVALUES=1
 ```
 
-other envs can be seen in [live-common:src/env.js](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/env.js)
+other envs can be seen in [live-common:src/env.js](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/env.js)
 
 #### Run tests
 
@@ -207,7 +207,7 @@ easy data setting for development.
 
 Optional environment variables you can put in `.env`, `.env.production` or `.env.staging` for debug, release, or staging release builds respectively.
 
-[A more exhaustive list of documented environment variables can be found here](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/env.ts).
+[A more exhaustive list of documented environment variables can be found here](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/env.ts).
 
 - `DEVICE_PROXY_URL=http://localhost:8435` Use the ledger device over HTTP. Useful for debugging on an emulator. More info about this in the section [Connection via HTTP bridge](#connection-via-http-bridge).
 - `BRIDGESTREAM_DATA=...` Come from console.log of the desktop app during the qrcode export. allow to bypass the bridgestream scanning.
@@ -272,7 +272,7 @@ Refer to the e2e specific [README.md](e2e/README.md)
 
   It is possible to run Ledger Live Mobile on an emulator and connect to a Nano that is plugged in via USB.
 
-  - Install the [ledger-live cli](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/cli.md).
+  - Install the [ledger-live cli](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/docs/cli.md).
   - Plug in your Nano to your computer.
   - Run `ledger-live proxy`. A server starts and displays variable environments that can be used to build Ledger-Live Mobile. For example:
     ```

@@ -82,7 +82,7 @@ We don't want showAllDigits for currencies because they generally have a lot of 
 
 At the opposite, it is commonly wanted that for popular fiats like EUR we will always display `EUR 42.10` and never `EUR 42.1`.
 
-In live-common, our formatter is implemented by [`formatCurrencyUnit`](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/currencies/formatCurrencyUnit.js) which takes a BigNumber value and a Unit (and many other options available).
+In live-common, our formatter is implemented by [`formatCurrencyUnit`](https://github.com/LedgerHQ/ledger-live/libs/tree/main/ledger-live-common/src/currencies/formatCurrencyUnit.js) which takes a BigNumber value and a Unit (and many other options available).
 
 ### CryptoCurrency specific fields
 

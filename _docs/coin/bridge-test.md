@@ -53,7 +53,7 @@ By doing so we can ensure that the account synchronisation and the transaction s
 
 This section will explain how to generate and add test cases for Accounts and Currencies.
 
-Dataset location: `ledger-live-common/src/families/{currency}`
+Dataset location: `ledger-live/libs/ledger-live-common/src/families/{currency}`
 
 ### Sync accounts
 
@@ -65,7 +65,7 @@ ledger-live generateTestScanAccounts -c <currency>    #Record the APDUs exchange
 
 Then copy the result in:
 
-`ledger-live-common/src/families/<currency>/datasets/<currency>.scanAccounts.1.js`
+`ledger-live/libs/ledger-live-common/src/families/<currency>/datasets/<currency>.scanAccounts.1.js`
 
 
 ### Send (get transaction status)
@@ -82,7 +82,7 @@ ledger-live generateTestTransaction -c bitcoin -i 1 -s 'native_segwit' --recipie
 
 Then copy the result in:
 
-`ledger-live-common/src/families/<currency>/datasets/<currency>.js` or `ledger-live-common/src/families/<currency>/test-dataset.js`
+`ledger-live/libs/ledger-live-common/src/families/<currency>/datasets/<currency>.js` or `ledger-live/libs/ledger-live-common/src/families/<currency>/test-dataset.js`
 
 ```js
 const dataset: CurrenciesData<Transaction> = {
@@ -142,7 +142,7 @@ const dataset: CurrenciesData<Transaction> = {
 };
 ```
 
-For some currencies, more specific tests are specified in: `ledger-live-common/src/families/<currency>/test-specifics.js`
+For some currencies, more specific tests are specified in: `ledger-live/libs/ledger-live-common/src/families/<currency>/test-specifics.js`
 
 
 After adding or modify a test you must run:
