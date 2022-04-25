@@ -1,5 +1,5 @@
 ---
-title: Architecture and work breakdown structure
+title: Ledger Live Architecture
 subtitle: This section describes the high level technical architecture of Ledger Live and how the different components interact.
 tags: [ledger live, live-common, ledgerjs, ledger-live-desktop, ledger-live-mobile]
 category: Blockchain Support
@@ -7,7 +7,7 @@ author:
 toc: true
 layout: doc
 ---
-
+  
 ## Global architecture overview
 
 <!-- ------------- Image ------------- -->
@@ -55,5 +55,3 @@ The Ledger Live application wil retrieve transaction history and broadcast new t
 As part of a Ledger Live blockchain integration, you should provide a indexer allowing a Ledger Live user to synchronize his account in a timely manner. It can be an open source project or your own explorer.
 
 The Ledger Live application uses our own explorers for Bitcoin and Ethereum forks.
-
-

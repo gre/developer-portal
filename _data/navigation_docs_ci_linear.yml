@@ -5,6 +5,7 @@
   docs:
   - coin/general-process
   - coin/general-architecture
+  - coin/work-breakdown
 
 - title: Prerequisites
   docs:
@@ -17,12 +18,19 @@
   - coin/speculos
   - coin/yalc
 
+- title: Setup
+  docs:
+  - coin/live-common
+
 - title: Coding
   docs:
   - coin/introduction
   - coin/cryptoassets-library
   - coin/js-bindings
-  - coin/live-common
+  - coin/address-derivation
+  - coin/light-sync
+  - coin/sync
+  - coin/send
   - coin/desktop-mobile
 
 - title: Testing
