@@ -130,15 +130,6 @@ import { makeAccountBridgeReceive } from "../../../bridge/jsHelpers";
 import { getPreloadStrategy, preload, hydrate } from "../preload";
 
 import { sync, scanAccounts } from "../js-synchronisation";
-import {
-  createTransaction,
-  updateTransaction,
-  prepareTransaction,
-} from "../js-transaction";
-import getTransactionStatus from "../js-getTransactionStatus";
-import estimateMaxSpendable from "../js-estimateMaxSpendable";
-import signOperation from "../js-signOperation";
-import broadcast from "../js-broadcast";
 
 const receive = makeAccountBridgeReceive();
 
@@ -147,6 +138,34 @@ const currencyBridge: CurrencyBridge = {
   preload,
   hydrate,
   scanAccounts,
+};
+
+const createTransaction = () => {
+  throw new Error("createTransaction not implemented");
+};
+
+const prepareTransaction = () => {
+  throw new Error("prepareTransaction not implemented");
+};
+
+const updateTransaction = () => {
+  throw new Error("updateTransaction not implemented");
+};
+
+const getTransactionStatus = () => {
+  throw new Error("getTransactionStatus not implemented");
+};
+
+const estimateMaxSpendable = () => {
+  throw new Error("estimateMaxSpendable not implemented");
+};
+
+const signOperation = () => {
+  throw new Error("signOperation not implemented");
+};
+
+const broadcast = () => {
+  throw new Error("broadcast not implemented");
 };
 
 const accountBridge: AccountBridge<Transaction> = {
@@ -165,9 +184,12 @@ export default { currencyBridge, accountBridge };
 ```
 
 <!--  -->
+
 {% include alert.html style="tip" text="You could implement all the methods in a single file, but for better readability and maintainability, you should split your code into multiple files." %}
 
 ## Account Bridge
+
+Notes HA: les sections Account Bridge et Currency Bridge doivent être déplacées avant "Starting with a mock"
 
 AccountBridge offers a generic abstraction to synchronize accounts and perform transactions.
 
@@ -175,14 +197,13 @@ It is designed for the end user frontend interface and is agnostic of the way it
 
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
-![account bridge flow](../images/account-bridge-flow.png)
 
+![account bridge flow](../images/account-bridge-flow.png)
 
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
 As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
-
 
 ### Synchronization
 
@@ -307,6 +328,7 @@ This cache contains the JSON serialized response from `preload` which is then hy
 Live-Common features will then be able to reuse those data anywhere (e.g. validating transactions) with `getCurrentMyCoinPreloadData`, or by subscribing to `getMyCoinPreloadDataUpdates` observable.
 
 `src/families/mycoin/preload.ts`:
+
 ```ts
 import { Observable, Subject } from "rxjs";
 import { log } from "@ledgerhq/logs";
@@ -374,5 +396,3 @@ export const hydrate = (data: any) => {
 ```
 
 Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/CurrencyBridge.md).
-
-
