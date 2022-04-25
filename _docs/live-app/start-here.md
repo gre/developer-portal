@@ -28,7 +28,8 @@ See the left or right part respectively.
 [![Discover section](../images/live-app.jpg)](../images/live-app.jpg)   
 <!--------------->
 
-- We recommend you get in touch with us on the [Ledger Discord server](https://discord.gg/Ledger) to discuss your project.  
+- We recommend you get in touch with us on the [Ledger Discord server](https://discord.gg/Ledger) to discuss your project.
+- We reserve the right to perform KYB (including regulatory compliance review) and may reject your submission based on such KYB.
 - If there is need to share data with us, please read this [doc](https://docs.google.com/document/d/1pD2iht4nAphDDEMikwJjD2OG8x4cc9BcUJ1QeMDE94Y/edit?usp=sharing) 
 - Your integration work is detailed in the sections below. Click on the corresponding card to continue.  
 
