@@ -8,6 +8,8 @@ toc: true
 layout: doc
 ---
 
+From step 3 to step 6, you work will be implemented in the [Ledger Live repository](https://github.com/LedgerHQ/ledger-live-common). 
+
 ### Derive Address from device
 
 <!--  -->

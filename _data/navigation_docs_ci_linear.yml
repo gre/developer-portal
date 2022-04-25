@@ -5,6 +5,7 @@
   docs:
   - coin/general-process
   - coin/general-architecture
+  - coin/work-breakdown
 
 - title: Prerequisites
   docs:
