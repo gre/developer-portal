@@ -100,14 +100,14 @@ This table contains the **most commonly used layouts**:
 
 **Most commonly used layouts**
 
-Here is a table that compares how those layouts are displayed on a Nano S and on a Nano X.
+Here is a table that compares how those layouts are displayed on a Nano S and on a Nano X or S Plus.
 
-Notice that the **Nano X can fit up to 4 lines**, whereas the **Nano S can only fit 2**.
+Notice that the **Nano X and S Plus can fit up to 4 lines**, whereas the **Nano S can only fit 2**.
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
 
 | | | |
-| LAYOUT        | NANO S                                                        | NANO X                                                         |
+| LAYOUT        | NANO S                                                        | NANO X  and S Plus                                            |
 |---------------|---------------------------------------------------------------|---------------------------------------------------------------|
 | `pb`          | <img align="left" width="280" src="../images/nanos_approve.png">       | <img align="left" width="327" src="../images/nanox_approve.png">       |
 | `bn`          | <img align="left" width="280" src="../images/nanos_amount.png">        | <img align="left" width="327" src="../images/nanox_amount.png">        |

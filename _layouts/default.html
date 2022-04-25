@@ -1,3 +1,6 @@
+{% assign url = page.url | split: "/" %}
+{% assign doc = url[1] %}
+
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
@@ -41,26 +44,30 @@
     
        <!-- Modal for Algolia search -->
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content uk-text-center">
-                <h3 style="margin-top:20px;">Search through our developers documentation</h3>
-                <!-- Algolia Instant Search Modal -->
-                <div class="search-box">
-                      <div id="search-searchbar"></div>
-                      <div class="post-list" id="search-hits">
-                        {% for doc in site.docs %}
-                          <div class="post-item">
-                            <h2>
-                              <a class="post-link" href="{{ post.url | relative_url }}">
-                                {{ doc.title | escape }}
-                              </a>
-                            </h2>
+            <div class="modal-dialog modal-lg" {% if doc == 'docs' %}style="position: absolute; top: 5px; right: 10px;"{% endif %}>
+              <div class="modal-content">
+                <a style="right: 5%; font-size: bold; position: Absolute; top: 0.5em; right:1em;" data-dismiss="modal">X</a>
+                <div class="uk-text-center">
+                  <h3 style="margin-top:20px;">Search through our developers documentation </h3>
 
-                            <div class="post-snippet">{{ doc.subtitle }}</div>
-                          </div>
-                        {% endfor %}
+                  <!-- Algolia Instant Search Modal -->
+                  <div class="search-box">
+                        <div id="search-searchbar"></div>
+                        <div class="post-list" id="search-hits">
+                          {% for doc in site.docs %}
+                            <div class="post-item">
+                              <h2>
+                                <a class="post-link" href="{{ post.url | relative_url }}">
+                                  {{ doc.title | escape }}
+                                </a>
+                              </h2>
 
-                    {% include algolia.html %}
+                              <div class="post-snippet">{{ doc.subtitle }}</div>
+                            </div>
+                          {% endfor %}
+
+                      {% include algolia.html %}
+                  </div>
                 </div>
                 <!-- End of Algolia Instant Search Modal -->
               </div>

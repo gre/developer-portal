@@ -10,6 +10,10 @@ layout: doc
 
 To test the code, we will use the [Zondax Zemu Testing Framework](https://github.com/Zondax/zemu). Tests can quickly be added and run on the emulator [Speculos](https://github.com/LedgerHQ/speculos) and take and compare snapshots to confirm they are correct.
 
+<!--  -->
+{% include alert.html style="important" text="The tests provided in the boilerplate plugin are only available for Nano S and X for the moment." %}
+<!--  -->
+
 We won't be using a docker image for this one. Instead, install `yarn` and the dependencies on your machine. So let's open a new terminal window.
 
 <!--  -->

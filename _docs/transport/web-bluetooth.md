@@ -15,7 +15,7 @@ Before starting, make sure you have gone through the [prerequisites](../prerequi
 
 ## Web App Bluetooth (only Nano X)
 
-The Ledger Nano S does not have the Bluetooth functionality. This tutorial will only work with a Ledger Nano X.
+The Ledger Nano S and S Plus do not have the Bluetooth functionality. This tutorial will only work with a Ledger Nano X.
 
 Please be aware that the Bluetooth implementation is only supported by a few browsers.
 You can check the [browser support](https://caniuse.com/web-bluetooth) for the Web Bluetooth.
@@ -351,19 +351,20 @@ This is how your “package.json” has to look like:
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ledgerhq/hw-app-eth": "^6.23.1",
-    "@ledgerhq/hw-transport-web-ble": "^6.21.0",
+    "@ledgerhq/hw-app-eth": "^6.26.0",
+    "@ledgerhq/hw-transport-web-ble": "^6.24.1",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "buffer": "^6.0.3",
+    "eip55": "^2.1.0",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "qrcode": "^1.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "stream": "^0.0.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.3"
   },
   "scripts": {
     "start": "react-scripts start",

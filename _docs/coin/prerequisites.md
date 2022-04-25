@@ -32,9 +32,10 @@ And lastly, special care and careful consideration must be given to providing th
 
 The output of this phase is a detailed proposition of choices made and discussed with Ledger for agreement, before coding starts. This is done at a joint meeting to agree on the Acceptance Plan.
 
-To submit the Technical Assessment for your Blockchain, start by [making a copy of this file locally]( https://docs.google.com/document/d/1pIk-TtmVtgBeyrUY8EyVjknkk-zoVUAXdxyDHluJSiM). (Do not request edit access of the original file). 
-
-After you have filled it in, please inform Ledger by contacting us in the usual way. 
+To submit the Technical Assessment for your Blockchain:  
+1.  Make a copy of this [Technical Assessment]( https://docs.google.com/document/d/1pIk-TtmVtgBeyrUY8EyVjknkk-zoVUAXdxyDHluJSiM) locally. <br> (Please do not request edit access of the original file).  
+2.  Carefully answer the questions in the form. <br> They will help you and Ledger to be more efficient in the integration of your Coin.
+3.  After you have filled it in, please inform Ledger by contacting us in the usual way. 
 
 ***
 ## Choice of Specific features

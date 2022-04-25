@@ -19,9 +19,13 @@ This file must contain some mandatory information, such as the app package names
 
 Check and if necessary edit your manifest file as described [below](#example-of-manifest-json-format-for-the-lido-application).
 
-### Load your Live App locally
+### Load your Live App locally on desktop
 
 To load your Live App locally, [Unlock the Developer mode](../../live-app/developer-mode) in Ledger Live and [add a local app](../../live-app/developer-mode#add-a-local-app).
+
+### Load your Live App locally on mobile (Android only)
+
+Go to the **Settings** -> **Developer** section, and click on **Load Platform Manifest** you can copy your manifest here and load it.
 
 ### Example of Manifest (JSON format) for the “Lido” application:
 

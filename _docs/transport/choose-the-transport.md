@@ -38,8 +38,8 @@ For Mobile applications, you can integrate through React Native libraries HID an
 
 Getting started with React Native Mobile App integration:
  - [React Native HID - Android Only](../react-native-android-hid)
- - [React Native Bluetooth - iOS](../react-native-bluetooth-android)
- - [React Native Bluetooth - Android](../react-native-bluetooth-ios)
+ - [React Native Bluetooth - iOS](../react-native-bluetooth-ios)
+ - [React Native Bluetooth - Android](../react-native-bluetooth-android)
 
 ### Desktop Application
 For a desktop application, your option is to use Node HID Transport layer. The library is only supported on Electron/Node.js

@@ -29,9 +29,11 @@ Ledger applies a specific signature to the triplet **{"ticker”,"contract_addre
 ## How to request a token addition?
 
 Follow the action for:
-- [ERC20, BEP20 or Polygon tokens](../erc20-bep20) for ERC20, BEP20 and Polygon tokens
+- [ERC20, BEP20 or Polygon tokens](../erc20-bep20)
 - [ASA](../asa) 
-- [TRC10/20](../trc) for TRC10/20
+- [TRC10/20](../trc)
+
+Other types of tokens are not supported for the moment. This documentation will be updated when new types are supported.
 
 ## Join us on Discord
 

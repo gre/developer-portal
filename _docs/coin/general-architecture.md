@@ -21,8 +21,7 @@ layout: doc
 
 ## What is Ledger Live?
 
-Ledger Live is Ledger's offical wallet application for Desktop and Mobile, providing a unique interface to maintain multiple crypto currencies
-for Ledger Nano S and X, manage devices, create accounts, receive and send cryptoassets. It communicates with hardware wallet devices to verify
+Ledger Live is Ledger's offical wallet application for Desktop and Mobile, providing a unique interface to maintain multiple crypto currencies for Ledger Nano S, X and S Plus, manage devices, create accounts, receive and send cryptoassets. It communicates with hardware wallet devices to verify
 addresses and sign transactions with ledgerjs.
 
 Ledger Live desktop is an hybrid application built using Electron, React Native, React, Redux, RxJS. It is compatible with **macOS 10.10+, Windows 8+ (x64)** and **Linux (x64)**.

@@ -41,7 +41,7 @@ There are 2 mandatory icons that should be provided for Ledger to release an app
 - Black and white only
 - Safe area: 2px
 
- Nano X icons are 14x14 px in size. Developers can create their Nano X icons from the 16x16 px Nano S one with the following command on Linux (install the package **imagemagick** first): `convert nanos_app_<token>.gif -crop 14x14+1+1 +repage -negate nanox_app_<token>.gif`
+ Nano X and S Plus icons are 14x14 px in size. Developers can create their Nano X or S Plus icons from the 16x16 px Nano S one with the following command on Linux (install the package **imagemagick** first): `convert nanos_app_<token>.gif -crop 14x14+1+1 +repage -negate nanox_app_<token>.gif`
 
 #### Manager icon
 
@@ -84,18 +84,10 @@ The Device icon must be displayed on the first welcome screen.
 
 #### Information display
 
-1. It is a good practice to inform the user of what kind of information is currently displayed, by giving it a title.
-2. To avoid having to much text on the same screen you can:
-	- Use multiple successive screens with a configurable time interval bewteen each screen switch
-	- Use automatic scrolling display
+1. It is a good practice to inform the user of what kind of information is currently displayed, by giving it a title. There should not be a colon after the title.
+2. To avoid having to much text on the same screen, use successive screens that can be switched back and forth using the left and right button.
+3. The send flow should be: Amount → Destination → Fees (if applicable) → Memo (if applicable)
 
-<!-- ------------- Image ------------- -->
-<figure class="uk-text-center">
-<img src="../images/scroll.gif" alt="Example: transaction confirmation screen" /><figcaption aria-hidden="true">Example with two alternating screens.</figcaption>
-</figure>
-<!-- --------------------------------- -->
-
-In the example above, two pieces of information are shown: an amount of bitcoins, and a destination address. The two screens alternates until the user validates or cancel. A title describes each information. Automatic scrolling is used for the address as it is too long to be displayed.
 
 #### Graphical pointers
 
@@ -116,21 +108,10 @@ You can display a question and relevant information in between the glyphs, like 
 
 **Browse**
 
-To browse through a menu, be it vertical or horizontal, the same technique is applied with different glyphs. We recommend using arrows: 
-- up and down for a vertical menu
-- left and right for a horizontal menu
+To browse through a menu, the same technique is applied with different glyphs. We recommend using horizontal menus only with left and right arrows for navigation.
 
-<!-- ------------- Image ------------- -->
-<!-- --------------------------------- -->
-<figure class="uk-text-center">
-<img src="../images/horizontal_menu.png" class="align-center" alt="Example use of arrows in an horizontal menu" /><figcaption aria-hidden="true">Example use of arrows in an horizontal menu</figcaption>
-</figure>
+It's preferable for a menu (Dashboard or Settings) to be a carrousel, so the user can go back easily at the beginning when they've reached the last item. This is **not applicable** to signing transactions, as the user should not be able to reach by mistake the validating screen without having checked the address entirely.
 
-<!-- ------------- Image ------------- -->
-<!-- --------------------------------- -->
-<figure class="uk-text-center">
-<img src="../images/vertical_menu.png" class="align-center" alt="Example use of arrows in a vertical menu" /><figcaption aria-hidden="true">Example use of arrows in a vertical menu</figcaption>
-</figure>
 
 **Select and proceed**
 
@@ -138,6 +119,11 @@ Once positioned on the right menu entry, the user can select the entry by pressi
 
 This is a consistent behavior across the device, so you can assume that users are used to it.
 
+#### "About" and "Settings" sections
+
+The sections "About" and "Settings" must only be created if they contain more than one screen. If you have only one screen to display, include it in the Dashboard flow.
+
+In the "Settings" section, follow this flow: Blind signing (if applicable) → Debug data (if applicable) → Nonce (if applicable) → Back
 
 ## Design Warranty
 

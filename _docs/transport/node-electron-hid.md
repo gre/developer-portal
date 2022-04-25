@@ -13,7 +13,7 @@ In this section, we will guide you through the creation of a desktop electron ap
 ## Prerequisites
 Before starting, make sure you have gone through the [prerequisites](../prerequisites).
 
-## Implementation for Web USB and Web HID on Nano S/X
+## Implementation for Web USB and Web HID on Nano S/X/S Plus
 
 For this application we will use the Ledger node hid package which is [@ledgerhq/hw-transport-node-hid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-node-hid).
 
@@ -296,14 +296,16 @@ Your file should know look like this:
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^16.0.1"
+    "electron": "^16.0.10"
   },
   "dependencies": {
-    "@ledgerhq/hw-app-btc": "^6.15.1",
-    "@ledgerhq/hw-transport-node-hid": "^6.11.2",
+    "@ledgerhq/hw-app-btc": "^6.24.1",
+    "@ledgerhq/hw-transport-node-hid": "^6.24.1",
     "@ledgerhq/logs": "^6.10.0",
     "babel-polyfill": "^6.26.0",
-    "browserify": "^17.0.0"
+    "browserify": "^17.0.0",
+    "node-polyfill-webpack-plugin": "^1.1.4",
+    "stream": "^0.0.2"
   }
 }
 ```

@@ -14,6 +14,10 @@ The submission of a Nano App is completed through a form. This will ask you for 
 
 Below, you will find the details of the form content, per section. You can use this page as a checklist to gather everything that is required.
 
+<!--  -->
+{% include alert.html style="important" text="Help us to help you by ensuring the information your provide is accurate. The integration process will only start if you answer to all the questions." %}
+<!--  -->
+
 The numbering below follows the one in the Requirements chapter.  
 
 
@@ -38,6 +42,8 @@ The numbering below follows the one in the Requirements chapter.
 
 - I have read the [coding guidelines](../display-management)
 - Nano App source code (GitHub repository)
+- A link to the pull request to currencies.ts
+- The name of your token as displayed in [CoinMarketCap](https://coinmarketcap.com/)
 - My app repository has a test folder that contains the Unit Tests list and the functional Tests
 - The App has been fully tested with a companion wallet (CLI or GUI)
 - Two icons for the Nano and for the Ledger Live Manager in Adobe Illustrator format (see [Design Guidelines](../design-requirements))
@@ -50,6 +56,7 @@ The numbering below follows the one in the Requirements chapter.
 
 ### 5- Documentation
 
+- Document in the App's repository the list of the app's APDUs and status words
 - Link to a Google doc tutorial about how to install and use your app (see [Third Party Applications Support](../support-requirements))
     - The doc must include the link to the published tutorial hosted on third party website 
 

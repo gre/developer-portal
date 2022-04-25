@@ -53,17 +53,25 @@ The Ledger Manager is the service which centralizes the distribution of [BOLOS](
 		</a>
 		<figcaption aria-hidden="true">The Ledger Manager</figcaption>
 	</figure>
-<div>
+</div>
 <!-- --------------------------------- -->
+
+
+
 
 
 When these pieces are ready for deployment, they must be sent to Ledger for a security review. One of the things we're going to do is review the security of the BOLOS application code, and check that it functions as intended in conjunction with its wallet app. Here is a non-exhaustive list of what we're looking at during the review process:
 
--   Backdoors
--   Buffer overflows
--   Correct use of the device (for example, minimizing [NVRAM wearing](../persistent-storage#flash-memory-endurance))
--   Correct use of the SDK
--   Application stability, correct handling of errors
--   Correct usability (see [Design Guidelines](#design-guidelines))
+- Backdoors
+- Buffer overflows
+- Correct use of the device (for example, minimizing [NVRAM wearing](../persistent-storage#flash-memory-endurance))
+- Correct use of the SDK
+- Application stability, correct handling of errors
+- Correct usability (see [Design Guidelines](#design-guidelines))
+
 
 Review time depends on Ledger’s available resources and code complexity. The more unique and complex the code, the longer the review. Please note that forks of supported BOLOS apps will require a new review. The decision to reject or revoke an app is at Ledger’s sole discretion. We will make our best efforts to provide a rationale for such decisions. Upon fixing identified issues, app authors will be allowed to re-submit their apps.
+
+
+
+

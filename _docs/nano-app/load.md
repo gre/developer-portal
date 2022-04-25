@@ -1,5 +1,5 @@
 ---
-title: Load the app to a Nano S
+title: Load the application
 subtitle:
 tags: [compile, load app to nano, side loading, ledgerblue, make load, make delete]
 category: Nano Application
@@ -11,11 +11,11 @@ layout: doc
 
 
 <!--  -->
-{% include alert.html style="tip" text="The <b>Nano X</b> does not support side loading, therefore you must use the device emulator <b>Speculos</b> for loading to work. See how to <a href='../../speculos/installation/build'>install</a> and <a href='../../speculos/user/usage'>use</a> it. For the Nano S, you can read the following instructions." %}
+{% include alert.html style="warning" text="The <b>Nano X</b> does not support side loading, therefore you must use the device emulator <b>Speculos</b> for loading to work. See how to <a href='../../speculos/installation/build'>install</a> and <a href='../../speculos/user/usage'>use</a> it. For the Nano S and Nano S Plus, you can read the following instructions." %}
 <!--  -->
 
 <!--  -->
-{% include alert.html style="important" text="If you are a Mac or a Windows user, you should use a Linux Virtual Machine to load the application to a Nano S." %}
+{% include alert.html style="important" text="If you are a Mac or a Windows user, you should use a Linux Virtual Machine to load the application to a Nano S or Nano S Plus." %}
 <!--  -->
 
 ## 1. Define the udev rules
@@ -68,21 +68,28 @@ deactivate
 #### Clone the SDK
 
 <!--  -->
-{% include alert.html style="important" text="The Nano S SDK must first be locally cloned and stored in <code>BOLOS_SDK</code> for the loading to work." %}
+{% include alert.html style="important" text="The Nano S or S Plus SDK must first be locally cloned and stored in <code>BOLOS_SDK</code> for the loading to work." %}
 <!--  -->
 
-Use the following commands:
+Use the following commands for the Nano S:
 
 ```bash
 git clone https://github.com/LedgerHQ/nanos-secure-sdk.git nanos-secure-sdk
 export BOLOS_SDK=<path-to>nanos-secure-sdk
 ```
 
+For the Nano S Plus:
+
+```bash
+git clone https://github.com/LedgerHQ/nanos-secure-sdk.git nanosplus-secure-sdk
+export BOLOS_SDK=<path-to>nanosplus-secure-sdk
+```
+
 #### How-to
 
-1. Plug and unlock the Nano S.
+1. Plug and unlock the Nano S or Nano S Plus.
 2. Move to the root of the application file and activate the virtual environment with `source ledger/bin/activate`.
-3. Use `make load` to load the app to the Nano S and `make delete` to delete it.
+3. Use `make load` to load the app to the Nano S or Nano S Plus and `make delete` to delete it.
 4. You can deactivate the virtual environment with the command `deactivate`.
 
 <!--  -->

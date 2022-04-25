@@ -25,6 +25,18 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css">
   <!-- -->
 
+  <!-- ReCAPTCHA for Comment form-->
+  <script src="https://www.google.com/recaptcha/api.js?render=6Lfk5BAdAAAAANDxAr8eMgKrodOOc3y-6HawPc1G"></script>
+  <script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('6Lfk5BAdAAAAANDxAr8eMgKrodOOc3y-6HawPc1G', {action: 'comment-box'})
+    .then(function(token) {
+        document.getElementById('g-recaptcha-response').value = token;
+    });
+  });
+  </script>
+  <!-- -->
+
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
   <link rel="shortcut icon" type="image/png" href="{{ "/favicon.ico" | relative_url }}" >

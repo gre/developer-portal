@@ -345,12 +345,12 @@ Your file should now look like this:
     "author": "",
     "license": "ISC",
     "devDependencies": {
-      "parcel": "^2.1.1"
+      "parcel": "^2.3.2"
     },
     "dependencies": {
-      "@ledgerhq/hw-app-eth": "^6.22.3",
-      "@ledgerhq/hw-transport-webhid": "^6.20.0",
-      "ethers": "^5.5.3"
+      "@ledgerhq/hw-app-eth": "^6.26.0",
+      "@ledgerhq/hw-transport-webhid": "^6.24.1",
+      "ethers": "^5.5.4"
     }
 }
 ```
