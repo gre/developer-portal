@@ -54,10 +54,17 @@ Nano applications are [coded](../secure-app/) in C on the Blockchain Open Ledger
 
 To develop a Nano Application you will need to:
 - Have Linux (or a VM running Linux)
-- Set up the BOLOS environment (consisting of the Nano S or X SDK, and two compilers)
+- Set up the BOLOS environment (consisting of the Nano S, X or S Plus SDK, and two compilers)
 
 Other languages are possible (no details here).
 
+## Need a team to build your Nano App?
+
+You need a Nano App but don't have an application developer in your team? The following companies have experience building Nano Apps, feel free to contact them to talk about your project:
+- [Blooo](https://blooo.io/en/)
+- [Obsidian Systems](https://obsidian.systems/)
+- [Vacuum Labs](https://vacuumlabs.com/)
+- [Zondax](https://zondax.ch/)
 
 ## Contribute
 If you want to improve the documentation you can use the comment box at the bottom of each page, or open a pull request on our repository

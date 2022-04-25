@@ -24,6 +24,7 @@ The support of this API within the Ledger hardware wallets is:
 - Ensured in all the Operating System versions since:
   - Nano S: 1.6.0 firmware version,
   - Nano X: 1.3.0 firmware version.
+  - Nano S Plus
 - Ensured in all the firmware applications ported on these OS versions, since it is build in the associated firmware SDK.
 
 ##  Possible operations

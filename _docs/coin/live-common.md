@@ -37,13 +37,12 @@ All integrated coins are implemented in a `ledger-live/libs/ledger-live-common/s
 
 ### Hardware prerequisites
 
-- A physical device (Ledger Nano S or Ledger Nano X)
+- A physical device (Ledger Nano S, Nano X or Nano S Plus)
 - <i>MyCoin</i> app installed on device
 
 ### Installation
 
-- Clone project [https://github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
-- `cd libs/ledger-live-common`
+- Clone project [https://github.com/LedgerHQ/ledger-live-common](https://github.com/LedgerHQ/ledger-live-common)
 - `yarn install` will install all dependencies
 - `yalc publish --push` will build and link ledger-live-common
 
@@ -134,4 +133,3 @@ If needed, you can add your own in `src/env.ts` (always try to add a MYCOIN\_ pr
   },
 // }
 ```
-

@@ -333,14 +333,14 @@ Your file should know look like this:
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "parcel": "^2.0.1"
+        "parcel": "^2.3.2"
     },
     "dependencies": {
-        "@ledgerhq/hw-app-solana": "^6.15.0",
-        "@ledgerhq/hw-transport-webusb": "^6.19.0",
+        "@ledgerhq/hw-app-solana": "^6.26.0",
+        "@ledgerhq/hw-transport-webusb": "^6.24.1",
         "@ledgerhq/logs": "^6.10.0",
-        "@solana/web3.js": "^1.31.0",
-        "bs58": "^4.0.1"
+        "@solana/web3.js": "^1.36.0",
+        "bs58": "^5.0.0"
     }
 }
 ```

@@ -107,7 +107,10 @@ layout: default
                     {% if page.subtitle %}<p class="uk-text-lead uk-text-muted">{{ page.subtitle }}</p>{% endif %}
                     <div class="article-content link-primary">
 
-                    {% include reading-time.html %}
+                    {% if sub_category != "crypto-api" %}
+                      {% include reading-time.html %}
+                    {% endif %}
+
 
                       {% if page.toc %}
                       <div class="uk-width-medium uk-nav-default link-primary uk-hidden@m mobile-sections">

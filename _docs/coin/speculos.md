@@ -8,9 +8,14 @@ toc:
 layout: doc
 ---
 
-The goal of the Speculos project is to emulate Ledger Nano S, Nano X and Blue apps on standard desktop computers, without any hardware device. You will need it to test your Blockchain integration.
+Speculos is the emulator of Ledger hardware wallets (Nano S, Nano X, Nano S Plus and Blue) on desktop computers. It is particularly useful when  
+- you don't have the physical hardware device, or 
+- you want to facilitate the pressing of Nano buttons.
 
-If you want to dive through the entire Speculos doc, [click here](../../speculos/introduction).
+If you want to go through the entire Speculos documentation, [click here](../../speculos/introduction).
+
+You will need Speculos to test your Blockchain integration.
+
 
 <!--  -->
 {% include alert.html style="important" text="Note that the first time you load and build your application it can take up to 20 minutes. The following builds will be shorter." %}

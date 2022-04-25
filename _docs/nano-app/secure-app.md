@@ -121,7 +121,7 @@ A common use of the APPLICATION_FLAG_BOLOS_SETTINGS is querying whether the plan
 #endif  // TARGET_NANOX
 ```
 
-The Nano S does not have such a channel however. Which means the Makefile has to treat the `--appFlags` separately for each device type, like so:
+The Nano S and Nano S Plus do not have such a channel however. Which means the Makefile has to treat the `--appFlags` separately for each device type, like so:
 
 ```makefile
 ifeq ($(TARGET_NAME), TARGET_NANOX)
@@ -300,7 +300,7 @@ Rationale: It is a purpose of BOLOS operating system to perform these in a secur
 
 ### Avoid Exceptions for Cryptographic Code
 
-From the 2.0 version of the SDK (for Nano S and Nano X) every cryptographic function has a version that returns an error code instead of raising an exception. As an example `cx_ecdsa_sign_no_throw` performs the same computation as `cx_ecdsa_sign` but does not raise any exception and returns CX_OK if everything went fine.
+From the 2.0 version of the SDK (for Nano S, S Plus and X) every cryptographic function has a version that returns an error code instead of raising an exception. As an example `cx_ecdsa_sign_no_throw` performs the same computation as `cx_ecdsa_sign` but does not raise any exception and returns CX_OK if everything went fine.
 
 We recommend using all `_no_throw` equivalents when available, as the ones raising exceptions will be deprecated in a future SDK release.
 

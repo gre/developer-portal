@@ -13,7 +13,7 @@ layout: doc
 </div>
 
 ## Context
-The objective of this documentation is to help **crypto assets service providers** to add to their service the capability to connect Ledger hardware devices (Nano S & Nano X) to preserve clients' self custody and always let them keep crypto assets in their hardware wallet.
+The objective of this documentation is to help **crypto assets service providers** to add to their service the capability to connect Ledger hardware devices (Nano S, S Plus and X) to preserve clients' self custody and always let them keep crypto assets in their hardware wallet.
 
 {: .center}
 [![Paraswap providing the capability to connect your Ledger Wallet](../images/overview.png)](../images/overview.png)  
@@ -23,8 +23,8 @@ The objective of this documentation is to help **crypto assets service providers
 Ledger hardware wallets are capable of connecting through different types of technologies and can be interfaced using different patterns. 
 
 {: .center}
-[![Ledger Nano S & Nano X connectivity capabilities](../images/connectivity1.png)](../images/connectivity1.png)  
-*Fig. 2: Ledger Nano S & Nano X connectivity capabilities*
+[![Ledger Nano S, S Plus & X connectivity capabilities](../images/connectivity1.png)](../images/connectivity1.png)  
+*Fig. 2: Ledger Nano S, S Plus & X connectivity capabilities*
 
 Ledger hardware devices connect with Desktops & Mobile devices through USB OTG & Bluetooth.
 

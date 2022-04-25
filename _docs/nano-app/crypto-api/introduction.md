@@ -7,7 +7,7 @@ toc:
 layout: doc
 ---
 
-This documentation describes the cryptography API and the syscalls that can be invoked to the operating system to use basic arithmetic and cryptographic functions. It is basically divided into:
+This documentation describes the cryptography API and the syscalls that can be invoked by a Nano App to the Nano devices operating system (BOLOS) to use basic arithmetic and cryptographic functions. It is basically divided into:
 - **Cryptography API** which consists of signature algorithms, hash functions, message authentication codes and encryption algorithms
 - **Syscalls** which enable computations for GF(p) and GF(2<sup align="right">n</sup>) arithmetic and efficient implementation of elliptic curves.
 
