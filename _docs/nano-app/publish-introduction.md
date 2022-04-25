@@ -17,7 +17,7 @@ There are different release types for an application:
     -   as an **audited** application  
 -   **Public release** (official Ledger support)  
 
-Ledger's release of a third party application may not be considered as any form of partnership or endorsement.
+Ledger's release of a third party application must not be considered as any form of partnership or endorsement.
 
 Until the application is audited by Ledger security team (Audited and Public releases), the message `Pending Ledger Review` is displayed when the application is used. The user must acknowledge this warning by pressing both buttons to use the application, which is at their own risk. Unaudited applications are considered experimental and such application will be visible **only when the [developer mode](../../live-app/developer-mode) settings is enabled** in Ledger Live settings.
 
