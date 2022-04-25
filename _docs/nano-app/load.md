@@ -33,8 +33,8 @@ wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_ud
 <!--  -->
 
 While the container image is running:
-1. Plug and unlock the Nano S.
-3. Use `make load` to load the app to the Nano S and `make delete` to delete it.
+1. Plug and unlock the Nano S or S Plus.
+2. Use `make load` (`BOLOS_SDK=$NANOSP_SDK make load` for the S Plus) to load the app to the Nano S and `make delete` to delete it.
 3. You can exit the image, with the command `exit`.
 
 
