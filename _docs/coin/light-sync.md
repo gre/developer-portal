@@ -86,7 +86,7 @@ src/icons/OperationStatusIcon/index.js
 
 ### Transaction
 
-{% include alert.html style="note" text="(Notes HA - TODO REVIEW WORDING) This type may not be required at light sync step. (CONTEXT FOR REVIEWERS: a few blockchains, e.g Bitcoin, need transactions even for light sync)" %}
+{% include alert.html style="note" text="This type may not be required at light sync step." %}
 
 In Ledger Live, the "Transaction" is the data model that is created and updated in order to build the final blob to be signed by the device, and then broadcasted to the blockchain.
 
@@ -268,7 +268,7 @@ Since `Operation` will be stored as JSON, you will need to implement specific se
 
 We also would like the `Operation` and `Account` to be displayed in CLI with their specifics, so you must provide formatters to display them.
 
-{% include alert.html style="note" text="(Notes HA - TODO REVIEW WORDING) In this code sample, all references to operations are not needed at light sync step, still necessary today but will soon be removed from this section" %}
+{% include alert.html style="note" text="In this code sample, all references to operations are not needed at light sync step. They are currently necessary but will soon be removed from this section" %}
 
 `src/families/mycoin/account.ts`:
 
@@ -372,7 +372,7 @@ export default {
 
 The same idea applies also to the `Transaction` type which needs to be serialized and formatted for CLI:
 
-{% include alert.html style="note" text="(Notes HA - TODO REVIEW WORDING) This part may not be required if you don't need transactions for light sync" %}
+{% include alert.html style="note" text="This part may not be required if you don't need transactions for light sync." %}
 
 `src/families/mycoin/transaction.ts`:
 
@@ -429,7 +429,7 @@ export default { formatTransaction, fromTransactionRaw, toTransactionRaw };
 
 ## Wrap your API
 
-{% include alert.html style="note" text="(Notes HA - TODO REVIEW WORDING) In the code samples below, all references to operations are not needed at light sync step, still necessary today but will soon be removed from this section" %}
+{% include alert.html style="note" text="In the code samples below, all references to operations are not needed at light sync step. They are currently necessary but will soon be removed from this section" %}
 
 Before this part, you will need a node/explorer to get the state of an account on the blockchain, such as balances, nonce (if your blockchain uses something similar), and any data relevant to show or fetch in Ledger Live.
 
@@ -642,6 +642,152 @@ export const getOperations = async (
 
 If you need to disconnect from your API after using it, update `src/api/index.ts` to add your api disconnect in the `disconnectAll` function, it will avoid tests and CLI to hang.
 
+## Account Bridge
+
+AccountBridge offers a generic abstraction to synchronize accounts and perform transactions.
+
+It is designed for the end user frontend interface and is agnostic of the way it runs, has multiple implementations and does not know how the data is even stored: in fact **it's just a set of stateless functions**.
+
+<!-- ------------- Image ------------- -->
+<!-- --------------------------------- -->
+
+![account bridge flow](../images/account-bridge-flow.png)
+
+### Receive
+
+The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
+As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
+
+### Synchronization
+
+We usually group the `scanAccounts` and `sync` into the same file `js-synchronisation.ts` as they both use similar logic as a `getAccountShape` function passed to helpers.
+
+`src/families/mycoin/js-synchronisation.ts`:
+
+```ts
+import type { Account } from "../../types";
+import type { GetAccountShape } from "../../bridge/jsHelpers";
+import { makeSync, makeScanAccounts, mergeOps } from "../../bridge/jsHelpers";
+
+import { getAccount, getOperations } from "./api";
+
+const getAccountShape: GetAccountShape = async (info) => {
+  const { id, address, initialAccount } = info;
+  const oldOperations = initialAccount?.operations || [];
+
+  // Needed for incremental synchronisation
+  const startAt = oldOperations.length
+    ? (oldOperations[0].blockHeight || 0) + 1
+    : 0;
+
+  // get the current account balance state depending your api implementation
+  const { blockHeight, balance, additionalBalance, nonce } = await getAccount(
+    address
+  );
+
+  // Merge new operations with the previously synced ones
+  const newOperations = await getOperations(id, address, startAt);
+  const operations = mergeOps(oldOperations, newOperations);
+
+  const shape = {
+    id,
+    balance,
+    spendableBalance: balance,
+    operationsCount: operations.length,
+    blockHeight,
+    myCoinResources: {
+      nonce,
+      additionalBalance,
+    },
+  };
+
+  return { ...shape, operations };
+};
+
+const postSync = (initial: Account, parent: Account) => parent;
+
+export const scanAccounts = makeScanAccounts(getAccountShape);
+
+export const sync = makeSync(getAccountShape, postSync);
+```
+
+The `scanAccounts` function performs the derivation of addresses for a given `currency` and `deviceId`, and returns an Observable that will notify every `Account` that it discovered.
+
+With the `makeScanAccounts` helper, you only have to pass a `getAccountShape` function to execute the generic scan that Ledger Live use with the correct derivation modes for <i>MyCoin</i>, and it will determine when to stop (generally as soon as an empty account was found).
+
+The `sync` function performs one "Account synchronisation" which consists of refreshing all fields of a (previously created) Account from your api.
+
+It is executed every 2 minutes if everything works as expected, but if it fails, a retry strategy will be executed with an increasing delay (to avoid burdening a failing API).
+
+Under the hood of the `makeSync` helper, the returned value is an Observable of an updater function (Account=>Account), which is a pattern having some advantages:
+
+- it avoids race conditions
+- the updater is called in a reducer, and allows to produce an immutable state by applying the update to the latest account instance (with reconciliation on Ledger Live Desktop)
+- it's an observable, so we can interrupt it when/if multiple updates occurs
+
+In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `src/families/mycoin/js-postSyncPatch.js` file.
+
+### Reconciliation
+
+Currently, Ledger Live Desktop executes this bridge in a separate thread. Thus, the "avoid race condition" aspect of sync might not be respected since the UI renderer thread does not share the same objects.
+This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
+
+Since we might have added some coin-specific data in `Account`, we must also reconciliate it:
+
+`src/reconciliation`:
+
+```ts
+// import {
+// ...
+  fromMyCoinResourcesRaw,
+// } from "./account";
+// ...
+// export function patchAccount(
+//   account: Account,
+//   updatedRaw: AccountRaw
+// ): Account {
+// ...
+  if (
+    updatedRaw.myCoinResources &&
+    account.myCoinResources !== updatedRaw.myCoinResources
+  ) {
+    next.myCoinResources = fromMyCoinResourcesRaw(
+      updatedRaw.myCoinResources
+    );
+    changed = true;
+  }
+//   if (!changed) return account; // nothing changed at all
+//
+//   return next;
+// }
+```
+
+## Currency Bridge
+
+### Scanning accounts
+
+As we have seen [Synchronization](#synchronization), the `scanAccounts`, which is part of the CurrencyBridge, share common logic with the sync function, that's why we preferably put them in a `js-synchronisation.ts` file.
+
+The `makeScanAccounts` helper will automatically execute the default address derivation logic, but for some reason if you need to have a completely new way to scan account, you could then implement your own strategy.
+
+## Icon
+
+Icons are usually maintained by Ledger's design team, so you must first check that <i>MyCoin</i> icon is not already added in ledger-live-common, in [src/data/icons/svg](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/data/icons/svg). It contains cleaned-up versions of Cryptocurrency Icons from [cryptoicons.co](http://cryptoicons.co/), organized by ticker.
+
+If you need to add your own, they must respect those requirements:
+
+- Clean SVG with **only** `<path>` elements representing the crypto
+- Size and viewport must be `24x24`
+- Icon should be `18x18` and centered / padded
+- Flat-styled, and must respect crypto color scheme (filled)
+- No background or decorative shape added
+- No `<g>` or `transform`, `style` attributes...
+
+Name should be the coin's ticker (e.g. `MYC.svg`) and must not conflict with an existing coin or token.
+
+When building ledger-live-common, a [script](https://github.com/LedgerHQ/ledger-live-common/blob/master/scripts/buildReactIcons.js) automatically converts them to React and React Native components.
+
+
 ## Starting with a mock
 
 A mock will help you test different UI flows on Desktop and Mobile.
@@ -844,149 +990,3 @@ You are then free to add them in a `src/families/mycoin/react.ts` file.
 
 See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/families/polkadot/react.ts).
 
-## Account Bridge
-
-Notes HA: les sections Account Bridge et Currency Bridge doivent être déplacées avant "Starting with a mock"
-
-AccountBridge offers a generic abstraction to synchronize accounts and perform transactions.
-
-It is designed for the end user frontend interface and is agnostic of the way it runs, has multiple implementations and does not know how the data is even stored: in fact **it's just a set of stateless functions**.
-
-<!-- ------------- Image ------------- -->
-<!-- --------------------------------- -->
-
-![account bridge flow](../images/account-bridge-flow.png)
-
-### Receive
-
-The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
-As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
-
-### Synchronization
-
-We usually group the `scanAccounts` and `sync` into the same file `js-synchronisation.ts` as they both use similar logic as a `getAccountShape` function passed to helpers.
-
-`src/families/mycoin/js-synchronisation.ts`:
-
-```ts
-import type { Account } from "../../types";
-import type { GetAccountShape } from "../../bridge/jsHelpers";
-import { makeSync, makeScanAccounts, mergeOps } from "../../bridge/jsHelpers";
-
-import { getAccount, getOperations } from "./api";
-
-const getAccountShape: GetAccountShape = async (info) => {
-  const { id, address, initialAccount } = info;
-  const oldOperations = initialAccount?.operations || [];
-
-  // Needed for incremental synchronisation
-  const startAt = oldOperations.length
-    ? (oldOperations[0].blockHeight || 0) + 1
-    : 0;
-
-  // get the current account balance state depending your api implementation
-  const { blockHeight, balance, additionalBalance, nonce } = await getAccount(
-    address
-  );
-
-  // Merge new operations with the previously synced ones
-  const newOperations = await getOperations(id, address, startAt);
-  const operations = mergeOps(oldOperations, newOperations);
-
-  const shape = {
-    id,
-    balance,
-    spendableBalance: balance,
-    operationsCount: operations.length,
-    blockHeight,
-    myCoinResources: {
-      nonce,
-      additionalBalance,
-    },
-  };
-
-  return { ...shape, operations };
-};
-
-const postSync = (initial: Account, parent: Account) => parent;
-
-export const scanAccounts = makeScanAccounts(getAccountShape);
-
-export const sync = makeSync(getAccountShape, postSync);
-```
-
-The `scanAccounts` function performs the derivation of addresses for a given `currency` and `deviceId`, and returns an Observable that will notify every `Account` that it discovered.
-
-With the `makeScanAccounts` helper, you only have to pass a `getAccountShape` function to execute the generic scan that Ledger Live use with the correct derivation modes for <i>MyCoin</i>, and it will determine when to stop (generally as soon as an empty account was found).
-
-The `sync` function performs one "Account synchronisation" which consists of refreshing all fields of a (previously created) Account from your api.
-
-It is executed every 2 minutes if everything works as expected, but if it fails, a retry strategy will be executed with an increasing delay (to avoid burdening a failing API).
-
-Under the hood of the `makeSync` helper, the returned value is an Observable of an updater function (Account=>Account), which is a pattern having some advantages:
-
-- it avoids race conditions
-- the updater is called in a reducer, and allows to produce an immutable state by applying the update to the latest account instance (with reconciliation on Ledger Live Desktop)
-- it's an observable, so we can interrupt it when/if multiple updates occurs
-
-In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `src/families/mycoin/js-postSyncPatch.js` file.
-
-### Reconciliation
-
-Currently, Ledger Live Desktop executes this bridge in a separate thread. Thus, the "avoid race condition" aspect of sync might not be respected since the UI renderer thread does not share the same objects.
-This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
-
-Since we might have added some coin-specific data in `Account`, we must also reconciliate it:
-
-`src/reconciliation`:
-
-```ts
-// import {
-// ...
-  fromMyCoinResourcesRaw,
-// } from "./account";
-// ...
-// export function patchAccount(
-//   account: Account,
-//   updatedRaw: AccountRaw
-// ): Account {
-// ...
-  if (
-    updatedRaw.myCoinResources &&
-    account.myCoinResources !== updatedRaw.myCoinResources
-  ) {
-    next.myCoinResources = fromMyCoinResourcesRaw(
-      updatedRaw.myCoinResources
-    );
-    changed = true;
-  }
-//   if (!changed) return account; // nothing changed at all
-//
-//   return next;
-// }
-```
-
-## Currency Bridge
-
-### Scanning accounts
-
-As we have seen [Synchronization](#synchronization), the `scanAccounts`, which is part of the CurrencyBridge, share common logic with the sync function, that's why we preferably put them in a `js-synchronisation.ts` file.
-
-The `makeScanAccounts` helper will automatically execute the default address derivation logic, but for some reason if you need to have a completely new way to scan account, you could then implement your own strategy.
-
-## Icon
-
-Icons are usually maintained by Ledger's design team, so you must first check that <i>MyCoin</i> icon is not already added in ledger-live-common, in [src/data/icons/svg](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/data/icons/svg). It contains cleaned-up versions of Cryptocurrency Icons from [cryptoicons.co](http://cryptoicons.co/), organized by ticker.
-
-If you need to add your own, they must respect those requirements:
-
-- Clean SVG with **only** `<path>` elements representing the crypto
-- Size and viewport must be `24x24`
-- Icon should be `18x18` and centered / padded
-- Flat-styled, and must respect crypto color scheme (filled)
-- No background or decorative shape added
-- No `<g>` or `transform`, `style` attributes...
-
-Name should be the coin's ticker (e.g. `MYC.svg`) and must not conflict with an existing coin or token.
-
-When building ledger-live-common, a [script](https://github.com/LedgerHQ/ledger-live-common/blob/master/scripts/buildReactIcons.js) automatically converts them to React and React Native components.
