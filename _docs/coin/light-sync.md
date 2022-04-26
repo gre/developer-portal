@@ -35,9 +35,9 @@ All main accounts share a common ground, that you will find defined and commente
 
 If needed by the blockchain, an account can also contain coin-specific resources related to a single account, like its "nonce" or additional balances (e.g. for staking), or anything that may be displayed or used in your implementation. It's generally an additional field like `myCoinResources`. See [Family-specific types](#family-specific-types) below.
 
-
-
 ### Operation
+
+{% include alert.html style="note" text="This type is not required at light sync step and will soon be removed from this section" %}
 
 Note the wording "Operation" is used instead of "Transaction". An account does not have transactions, it has **operations**.
 
@@ -51,8 +51,7 @@ They all share the same model, with an `extra` field that can store any addition
 
 If <i>MyCoin</i> has specific operation fields (like `additionalField` we added for example), you will be able to display them later. They are not meant to be useful in any flow, only for UI.
 
-If <i>MyCoin</i> uses a "nonce", then `transactionSequenceNumber` must be filled correctly, as it will be necessary for signing new transactions (and will interpreted to clear pending operations). Only outgoing transaction must have this value though. 
-
+If <i>MyCoin</i> uses a "nonce", then `transactionSequenceNumber` must be filled correctly, as it will be necessary for signing new transactions (and will interpreted to clear pending operations). Only outgoing transaction must have this value though.
 
 ### Operation Type
 
@@ -72,19 +71,22 @@ There are more types available, existing one will have predefined icons, transla
 
 You will be asked to add an svg for the icon of your type and a label to be translated, you can check for "OPT_IN" operation in Algorand.
 
+In LLD :
 
-In LLD : 
 ```
 src/renderer/components/OperationsList/ConfirmationCheck.js
 ```
 
-In LLM : 
+In LLM :
 (You will need to check SVG is wrapped into our component)
+
 ```
 src/icons/OperationStatusIcon/index.js
 ```
 
 ### Transaction
+
+{% include alert.html style="note" text="This type may not be required at light sync step." %}
 
 In Ledger Live, the "Transaction" is the data model that is created and updated in order to build the final blob to be signed by the device, and then broadcasted to the blockchain.
 
@@ -169,10 +171,9 @@ export type TransactionRaw = TransactionCommonRaw & {
  * or any volatile data that could not be set as constants in the code (staking progress, fee estimation variables, etc.)
  */
 export type MyCoinPreloadData = {
-  somePreloadedData: Record<any, any>,
+  somePreloadedData: Record<any, any>;
 };
 ```
-
 
 Since some of thoses types will be serialized when stored or cached, you may need to define serialize/deserialize functions for those:
 
@@ -256,15 +257,18 @@ export { toMyCoinResourcesRaw, fromMyCoinResourcesRaw };
 ```
 
 <!--  -->
-{% include alert.html style="success" text="If your integration of <i>MyCoin</i> does not require coin-specific data in an account, you will not need to define <code>MyCoinResources</code>." %}
-<!--  -->
 
+{% include alert.html style="success" text="If your integration of <i>MyCoin</i> does not require coin-specific data in an account, you will not need to define <code>MyCoinResources</code>." %}
+
+<!--  -->
 
 ### Display Format
 
 Since `Operation` will be stored as JSON, you will need to implement specific serializers for the `extra` field.
 
 We also would like the `Operation` and `Account` to be displayed in CLI with their specifics, so you must provide formatters to display them.
+
+{% include alert.html style="note" text="In this code sample, all references to operations are not needed at light sync step. They are currently necessary but will soon be removed from this section" %}
 
 `src/families/mycoin/account.ts`:
 
@@ -277,7 +281,7 @@ import { formatCurrencyUnit } from "../../currencies";
 function formatAccountSpecifics(account: Account): string {
   const { myCoinResources } = account;
   if (!myCoinResources) {
-    throw new Error("mycoin account expected")
+    throw new Error("mycoin account expected");
   }
 
   const unit = getAccountUnit(account);
@@ -361,10 +365,14 @@ export default {
 ```
 
 <!--  -->
+
 {% include alert.html style="success" text="<code>formatOperationSpecifics()</code> and <code>formatAccountSpecifics()</code> are used in the CLI to display account-specific fields and extras of the transaction history, useful for debugging." %}
+
 <!--  -->
 
 The same idea applies also to the `Transaction` type which needs to be serialized and formatted for CLI:
+
+{% include alert.html style="note" text="This part may not be required if you don't need transactions for light sync." %}
 
 `src/families/mycoin/transaction.ts`:
 
@@ -421,7 +429,9 @@ export default { formatTransaction, fromTransactionRaw, toTransactionRaw };
 
 ## Wrap your API
 
-Before this part, you will need an indexer/explorer to get a list of operations. You may also obtain from it, or from a SDK, the state of an account on the blockchain, such as balances, nonce (if your blockchain uses something similar), and any data relevant to show or fetch in Ledger Live.
+{% include alert.html style="note" text="In the code samples below, all references to operations are not needed at light sync step. They are currently necessary but will soon be removed from this section" %}
+
+Before this part, you will need a node/explorer to get the state of an account on the blockchain, such as balances, nonce (if your blockchain uses something similar), and any data relevant to show or fetch in Ledger Live.
 
 For the example, we will assume that <i>MyCoin</i> provides a SDK that is able to do both getting the state and the account history.
 
@@ -434,8 +444,11 @@ The best way to implement your API in Live Common is to create a dedicated `api`
   ├── sdk.ts
   └── sdk.types.ts
 ```
+
 <!--  -->
+
 {% include alert.html style="tip" text="Try to separate as much as possible your different APIs (if you use multiple providers) and use typings to ensure you map correctly API responses to Ledger Live types" %}
+
 <!--  -->
 
 You will likely need to export thoses functions, but implemention is up-to-developer:
@@ -462,7 +475,9 @@ See [Polkadot Coin Integration's api](https://github.com/LedgerHQ/ledger-live-co
 Here is an example of a <i>MyCoin</i> API implementation using a fictive SDK that uses something like WebSocket to fetch data.
 
 <!--  -->
+
 {% include alert.html style="tip" text="We don't recommend using WebSocket as it could have drawbacks and is more difficult to scale up and put behind a reverse proxy. If possible, use HTTPS requests as much as possible." %}
+
 <!--  -->
 
 ```ts
@@ -470,7 +485,6 @@ import MyCoinApi from "my-coin-sdk";
 import type { MyCoinTransaction } from "my-coin-sdk";
 import { BigNumber } from "bignumber.js";
 
-import type { Operation, OperationType } from "../../../types";
 import { getEnv } from "../../../env";
 import { encodeOperationId } from "../../../operation";
 
@@ -595,7 +609,7 @@ function transactionToOperation(
     value: getOperationValue(transaction, addr),
     type,
     // This is where you retrieve the hash of the transaction
-    hash: transaction.hash, 
+    hash: transaction.hash,
     blockHash: null,
     blockHeight: transaction.blockNumber,
     date: new Date(transaction.timestamp),
@@ -624,213 +638,9 @@ export const getOperations = async (
       transactionToOperation(accountId, addr, transaction)
     );
   });
-
-/**
- * Obtain fees from blockchain
- */
-export const getFees = async (unsigned: string): Promise<BigNumber> =>
-  withApi(async (api: typeof MyCoinApi) => {
-    const { fees } = await api.dryRun(unsigned);
-
-    return BigNumber(fees);
-  });
-
-/**
- * Broadcast blob to blockchain
- */
-export const submit = async (blob: string) =>
-  withApi(async (api: typeof MyCoinApi) => {
-    // This is where you retrieve the hash of newly sent transaction
-    const { hash, fees } = await api.submit(blob);
-
-    return { hash, fees: BigNumber(fees) };
-  });
 ```
 
 If you need to disconnect from your API after using it, update `src/api/index.ts` to add your api disconnect in the `disconnectAll` function, it will avoid tests and CLI to hang.
-
-## Starting with a mock
-
-A mock will help you test different UI flows on Desktop and Mobile.
-It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
-
-For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
-
-```ts
-import { BigNumber } from "bignumber.js";
-import {
-  NotEnoughBalance,
-  RecipientRequired,
-  InvalidAddress,
-  FeeTooHigh,
-} from "@ledgerhq/errors";
-import type { Transaction } from "../types";
-import type { AccountBridge, CurrencyBridge } from "../../../types";
-import {
-  scanAccounts,
-  signOperation,
-  broadcast,
-  sync,
-  isInvalidRecipient,
-} from "../../../bridge/mockHelpers";
-import { getMainAccount } from "../../../account";
-import { makeAccountBridgeReceive } from "../../../bridge/mockHelpers";
-
-const receive = makeAccountBridgeReceive();
-
-const createTransaction = (): Transaction => ({
-  family: "mycoin",
-  mode: "send",
-  amount: BigNumber(0),
-  recipient: "",
-  useAllAmount: false,
-  fees: null,
-});
-
-const updateTransaction = (t, patch) => ({ ...t, ...patch });
-
-const prepareTransaction = async (a, t) => t;
-
-const estimateMaxSpendable = ({ account, parentAccount, transaction }) => {
-  const mainAccount = getMainAccount(account, parentAccount);
-  const estimatedFees = transaction?.fees || BigNumber(5000);
-  return Promise.resolve(
-    BigNumber.max(0, mainAccount.balance.minus(estimatedFees))
-  );
-};
-
-const getTransactionStatus = (account, t) => {
-  const errors = {};
-  const warnings = {};
-  const useAllAmount = !!t.useAllAmount;
-
-  const estimatedFees = BigNumber(5000);
-
-  const totalSpent = useAllAmount
-    ? account.balance
-    : BigNumber(t.amount).plus(estimatedFees);
-
-  const amount = useAllAmount
-    ? account.balance.minus(estimatedFees)
-    : BigNumber(t.amount);
-
-  if (amount.gt(0) && estimatedFees.times(10).gt(amount)) {
-    warnings.amount = new FeeTooHigh();
-  }
-
-  if (totalSpent.gt(account.balance)) {
-    errors.amount = new NotEnoughBalance();
-  }
-
-  if (!t.recipient) {
-    errors.recipient = new RecipientRequired();
-  } else if (isInvalidRecipient(t.recipient)) {
-    errors.recipient = new InvalidAddress();
-  }
-
-  return Promise.resolve({
-    errors,
-    warnings,
-    estimatedFees,
-    amount,
-    totalSpent,
-  });
-};
-
-const accountBridge: AccountBridge<Transaction> = {
-  estimateMaxSpendable,
-  createTransaction,
-  updateTransaction,
-  getTransactionStatus,
-  prepareTransaction,
-  sync,
-  receive,
-  signOperation,
-  broadcast,
-};
-
-const currencyBridge: CurrencyBridge = {
-  scanAccounts,
-  preload: async () => {},
-  hydrate: () => {},
-};
-
-export default { currencyBridge, accountBridge };
-```
-
-## Split your code
-
-You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
-
-The skeleton of `src/families/mycoin/bridge/js.ts` should look something like this:
-
-```ts
-import type { AccountBridge, CurrencyBridge } from "../../../types";
-import type { Transaction } from "../types";
-import { makeAccountBridgeReceive } from "../../../bridge/jsHelpers";
-
-import { getPreloadStrategy, preload, hydrate } from "../preload";
-
-import { sync, scanAccounts } from "../js-synchronisation";
-import {
-  createTransaction,
-  updateTransaction,
-  prepareTransaction,
-} from "../js-transaction";
-import getTransactionStatus from "../js-getTransactionStatus";
-import estimateMaxSpendable from "../js-estimateMaxSpendable";
-import signOperation from "../js-signOperation";
-import broadcast from "../js-broadcast";
-
-const receive = makeAccountBridgeReceive();
-
-const currencyBridge: CurrencyBridge = {
-  getPreloadStrategy,
-  preload,
-  hydrate,
-  scanAccounts,
-};
-
-const accountBridge: AccountBridge<Transaction> = {
-  estimateMaxSpendable,
-  createTransaction,
-  updateTransaction,
-  getTransactionStatus,
-  prepareTransaction,
-  sync,
-  receive,
-  signOperation,
-  broadcast,
-};
-
-export default { currencyBridge, accountBridge };
-```
-
-<!--  -->
-{% include alert.html style="tip" text="You could implement all the methods in a single file, but for better readability and maintainability, you should split your code into multiple files." %}
-<!--  -->
-
-## Cache and performance (optional)
-
-It is important to keep in mind that all currencies work independently and that Live Common provides a common framework to synchronize accounts with a polling strategy, and that network connectivity is not always stable and optimal.
-
-Hence, the more cryptocurrencies Ledger Live is using, the more requests and calculations are executed, which can take time.
-
-To avoid making the same requests several times, we recommend using a local cache in your implementation (e.g. fees estimations, some currency data to preload, etc in a `src/families/mycoin/cache.ts` file.
-
-We have a [`src/cache.ts`](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/cache.ts) helper for creating Least-Recently-Used caches anywhere if needed.
-
-See for example the [Polkadot's cache implementation](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/families/polkadot/cache.ts).
-
-
-## React Hooks 
-
-If you are adding specific features to Ledger Live (like staking), you may need to access data through React hooks, that could provide common logic reusable for React components.
-
-You are then free to add them in a `src/families/mycoin/react.ts` file.
-
-See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/families/polkadot/react.ts).
-
 
 ## Account Bridge
 
@@ -840,6 +650,7 @@ It is designed for the end user frontend interface and is agnostic of the way it
 
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
+
 ![account bridge flow](../images/account-bridge-flow.png)
 
 ### Receive
@@ -964,6 +775,7 @@ The `makeScanAccounts` helper will automatically execute the default address der
 Icons are usually maintained by Ledger's design team, so you must first check that <i>MyCoin</i> icon is not already added in ledger-live-common, in [src/data/icons/svg](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/data/icons/svg). It contains cleaned-up versions of Cryptocurrency Icons from [cryptoicons.co](http://cryptoicons.co/), organized by ticker.
 
 If you need to add your own, they must respect those requirements:
+
 - Clean SVG with **only** `<path>` elements representing the crypto
 - Size and viewport must be `24x24`
 - Icon should be `18x18` and centered / padded
@@ -974,4 +786,207 @@ If you need to add your own, they must respect those requirements:
 Name should be the coin's ticker (e.g. `MYC.svg`) and must not conflict with an existing coin or token.
 
 When building ledger-live-common, a [script](https://github.com/LedgerHQ/ledger-live-common/blob/master/scripts/buildReactIcons.js) automatically converts them to React and React Native components.
+
+
+## Starting with a mock
+
+A mock will help you test different UI flows on Desktop and Mobile.
+It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
+
+For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
+
+```ts
+import { BigNumber } from "bignumber.js";
+import {
+  NotEnoughBalance,
+  RecipientRequired,
+  InvalidAddress,
+  FeeTooHigh,
+} from "@ledgerhq/errors";
+import type { Transaction } from "../types";
+import type { AccountBridge, CurrencyBridge } from "../../../types";
+import {
+  scanAccounts,
+  signOperation,
+  broadcast,
+  sync,
+  isInvalidRecipient,
+} from "../../../bridge/mockHelpers";
+import { getMainAccount } from "../../../account";
+import { makeAccountBridgeReceive } from "../../../bridge/mockHelpers";
+
+const receive = makeAccountBridgeReceive();
+
+const createTransaction = (): Transaction => ({
+  family: "mycoin",
+  mode: "send",
+  amount: BigNumber(0),
+  recipient: "",
+  useAllAmount: false,
+  fees: null,
+});
+
+const updateTransaction = (t, patch) => ({ ...t, ...patch });
+
+const prepareTransaction = async (a, t) => t;
+
+const estimateMaxSpendable = ({ account, parentAccount, transaction }) => {
+  const mainAccount = getMainAccount(account, parentAccount);
+  const estimatedFees = transaction?.fees || BigNumber(5000);
+  return Promise.resolve(
+    BigNumber.max(0, mainAccount.balance.minus(estimatedFees))
+  );
+};
+
+const getTransactionStatus = (account, t) => {
+  const errors = {};
+  const warnings = {};
+  const useAllAmount = !!t.useAllAmount;
+
+  const estimatedFees = BigNumber(5000);
+
+  const totalSpent = useAllAmount
+    ? account.balance
+    : BigNumber(t.amount).plus(estimatedFees);
+
+  const amount = useAllAmount
+    ? account.balance.minus(estimatedFees)
+    : BigNumber(t.amount);
+
+  if (amount.gt(0) && estimatedFees.times(10).gt(amount)) {
+    warnings.amount = new FeeTooHigh();
+  }
+
+  if (totalSpent.gt(account.balance)) {
+    errors.amount = new NotEnoughBalance();
+  }
+
+  if (!t.recipient) {
+    errors.recipient = new RecipientRequired();
+  } else if (isInvalidRecipient(t.recipient)) {
+    errors.recipient = new InvalidAddress();
+  }
+
+  return Promise.resolve({
+    errors,
+    warnings,
+    estimatedFees,
+    amount,
+    totalSpent,
+  });
+};
+
+const accountBridge: AccountBridge<Transaction> = {
+  estimateMaxSpendable,
+  createTransaction,
+  updateTransaction,
+  getTransactionStatus,
+  prepareTransaction,
+  sync,
+  receive,
+  signOperation,
+  broadcast,
+};
+
+const currencyBridge: CurrencyBridge = {
+  scanAccounts,
+  preload: async () => {},
+  hydrate: () => {},
+};
+
+export default { currencyBridge, accountBridge };
+```
+
+## Split your code
+
+You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
+
+The skeleton of `src/families/mycoin/bridge/js.ts` should look something like this:
+
+```ts
+import type { AccountBridge, CurrencyBridge } from "../../../types";
+import type { Transaction } from "../types";
+import { makeAccountBridgeReceive } from "../../../bridge/jsHelpers";
+
+import { getPreloadStrategy, preload, hydrate } from "../preload";
+
+import { sync, scanAccounts } from "../js-synchronisation";
+
+const receive = makeAccountBridgeReceive();
+
+const currencyBridge: CurrencyBridge = {
+  getPreloadStrategy,
+  preload,
+  hydrate,
+  scanAccounts,
+};
+
+const createTransaction = () => {
+  throw new Error("createTransaction not implemented");
+};
+
+const prepareTransaction = () => {
+  throw new Error("prepareTransaction not implemented");
+};
+
+const updateTransaction = () => {
+  throw new Error("updateTransaction not implemented");
+};
+
+const getTransactionStatus = () => {
+  throw new Error("getTransactionStatus not implemented");
+};
+
+const estimateMaxSpendable = () => {
+  throw new Error("estimateMaxSpendable not implemented");
+};
+
+const signOperation = () => {
+  throw new Error("signOperation not implemented");
+};
+
+const broadcast = () => {
+  throw new Error("broadcast not implemented");
+};
+
+const accountBridge: AccountBridge<Transaction> = {
+  estimateMaxSpendable,
+  createTransaction,
+  updateTransaction,
+  getTransactionStatus,
+  prepareTransaction,
+  sync,
+  receive,
+  signOperation,
+  broadcast,
+};
+
+export default { currencyBridge, accountBridge };
+```
+
+<!--  -->
+
+{% include alert.html style="tip" text="You could implement all the methods in a single file, but for better readability and maintainability, you should split your code into multiple files." %}
+
+<!--  -->
+
+## Cache and performance (optional)
+
+It is important to keep in mind that all currencies work independently and that Live Common provides a common framework to synchronize accounts with a polling strategy, and that network connectivity is not always stable and optimal.
+
+Hence, the more cryptocurrencies Ledger Live is using, the more requests and calculations are executed, which can take time.
+
+To avoid making the same requests several times, we recommend using a local cache in your implementation (e.g. fees estimations, some currency data to preload, etc in a `src/families/mycoin/cache.ts` file.
+
+We have a [`src/cache.ts`](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/cache.ts) helper for creating Least-Recently-Used caches anywhere if needed.
+
+See for example the [Polkadot's cache implementation](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/families/polkadot/cache.ts).
+
+## React Hooks
+
+If you are adding specific features to Ledger Live (like staking), you may need to access data through React hooks, that could provide common logic reusable for React components.
+
+You are then free to add them in a `src/families/mycoin/react.ts` file.
+
+See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/families/polkadot/react.ts).
 

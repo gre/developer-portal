@@ -7,166 +7,6 @@ toc: true
 layout: doc
 ---
 
-## Starting with a mock
-
-A mock will help you test different UI flows on Desktop and Mobile.
-It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
-
-For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
-
-```ts
-import { BigNumber } from "bignumber.js";
-import {
-  NotEnoughBalance,
-  RecipientRequired,
-  InvalidAddress,
-  FeeTooHigh,
-} from "@ledgerhq/errors";
-import type { Transaction } from "../types";
-import type { AccountBridge, CurrencyBridge } from "../../../types";
-import {
-  scanAccounts,
-  signOperation,
-  broadcast,
-  sync,
-  isInvalidRecipient,
-} from "../../../bridge/mockHelpers";
-import { getMainAccount } from "../../../account";
-import { makeAccountBridgeReceive } from "../../../bridge/mockHelpers";
-
-const receive = makeAccountBridgeReceive();
-
-const createTransaction = (): Transaction => ({
-  family: "mycoin",
-  mode: "send",
-  amount: BigNumber(0),
-  recipient: "",
-  useAllAmount: false,
-  fees: null,
-});
-
-const updateTransaction = (t, patch) => ({ ...t, ...patch });
-
-const prepareTransaction = async (a, t) => t;
-
-const estimateMaxSpendable = ({ account, parentAccount, transaction }) => {
-  const mainAccount = getMainAccount(account, parentAccount);
-  const estimatedFees = transaction?.fees || BigNumber(5000);
-  return Promise.resolve(
-    BigNumber.max(0, mainAccount.balance.minus(estimatedFees))
-  );
-};
-
-const getTransactionStatus = (account, t) => {
-  const errors = {};
-  const warnings = {};
-  const useAllAmount = !!t.useAllAmount;
-
-  const estimatedFees = BigNumber(5000);
-
-  const totalSpent = useAllAmount
-    ? account.balance
-    : BigNumber(t.amount).plus(estimatedFees);
-
-  const amount = useAllAmount
-    ? account.balance.minus(estimatedFees)
-    : BigNumber(t.amount);
-
-  if (amount.gt(0) && estimatedFees.times(10).gt(amount)) {
-    warnings.amount = new FeeTooHigh();
-  }
-
-  if (totalSpent.gt(account.balance)) {
-    errors.amount = new NotEnoughBalance();
-  }
-
-  if (!t.recipient) {
-    errors.recipient = new RecipientRequired();
-  } else if (isInvalidRecipient(t.recipient)) {
-    errors.recipient = new InvalidAddress();
-  }
-
-  return Promise.resolve({
-    errors,
-    warnings,
-    estimatedFees,
-    amount,
-    totalSpent,
-  });
-};
-
-const accountBridge: AccountBridge<Transaction> = {
-  estimateMaxSpendable,
-  createTransaction,
-  updateTransaction,
-  getTransactionStatus,
-  prepareTransaction,
-  sync,
-  receive,
-  signOperation,
-  broadcast,
-};
-
-const currencyBridge: CurrencyBridge = {
-  scanAccounts,
-  preload: async () => {},
-  hydrate: () => {},
-};
-
-export default { currencyBridge, accountBridge };
-```
-
-## Split your code
-
-You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
-
-The skeleton of `src/families/mycoin/bridge/js.ts` should look something like this:
-
-```ts
-import type { AccountBridge, CurrencyBridge } from "../../../types";
-import type { Transaction } from "../types";
-import { makeAccountBridgeReceive } from "../../../bridge/jsHelpers";
-
-import { getPreloadStrategy, preload, hydrate } from "../preload";
-
-import { sync, scanAccounts } from "../js-synchronisation";
-import {
-  createTransaction,
-  updateTransaction,
-  prepareTransaction,
-} from "../js-transaction";
-import getTransactionStatus from "../js-getTransactionStatus";
-import estimateMaxSpendable from "../js-estimateMaxSpendable";
-import signOperation from "../js-signOperation";
-import broadcast from "../js-broadcast";
-
-const receive = makeAccountBridgeReceive();
-
-const currencyBridge: CurrencyBridge = {
-  getPreloadStrategy,
-  preload,
-  hydrate,
-  scanAccounts,
-};
-
-const accountBridge: AccountBridge<Transaction> = {
-  estimateMaxSpendable,
-  createTransaction,
-  updateTransaction,
-  getTransactionStatus,
-  prepareTransaction,
-  sync,
-  receive,
-  signOperation,
-  broadcast,
-};
-
-export default { currencyBridge, accountBridge };
-```
-
-<!--  -->
-{% include alert.html style="tip" text="You could implement all the methods in a single file, but for better readability and maintainability, you should split your code into multiple files." %}
-
 ## Account Bridge
 
 AccountBridge offers a generic abstraction to synchronize accounts and perform transactions.
@@ -175,14 +15,13 @@ It is designed for the end user frontend interface and is agnostic of the way it
 
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
-![account bridge flow](../images/account-bridge-flow.png)
 
+![account bridge flow](../images/account-bridge-flow.png)
 
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
 As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
-
 
 ### Synchronization
 
@@ -307,6 +146,7 @@ This cache contains the JSON serialized response from `preload` which is then hy
 Live-Common features will then be able to reuse those data anywhere (e.g. validating transactions) with `getCurrentMyCoinPreloadData`, or by subscribing to `getMyCoinPreloadDataUpdates` observable.
 
 `src/families/mycoin/preload.ts`:
+
 ```ts
 import { Observable, Subject } from "rxjs";
 import { log } from "@ledgerhq/logs";
@@ -375,4 +215,184 @@ export const hydrate = (data: any) => {
 
 Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/CurrencyBridge.md).
 
+
+## Starting with a mock
+
+A mock will help you test different UI flows on Desktop and Mobile.
+It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
+
+For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
+
+```ts
+import { BigNumber } from "bignumber.js";
+import {
+  NotEnoughBalance,
+  RecipientRequired,
+  InvalidAddress,
+  FeeTooHigh,
+} from "@ledgerhq/errors";
+import type { Transaction } from "../types";
+import type { AccountBridge, CurrencyBridge } from "../../../types";
+import {
+  scanAccounts,
+  signOperation,
+  broadcast,
+  sync,
+  isInvalidRecipient,
+} from "../../../bridge/mockHelpers";
+import { getMainAccount } from "../../../account";
+import { makeAccountBridgeReceive } from "../../../bridge/mockHelpers";
+
+const receive = makeAccountBridgeReceive();
+
+const createTransaction = (): Transaction => ({
+  family: "mycoin",
+  mode: "send",
+  amount: BigNumber(0),
+  recipient: "",
+  useAllAmount: false,
+  fees: null,
+});
+
+const updateTransaction = (t, patch) => ({ ...t, ...patch });
+
+const prepareTransaction = async (a, t) => t;
+
+const estimateMaxSpendable = ({ account, parentAccount, transaction }) => {
+  const mainAccount = getMainAccount(account, parentAccount);
+  const estimatedFees = transaction?.fees || BigNumber(5000);
+  return Promise.resolve(
+    BigNumber.max(0, mainAccount.balance.minus(estimatedFees))
+  );
+};
+
+const getTransactionStatus = (account, t) => {
+  const errors = {};
+  const warnings = {};
+  const useAllAmount = !!t.useAllAmount;
+
+  const estimatedFees = BigNumber(5000);
+
+  const totalSpent = useAllAmount
+    ? account.balance
+    : BigNumber(t.amount).plus(estimatedFees);
+
+  const amount = useAllAmount
+    ? account.balance.minus(estimatedFees)
+    : BigNumber(t.amount);
+
+  if (amount.gt(0) && estimatedFees.times(10).gt(amount)) {
+    warnings.amount = new FeeTooHigh();
+  }
+
+  if (totalSpent.gt(account.balance)) {
+    errors.amount = new NotEnoughBalance();
+  }
+
+  if (!t.recipient) {
+    errors.recipient = new RecipientRequired();
+  } else if (isInvalidRecipient(t.recipient)) {
+    errors.recipient = new InvalidAddress();
+  }
+
+  return Promise.resolve({
+    errors,
+    warnings,
+    estimatedFees,
+    amount,
+    totalSpent,
+  });
+};
+
+const accountBridge: AccountBridge<Transaction> = {
+  estimateMaxSpendable,
+  createTransaction,
+  updateTransaction,
+  getTransactionStatus,
+  prepareTransaction,
+  sync,
+  receive,
+  signOperation,
+  broadcast,
+};
+
+const currencyBridge: CurrencyBridge = {
+  scanAccounts,
+  preload: async () => {},
+  hydrate: () => {},
+};
+
+export default { currencyBridge, accountBridge };
+```
+
+## Split your code
+
+You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
+
+The skeleton of `src/families/mycoin/bridge/js.ts` should look something like this:
+
+```ts
+import type { AccountBridge, CurrencyBridge } from "../../../types";
+import type { Transaction } from "../types";
+import { makeAccountBridgeReceive } from "../../../bridge/jsHelpers";
+
+import { getPreloadStrategy, preload, hydrate } from "../preload";
+
+import { sync, scanAccounts } from "../js-synchronisation";
+
+const receive = makeAccountBridgeReceive();
+
+const currencyBridge: CurrencyBridge = {
+  getPreloadStrategy,
+  preload,
+  hydrate,
+  scanAccounts,
+};
+
+const createTransaction = () => {
+  throw new Error("createTransaction not implemented");
+};
+
+const prepareTransaction = () => {
+  throw new Error("prepareTransaction not implemented");
+};
+
+const updateTransaction = () => {
+  throw new Error("updateTransaction not implemented");
+};
+
+const getTransactionStatus = () => {
+  throw new Error("getTransactionStatus not implemented");
+};
+
+const estimateMaxSpendable = () => {
+  throw new Error("estimateMaxSpendable not implemented");
+};
+
+const signOperation = () => {
+  throw new Error("signOperation not implemented");
+};
+
+const broadcast = () => {
+  throw new Error("broadcast not implemented");
+};
+
+const accountBridge: AccountBridge<Transaction> = {
+  estimateMaxSpendable,
+  createTransaction,
+  updateTransaction,
+  getTransactionStatus,
+  prepareTransaction,
+  sync,
+  receive,
+  signOperation,
+  broadcast,
+};
+
+export default { currencyBridge, accountBridge };
+```
+
+<!--  -->
+
+{% include alert.html style="tip" text="You could implement all the methods in a single file, but for better readability and maintainability, you should split your code into multiple files." %}
 
