@@ -42,7 +42,7 @@ group :jekyll_plugins do
    gem 'jekyll-algolia', '~> 1.0'
 end
 
-gem "nokogiri", ">= 1.12.5" #Added 4.10.21 to resolve a security issue
+gem "nokogiri", ">= 1.13.4" 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
