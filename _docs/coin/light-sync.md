@@ -37,7 +37,7 @@ If needed by the blockchain, an account can also contain coin-specific resources
 
 ### Operation
 
-{% include alert.html style="note" text="(Notes HA - TODO REVIEW WORDING) This type is not required at light sync step, will soon be removed from this section" %}
+{% include alert.html style="note" text="This type is not required at light sync step and will soon be removed from this section" %}
 
 Note the wording "Operation" is used instead of "Transaction". An account does not have transactions, it has **operations**.
 
