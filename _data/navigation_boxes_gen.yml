@@ -4,19 +4,23 @@
   desc: Get your blockchain supported on Nano S/X/S Plus
   icon: nano
   doc: nano-app/start-here
+  image: /uploads//images/home-covers/nano-app.jpg
 
 - title: Connect your app
   desc: Support a Nano on your desktop/web app
   icon: connect
   doc: transport/overview
+  image: /uploads//images/home-covers/connect-app.jpg
 
 - title: Blockchain support
   desc: How to get your currency supported on Ledger Live
   icon: coin
   doc: coin/general-process
+  image: /uploads//images/home-covers/blockchain-support.jpg
 
 - title: Live App
   desc: Turn your DApp or regular app into a Live App in Ledger Live
   icon: dapp
   doc: live-app/start-here
+  image: /uploads//images/home-covers/live-app.jpg
 
