@@ -132,6 +132,7 @@ Change `boilerplate` to the folder name created earlier, containing `abis/` and 
 Next, change `test.fixture.js`: 
 ```js
 const NANOS_PLUGIN = { "Boilerplate": NANOS_PLUGIN_PATH };
+const NANOSP_PLUGIN = { "Boilerplate": NANOSP_PLUGIN_PATH };
 const NANOX_PLUGIN = { "Boilerplate": NANOX_PLUGIN_PATH };
 ```
 
