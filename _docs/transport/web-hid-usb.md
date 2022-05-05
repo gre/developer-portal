@@ -161,7 +161,7 @@ npm install --save @ledgerhq/hw-app-btc
         </tr>
         <tr>
             <td><a href="https://www.npmjs.com/package/@ledgerhq/logs">@ledgerhq/logs</a></td>
-            <td colspan="2">It provides you the log of all the errors from your connexion with your Nano that may appear when developing.</td>
+            <td colspan="2">It provides you the log of all the errors from your connection with your Nano that may appear when developing.</td>
         </tr>
         <tr>
             <td><a href="https://parceljs.org/">parcel</a></td>
@@ -177,11 +177,11 @@ npm install --save @ledgerhq/hw-app-btc
 
 #### Install the Transport HID or USB package
 Then depending on your choice install one of the corresponding packages:
-- Install the Ledger package [@ledgerhq/hw-transport-webhid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webhid) which provide you with all the methods to interact with  your Nano with an HID connexion:
+- Install the Ledger package [@ledgerhq/hw-transport-webhid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webhid) which provide you with all the methods to interact with your Nano with an HID connection:
     ```console
     npm install --save @ledgerhq/hw-transport-webhid
     ```
-- Install the Ledger package [@ledgerhq/hw-transport-webusb](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webusb) which provide you with all the methods to interact with  your Nano with a USB connexion:
+- Install the Ledger package [@ledgerhq/hw-transport-webusb](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webusb) which provide you with all the methods to interact with your Nano with a USB connection:
     ```console
     npm install --save @ledgerhq/hw-transport-webusb
     ``` 
@@ -262,7 +262,7 @@ The steps are described below.
 *Fig. 6: The App is running*
 
 ### Connect Your Nano to the Application
-Now you can click on the text and a popup will be prompt. Choose your Nano and click connexion
+Now you can click on the text and a popup will be prompt. Choose your Nano and click connect:
 
 {: .center}
 [![Connect your Nano](../images/webapp2.png)](../images/webapp2.png){: style="border-bottom:none;"}  
