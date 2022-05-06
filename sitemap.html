@@ -14,19 +14,19 @@ width: medium
               {% for doc in section.docs %}
                 {% if doc.subfolderitems%}
                   {% for section in doc.subfolderitems %}
-                    <li>{{ section.title }}</li>
-                    <ul class="uk-nav-default doc-nav">
+                    <li class="section-title">{{ section.title }}:</li>
+                    <ul class="uk-nav-default doc-nav section-margin">
                             {% for doc in section.docs %}
                             {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
                             {% assign p = site.docs | where:"url", doc_url | first %}
-                            <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                            <li class="section-list"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
                             {% endfor %}
                     </ul>
                   {% endfor %}
                 {% else %}
                   {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
                   {% assign p = site.docs | where:"url", doc_url | first %}
-                  <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                  <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
                 {% endif %}
               {% endfor %}
 
@@ -75,26 +75,37 @@ width: medium
           {% for section in site.data.navigation_docs_et %}
             <h4>{{ section.title }}</h4>
 
-            {% if section.subfolderitems %}
-              {% for subsection in section.subfolderitems %}
-                  <h5>{{ subsection.title }}</h5>
-                  {% for doc in subsection.docs %}
-                  {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
-                  {% assign doc_content = site.docs | where:"url", doc_url | first %}
-                    <a href="..{{ doc_url }}">{{ doc_content.title }}</a><br>
+              {% for doc in section.docs %}
+                {% if doc.subfolderitems%}
+                  {% for section in doc.subfolderitems %}
+                    <li class="section-title">{{ section.title }}:</li>
+                    <ul class="uk-nav-default doc-nav section-margin">
+                            {% for doc in section.docs %}
+                            {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                            {% assign p = site.docs | where:"url", doc_url | first %}
+                            <li class="section-list"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                            {% endfor %}
+                    </ul>
                   {% endfor %}
+                {% else %}
+                  {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                  {% assign p = site.docs | where:"url", doc_url | first %}
+                  <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                {% endif %}
               {% endfor %}
 
-            {% else %}
+              {% if section.subfolderitems %}
+                {% for subsection in section.subfolderitems %}
+                    <h5>{{ subsection.title }}</h5>
+                    {% for doc in subsection.docs %}
+                    {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                    {% assign doc_content = site.docs | where:"url", doc_url | first %}
+                      <a href="..{{ doc_url }}">{{ doc_content.title }}</a><br>
+                    {% endfor %}
+                {% endfor %}
+              {% endif %}
 
-            {% for doc in section.docs %}
-              {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
-              {% assign doc_content = site.docs | where:"url", doc_url | first %}
-                <a href="..{{ doc_url }}">{{ doc_content.title }}</a><br>
-            {% endfor %}
-
-            {% endif %}
-          {%  endfor %}
+          {% endfor %}
 
           <h3>DApps</h3>
           {% for section in site.data.navigation_docs_da %}
@@ -110,12 +121,12 @@ width: medium
                     <a href="..{{ doc_url }}">{{ doc_content.title }}</a><br>
                     {% else %}
                       {% for section in doc.subfolderitems %}
-                          <li>{{ section.title }}</li>
-                          <ul class="uk-nav-default doc-nav">
+                          <li class="section-title">{{ section.title }}:</li>
+                          <ul class="uk-nav-default doc-nav section-margin">
                             {% for doc in section.docs %}
                             {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
                             {% assign p = site.docs | where:"url", doc_url | first %}
-                            <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                            <li class="section-list"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
                             {% endfor %}
                           </ul>
                       {% endfor %}
