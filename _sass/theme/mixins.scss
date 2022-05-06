@@ -975,6 +975,19 @@
       margin-bottom: 10px;
     }
 
+    .section-title {
+        color: $safety-orange;
+    }
+
+    .section-margin {
+        margin-bottom: 5px !important;
+        margin-top: 0px !important;
+    }
+
+    .section-list {
+        list-style: none;
+    }
+
     // Style for mermaid
 
     .mermaid > svg > g > text {
