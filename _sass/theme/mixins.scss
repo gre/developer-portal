@@ -541,6 +541,14 @@
     //     }
     // }
 
+    // Boxes on the home page
+
+    .title-box-gen {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        block-size: 10px;
+    }
+
     // Right TOC Sidebar added by CF for V3
    .sidebar-toc {
       top: 95px;
@@ -965,6 +973,19 @@
     .sitemap h4 {
       margin-top: 40px;
       margin-bottom: 10px;
+    }
+
+    .section-title {
+        color: $safety-orange;
+    }
+
+    .section-margin {
+        margin-bottom: 5px !important;
+        margin-top: 0px !important;
+    }
+
+    .section-list {
+        list-style: none;
     }
 
     // Style for mermaid

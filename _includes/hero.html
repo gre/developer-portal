@@ -17,12 +17,12 @@
 <!--                 {% if page.hero.image %}
                 <p class="hero-image uk-text-center"><img src="{{ site.uploads | absolute_url }}{{ page.hero.image }}" alt="Hero"></p>
                 {% endif %} -->
-                <h1 class="uk-heading-primary uk-text-center uk-margin-remove-top uk-visible@l">{{ page.hero.title }}   {%if page.hero.icon %}<span data-uk-icon="icon: {{ page.hero.icon }}; ratio: 1.5"></span>{% endif %}</h1>
+                <h1 class="uk-heading-primary uk-text-center uk-margin-remove-top">{{ page.hero.title }}   {%if page.hero.icon %}<span data-uk-icon="icon: {{ page.hero.icon }}; ratio: 1.5"></span>{% endif %}</h1>
  
                 <!-- Video displayed here only on mobile -->
-                <div class="uk-hidden@m">
+<!--                 <div class="uk-hidden@m">
                     {% include home-video.html %}
-                </div>
+                </div> -->
                 <!-- -->
 
                 {% if page.hero.subtitle %}<p class="uk-text-lead uk-text-center" style="margin-bottom: 20px;">{{ page.hero.subtitle }}</p>{% endif %}
