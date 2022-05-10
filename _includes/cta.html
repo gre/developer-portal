@@ -6,17 +6,22 @@
 
 {% if include.button_url %}
 <div class="uk-section">
-  <div class="uk-container uk-container-xsmall">
+  <div class="uk-container uk-container-medium">
     {% if include.title %}
       <h2 class="uk-h1 uk-text-center">{{ include.title }}</h2>
     {% endif %}
     {% if include.subtitle %}<p class="uk-text-lead uk-text-center">{{ include.subtitle | escape }}</p>{% endif %}
-      <div class="uk-child-width-1-2@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid >
+      <div class="uk-child-width-1-3@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid >
         <div>
           <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-xlight" >
             <h3 class="uk-card-title uk-margin" style="margin:0px">New to Discord?</h3>
             <p>See how it works.</p>
             <a class="uk-button uk-button-default uk-button-large uk-margin-medium-top" href="discord">Click here</a>
+          </div>
+        </div>
+        <div>
+          <div class="motion-design-home">
+            <video class="motion-design-content" controls muted preload='none' poster='/uploads//videos/covers/dev-journey.png' ><source src="/uploads//videos/dev-journey.mp4" type='video/mp4'></video><br>
           </div>
         </div>
         <div>
@@ -26,7 +31,6 @@
             <a class="uk-button uk-button-default uk-button-large uk-margin-medium-top" href="https://discord.gg/Ledger">Click here</a>
           </div>
         </div>
-      </div>
   </div>
 </div>
 {% endif %}
