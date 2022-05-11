@@ -104,7 +104,8 @@ $card-large-footer-padding-vertical-l:          round($global-large-gutter / 2) 
 
 .uk-card-body {
     display: flow-root;
-    padding: $card-body-padding-vertical $card-body-padding-horizontal;
+    // padding: $card-body-padding-vertical $card-body-padding-horizontal; Modified by CF on the 11th of May 2022
+    padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l;
     @if(mixin-exists(hook-card-body)) {@include hook-card-body();}
 }
 
