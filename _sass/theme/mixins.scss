@@ -549,6 +549,12 @@
         block-size: 10px;
     }
 
+    @media (max-width: 1100px) {
+        .title-box-gen {
+            block-size: 40px;
+        }
+    }
+
     // Motion design in the Discord section of the home page
 
     .motion-design-home {
@@ -558,7 +564,7 @@
     @media (min-width: 960px) {
         .motion-design-content {
             position: absolute;
-            top: 15%;
+            top: 8%;
             left: 0;
         }
         .motion-design-home {

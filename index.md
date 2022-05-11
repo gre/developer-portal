@@ -15,7 +15,7 @@ hero:
 {% include home-video.html %}
 </div>
  -->
-{% include cta.html title="You are integrating a project with Ledger" button_text="Click here" button_url="/contact/" subtitle="Join Ledger's Discord server and get in touch with us and other developers for details on setup and development" %}
+{% include cta.html title="The Developer journey" button_text="Click here" button_url="/contact/" subtitle="How Discord helps you to integrate faster" %}
 
 <div class="uk-visible@m">
 {% include repos.html columns="5" title="Github Repos " subtitle="Other sources to help you develop for Ledger Live" %}
