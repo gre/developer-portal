@@ -34,8 +34,3 @@ _site
 
 # Local variables
 .env
-
-
-# Spellcheck files
-wordlist.txt
-spellcheck.yml
