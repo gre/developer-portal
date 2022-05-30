@@ -12,7 +12,7 @@ layout: doc
 ## Architecture Overview  
 
 
-In order to understand deeply the interactions between different components of the application, we need to understand the architecture of the application.
+In order to deeply understand the interactions between different components of the application, we need to understand the architecture of the application.
 The overall architecture of the integration is based on the following layers:
 
 {: .center}

@@ -6,27 +6,25 @@
 
 {% if include.button_url %}
 <div class="uk-section">
-  <div class="uk-container uk-container-xsmall">
+  <div class="uk-container uk-container-small">
     {% if include.title %}
       <h2 class="uk-h1 uk-text-center">{{ include.title }}</h2>
     {% endif %}
     {% if include.subtitle %}<p class="uk-text-lead uk-text-center">{{ include.subtitle | escape }}</p>{% endif %}
       <div class="uk-child-width-1-2@m uk-grid-match uk-text-center uk-margin-medium-top" data-uk-grid >
         <div>
-          <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-xlight" >
-            <h3 class="uk-card-title uk-margin" style="margin:0px">New to Discord?</h3>
-            <p>See how it works.</p>
-            <a class="uk-button uk-button-default uk-button-large uk-margin-medium-top" href="discord">Click here</a>
+          <div class="motion-design-home">
+            <video class="motion-design-content" controls muted preload='none' poster='/uploads//videos/covers/dev-journey.png' ><source src="/uploads//videos/dev-journey.mp4" type='video/mp4'></video><br>
           </div>
         </div>
         <div>
           <div class="uk-card uk-card-default uk-box-shadow-medium uk-card-hover uk-card-body uk-inline border-xlight" >
-            <h3 class="uk-card-title uk-margin" style="margin:0px">Join us on</h3>
+            <h3 class="uk-card-title uk-margin" style="margin:0px">Talk to us on</h3>
             <img src="../uploads//images/Discord-Logo.png" style="max-width:200px; display: block;margin:auto;">
-            <a class="uk-button uk-button-default uk-button-large uk-margin-medium-top" href="https://discord.gg/Ledger">Click here</a>
+            <a class="uk-button uk-button-default uk-button-large" href="https://discord.gg/Ledger">Click here</a>
+            <p><a href="discord">More information about Discord here.</a></p>
           </div>
         </div>
-      </div>
   </div>
 </div>
 {% endif %}

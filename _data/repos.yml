@@ -12,9 +12,9 @@
   desc: SDK for ST31 applications development
   url: https://github.com/LedgerHQ/nanos-secure-sdk
 
-- title: Ledger Sample Apps
-  desc: Sample applications for Ledger Blue and Ledger Nano S
-  url: https://github.com/LedgerHQ/blue-sample-apps
+- title: Nano S Plus Secure SDK
+  desc: SDK for ST33 applications development
+  url: https://github.com/LedgerHQ/nanosplus-secure-sdk
 
 - title: Speculos Nano Emulator
   desc: Emulate Ledger devices on your computer

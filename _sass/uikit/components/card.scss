@@ -123,7 +123,7 @@ $card-large-footer-padding-vertical-l:          round($global-large-gutter / 2) 
 /* Desktop and bigger */
 @media (min-width: $breakpoint-large) {
 
-    .uk-card-body { padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l; }
+    //.uk-card-body { padding: $card-body-padding-vertical-l $card-body-padding-horizontal-l; } Modified by CF on the 11th of May 2022. Has an influence on the Discord section of the home page.
 
     .uk-card-header { padding: $card-header-padding-vertical-l $card-header-padding-horizontal-l; }
 

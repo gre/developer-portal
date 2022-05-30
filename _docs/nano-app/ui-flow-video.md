@@ -61,7 +61,7 @@ In case you need the users to blind sign transactions, you will need to include 
 
 You must **create your own video** using the example given.  
 
-<video controls width="395" style="float:right; padding-top:60px;" muted preload='none' poster='../images/ledger-submission.png'><source src="../../videos/ledger-submission.mp4" type='video/mp4'></video><br>
+<video controls width="395" style="float:right; padding-top:60px;" muted preload='none' poster='../images/ledger-submission.png'><source src="../videos/ledger-submission.mp4" type='video/mp4'></video><br>
 
 On the video demo you must show how to: 
 - Verify a public address on the Ledger device
