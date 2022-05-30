@@ -9,7 +9,7 @@ layout: doc
 
 ## Types
 
-Generic types can be found in [src/types/](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/types), with some documentation in source.
+Generic types can be found in [src/types/](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/types), with some documentation in source.
 
 ### Account
 
@@ -31,7 +31,7 @@ They are aggregated as a single `AccountLike` type, used across Ledger Live impl
 
 We will focus only on the `Account` type as we won't cover the Token integration in this document.
 
-All main accounts share a common ground, that you will find defined and commented [here](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/types/account.ts#L118).
+All main accounts share a common ground, that you will find defined and commented [here](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/types/account.ts#L118).
 
 If needed by the blockchain, an account can also contain coin-specific resources related to a single account, like its "nonce" or additional balances (e.g. for staking), or anything that may be displayed or used in your implementation. It's generally an additional field like `myCoinResources`. See [Family-specific types](#family-specific-types) below.
 
@@ -47,7 +47,7 @@ Most of the time, a transaction yield of one operation. But in some blockchains 
 
 In short, transactions history in Ledger Live is a list of `Operation`, that are confirmed, unconfirmed or pending (not yet fetched from explorer).
 
-They all share the same model, with an `extra` field that can store any additional data you may need to display. You will find the detailed and commented fields [here](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/types/operation.ts#L34).
+They all share the same model, with an `extra` field that can store any additional data you may need to display. You will find the detailed and commented fields [here](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/types/operation.ts#L34).
 
 If <i>MyCoin</i> has specific operation fields (like `additionalField` we added for example), you will be able to display them later. They are not meant to be useful in any flow, only for UI.
 
@@ -65,7 +65,7 @@ An `Operation` has a `type` which is generic string typed as `OperationType`, gi
 - `REWARD_PAYOUT`: A received reward (as an incoming transaction)
 - `SLASH`: A staking slash (with slashed amount generally)
 
-There are more types available, existing one will have predefined icons, translations and behaviours (i.e. `getOperationAmountNumber()` in [src/operation.ts](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/operation.ts)).
+There are more types available, existing one will have predefined icons, translations and behaviours (i.e. `getOperationAmountNumber()` in [src/operation.ts](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/operation.ts)).
 
 <i>MyCoin</i> could have also specific operation types, if you need to add a type that is not yet implemented, add them in `src/types/operation.ts`. You will later need to implement some specific code for the Ledger Live Desktop and Mobile to display them correctly.
 
@@ -114,13 +114,13 @@ Although some fields are required, they can be emptied (recipent = "" and amount
 
 You should add any fields that would be required by <i>MyCoin</i> to be correctly broadcasted - respecting as much as possible its protocol's lexicon.
 
-See existing implementations for inspiration: [Polkadot types](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/families/polkadot/types.ts), [Cosmos types](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/families/cosmos/types.ts)
+See existing implementations for inspiration: [Polkadot types](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/polkadot/types.ts), [Cosmos types](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/cosmos/types.ts)
 
 ### Family-specific types
 
 You will be implementing typescript types that will be used in your integration, like the Transaction type or the additional data needed to be added to the Account shared type, but also any other types that you will need (remember to always type your functions with typescript).
 
-`ledger-live/libs/ledger-live-common/src/families/mycoin/types.ts`:
+`libs/ledger-live-common/src/families/mycoin/types.ts`:
 
 ```ts
 import type { BigNumber } from "bignumber.js";
@@ -177,7 +177,7 @@ export type MyCoinPreloadData = {
 
 Since some of thoses types will be serialized when stored or cached, you may need to define serialize/deserialize functions for those:
 
-`ledger-live/libs/ledger-live-common/src/families/mycoin/serialization.ts`:
+`libs/ledger-live-common/src/families/mycoin/serialization.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -270,7 +270,7 @@ We also would like the `Operation` and `Account` to be displayed in CLI with the
 
 {% include alert.html style="note" text="In this code sample, all references to operations are not needed at light sync step. They are currently necessary but will soon be removed from this section" %}
 
-`ledger-live/libs/ledger-live-common/src/families/mycoin/account.ts`:
+`libs/ledger-live-common/src/families/mycoin/account.ts`:
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -374,7 +374,7 @@ The same idea applies also to the `Transaction` type which needs to be serialize
 
 {% include alert.html style="note" text="This part may not be required if you don't need transactions for light sync." %}
 
-`ledger-live/libs/ledger-live-common/src/families/mycoin/transaction.ts`:
+`libs/ledger-live-common/src/families/mycoin/transaction.ts`:
 
 ```ts
 import type { Transaction, TransactionRaw } from "./types";
@@ -453,7 +453,7 @@ The best way to implement your API in Live Common is to create a dedicated `api`
 
 You will likely need to export thoses functions, but implemention is up-to-developer:
 
-`ledger-live/libs/ledger-live-common/src/families/mycoin/api/index.ts`:
+`libs/ledger-live-common/src/families/mycoin/api/index.ts`:
 
 ```ts
 export {
@@ -468,7 +468,7 @@ export {
 
 Basically, in the next sections, `getAccount` will be called to create an `Account` with balances and any additional resources, and `getOperations` will be called to fill the `operations[]` of this account, with the whole history of operations that can be requested incrementally. Then `getFees` before sending a transaction to let the user know of the network cost (estimated or effective), and `submit` to broadcast its transaction after signing.
 
-See [Polkadot Coin Integration's api](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/families/polkadot/api) for good inspiration.
+See [Polkadot Coin Integration's api](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/polkadot/api) for good inspiration.
 
 ### API Example
 
@@ -901,7 +901,7 @@ export default { currencyBridge, accountBridge };
 
 You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
 
-The skeleton of `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge/js.ts` should look something like this:
+The skeleton of `libs/ledger-live-common/src/families/mycoin/bridge/js.ts` should look something like this:
 
 ```ts
 import type { AccountBridge, CurrencyBridge } from "../../../types";
@@ -976,17 +976,17 @@ It is important to keep in mind that all currencies work independently and that 
 
 Hence, the more cryptocurrencies Ledger Live is using, the more requests and calculations are executed, which can take time.
 
-To avoid making the same requests several times, we recommend using a local cache in your implementation (e.g. fees estimations, some currency data to preload, etc in a `ledger-live/libs/ledger-live-common/src/families/mycoin/cache.ts` file.
+To avoid making the same requests several times, we recommend using a local cache in your implementation (e.g. fees estimations, some currency data to preload, etc in a `libs/ledger-live-common/src/families/mycoin/cache.ts` file.
 
-We have a [`src/cache.ts`](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/cache.ts) helper for creating Least-Recently-Used caches anywhere if needed.
+We have a [`src/cache.ts`](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/cache.ts) helper for creating Least-Recently-Used caches anywhere if needed.
 
-See for example the [Polkadot's cache implementation](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/families/polkadot/cache.ts).
+See for example the [Polkadot's cache implementation](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/polkadot/cache.ts).
 
 ## React Hooks
 
 If you are adding specific features to Ledger Live (like staking), you may need to access data through React hooks, that could provide common logic reusable for React components.
 
-You are then free to add them in a `ledger-live/libs/ledger-live-common/src/families/mycoin/react.ts` file.
+You are then free to add them in a `libs/ledger-live-common/src/families/mycoin/react.ts` file.
 
-See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/families/polkadot/react.ts).
+See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/polkadot/react.ts).
 

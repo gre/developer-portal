@@ -14,10 +14,10 @@ Using a local version of Ledger Live to test your integration can be time consum
 
 ### Set up
 
-Clone [ledger-live-common](https://github.com/LedgerHQ/ledger-live/libs/ledger-live-common) repository
+Clone the [ledger-live-common](https://github.com/LedgerHQ/ledger-live.git) repository
 
 ```sh
-cd ledger-live-common
+cd ledger-live/libs/ledger-live-common
 yarn
 cd cli
 yarn

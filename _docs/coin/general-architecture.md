@@ -38,7 +38,7 @@ The Ledger Live application act as a relay between the different blockchains, an
 
 #### Live Common
 
-The Common library of Ledger Live is called [Ledger-live-common](https://github.com/LedgerHQ/ledger-live/libs/ledger-live-common). It provides a single library compatible with both desktop and mobile version of Ledger Live.
+The Common library of Ledger Live is called [Ledger-live-common](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common). It provides a single library compatible with both desktop and mobile version of Ledger Live.
 
 #### Communication with the Device
 

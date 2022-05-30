@@ -26,7 +26,7 @@ layout: doc
 
 1.  Build the relevant version of `live-common` and `yalc publish`
 
-2.  Clone or pull [Ledger-Coin-Integration-team/ledger-live-mobile](https://github.com/LedgerHQ/ledger-live/apps/ledger-live-mobile) **and checkout the relevant branch**
+2.  Clone or pull [Ledger-Coin-Integration-team/ledger-live-mobile](https://github.com/LedgerHQ/ledger-live.git) **and checkout the relevant branch**
 
 
 | **Terminal 1** | **Terminal 2** |

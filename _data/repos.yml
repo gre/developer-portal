@@ -34,11 +34,11 @@
 
 - title: Ledger Live Desktop
   desc: Desktop front end
-  url: https://github.com/LedgerHQ/ledger-live/apps/ledger-live-desktop
+  url: https://github.com/LedgerHQ/ledger-live/tree/main/apps/ledger-live-desktop
 
 - title: Ledger Live Mobile
   desc: Mobile front end
-  url: https://github.com/LedgerHQ/ledger-live/apps/ledger-live-mobile
+  url: https://github.com/LedgerHQ/ledger-live/tree/main/apps/ledger-live-mobile
 
 
 

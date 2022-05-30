@@ -7,169 +7,6 @@ toc: true
 layout: doc
 ---
 
-<<<<<<< HEAD
-## Starting with a mock
-
-A mock will help you test different UI flows on Desktop and Mobile.
-It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
-
-For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
-
-```ts
-import { BigNumber } from "bignumber.js";
-import {
-  NotEnoughBalance,
-  RecipientRequired,
-  InvalidAddress,
-  FeeTooHigh,
-} from "@ledgerhq/errors";
-import type { Transaction } from "../types";
-import type { AccountBridge, CurrencyBridge } from "../../../types";
-import {
-  scanAccounts,
-  signOperation,
-  broadcast,
-  sync,
-  isInvalidRecipient,
-} from "../../../bridge/mockHelpers";
-import { getMainAccount } from "../../../account";
-import { makeAccountBridgeReceive } from "../../../bridge/mockHelpers";
-
-const receive = makeAccountBridgeReceive();
-
-const createTransaction = (): Transaction => ({
-  family: "mycoin",
-  mode: "send",
-  amount: BigNumber(0),
-  recipient: "",
-  useAllAmount: false,
-  fees: null,
-});
-
-const updateTransaction = (t, patch) => ({ ...t, ...patch });
-
-const prepareTransaction = async (a, t) => t;
-
-const estimateMaxSpendable = ({ account, parentAccount, transaction }) => {
-  const mainAccount = getMainAccount(account, parentAccount);
-  const estimatedFees = transaction?.fees || BigNumber(5000);
-  return Promise.resolve(
-    BigNumber.max(0, mainAccount.balance.minus(estimatedFees))
-  );
-};
-
-const getTransactionStatus = (account, t) => {
-  const errors = {};
-  const warnings = {};
-  const useAllAmount = !!t.useAllAmount;
-
-  const estimatedFees = BigNumber(5000);
-
-  const totalSpent = useAllAmount
-    ? account.balance
-    : BigNumber(t.amount).plus(estimatedFees);
-
-  const amount = useAllAmount
-    ? account.balance.minus(estimatedFees)
-    : BigNumber(t.amount);
-
-  if (amount.gt(0) && estimatedFees.times(10).gt(amount)) {
-    warnings.amount = new FeeTooHigh();
-  }
-
-  if (totalSpent.gt(account.balance)) {
-    errors.amount = new NotEnoughBalance();
-  }
-
-  if (!t.recipient) {
-    errors.recipient = new RecipientRequired();
-  } else if (isInvalidRecipient(t.recipient)) {
-    errors.recipient = new InvalidAddress();
-  }
-
-  return Promise.resolve({
-    errors,
-    warnings,
-    estimatedFees,
-    amount,
-    totalSpent,
-  });
-};
-
-const accountBridge: AccountBridge<Transaction> = {
-  estimateMaxSpendable,
-  createTransaction,
-  updateTransaction,
-  getTransactionStatus,
-  prepareTransaction,
-  sync,
-  receive,
-  signOperation,
-  broadcast,
-};
-
-const currencyBridge: CurrencyBridge = {
-  scanAccounts,
-  preload: async () => {},
-  hydrate: () => {},
-};
-
-export default { currencyBridge, accountBridge };
-```
-
-## Split your code
-
-You can now start to implement the JS bridge for <i>MyCoin</i>. It may need some changes back and forth between the types, your api wrapper, and the different files.
-
-The skeleton of `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge/js.ts` should look something like this:
-
-```ts
-import type { AccountBridge, CurrencyBridge } from "../../../types";
-import type { Transaction } from "../types";
-import { makeAccountBridgeReceive } from "../../../bridge/jsHelpers";
-
-import { getPreloadStrategy, preload, hydrate } from "../preload";
-
-import { sync, scanAccounts } from "../js-synchronisation";
-import {
-  createTransaction,
-  updateTransaction,
-  prepareTransaction,
-} from "../js-transaction";
-import getTransactionStatus from "../js-getTransactionStatus";
-import estimateMaxSpendable from "../js-estimateMaxSpendable";
-import signOperation from "../js-signOperation";
-import broadcast from "../js-broadcast";
-
-const receive = makeAccountBridgeReceive();
-
-const currencyBridge: CurrencyBridge = {
-  getPreloadStrategy,
-  preload,
-  hydrate,
-  scanAccounts,
-};
-
-const accountBridge: AccountBridge<Transaction> = {
-  estimateMaxSpendable,
-  createTransaction,
-  updateTransaction,
-  getTransactionStatus,
-  prepareTransaction,
-  sync,
-  receive,
-  signOperation,
-  broadcast,
-};
-
-export default { currencyBridge, accountBridge };
-```
-
-<!--  -->
-{% include alert.html style="tip" text="You could implement all the methods in a single file, but for better readability and maintainability, you should split your code into multiple files." %}
-
-=======
->>>>>>> main
 ## Account Bridge
 
 AccountBridge offers a generic abstraction to synchronize accounts and perform transactions.
@@ -184,13 +21,13 @@ It is designed for the end user frontend interface and is agnostic of the way it
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
-As you may see in `ledger-live/libs/ledger-live-common/src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
+As you may see in `libs/ledger-live-common/src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
 
 ### Synchronization
 
 We usually group the `scanAccounts` and `sync` into the same file `js-synchronisation.ts` as they both use similar logic as a `getAccountShape` function passed to helpers.
 
-`ledger-live/libs/ledger-live-common/src/families/mycoin/js-synchronisation.ts`:
+`libs/ledger-live-common/src/families/mycoin/js-synchronisation.ts`:
 
 ```ts
 import type { Account } from "../../types";
@@ -253,12 +90,12 @@ Under the hood of the `makeSync` helper, the returned value is an Observable of 
 - the updater is called in a reducer, and allows to produce an immutable state by applying the update to the latest account instance (with reconciliation on Ledger Live Desktop)
 - it's an observable, so we can interrupt it when/if multiple updates occurs
 
-In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `ledger-live/libs/ledger-live-common/src/families/mycoin/js-postSyncPatch.js` file.
+In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `libs/ledger-live-common/src/families/mycoin/js-postSyncPatch.js` file.
 
 ### Reconciliation
 
 Currently, Ledger Live Desktop executes this bridge in a separate thread. Thus, the "avoid race condition" aspect of sync might not be respected since the UI renderer thread does not share the same objects.
-This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
+This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
 
 Since we might have added some coin-specific data in `Account`, we must also reconciliate it:
 
@@ -308,12 +145,9 @@ This cache contains the JSON serialized response from `preload` which is then hy
 
 Live-Common features will then be able to reuse those data anywhere (e.g. validating transactions) with `getCurrentMyCoinPreloadData`, or by subscribing to `getMyCoinPreloadDataUpdates` observable.
 
-<<<<<<< HEAD
-`ledger-live/libs/ledger-live-common/src/families/mycoin/preload.ts`:
-=======
-`src/families/mycoin/preload.ts`:
 
->>>>>>> main
+`libs/ledger-live-common/src/families/mycoin/preload.ts`:
+
 ```ts
 import { Observable, Subject } from "rxjs";
 import { log } from "@ledgerhq/logs";
@@ -380,7 +214,7 @@ export const hydrate = (data: any) => {
 };
 ```
 
-Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live/tree/main/ledger-live-common/docs/CurrencyBridge.md).
+Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live/wiki/LLC:CurrencyBridge).
 
 
 ## Starting with a mock
