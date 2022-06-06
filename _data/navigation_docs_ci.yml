@@ -12,7 +12,6 @@
 - title: Tools
   docs:
   - coin/ledger-live-cli
-  - coin/speculos
   - coin/yalc
 
 
