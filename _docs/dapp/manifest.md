@@ -97,7 +97,12 @@ Here is the list of the mandatory fields required in your Manifest file:
         </tr>
         <tr>
             <td><code>url</code></td>
-            <td>The URL of your application. Must be expressed in the following way "https://platform.apps.ledger.com/app/dapp-browser?dappName=Lido&nanoApp=Lido&url=YOUR_URL", with YOUR_URL encoded with a tool like <a href="https://meyerweb.com/eric/tools/dencoder/">this one</a>.</td>
+            <td>https://dapp-browser.apps.ledger.com</td>
+            <td>String</td>
+        </tr>
+        <tr>
+            <td><code>params</code></td>
+            <td>dappUrl is the URL of your DApp; nanoApp is the plugin needed to clear sign your DApp; dappName should be the same as nanoApp; networks is the list of networks supported by your DApp, Ledger Live currently only support mainnet, BSC and Polygon, the nodeURL param will be set by Ledger in prod to use your node, for testing purposes, you can replace it with your own.</td>
             <td>String</td>
         </tr>
         <tr>
