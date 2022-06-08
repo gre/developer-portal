@@ -12,7 +12,7 @@ This page is a description of the three parts of the implementation of your DApp
 
 ## 1. Update your DApp server
 
-Ledger has a [DApp browser](https://github.com/LedgerHQ/ledger-live-platform-apps) to host your web3 DApp.
+Ledger has a [DApp browser](https://github.com/LedgerHQ/eth-dapp-browser) to host your web3 DApp.
 
 One of the most useful features of this DApp Browser is to be able to log-in automatically from a Ledger Live Ethereum account, therefore obviating the step to manually “Connect a Wallet”.
 

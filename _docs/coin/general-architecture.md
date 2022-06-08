@@ -30,11 +30,13 @@ The Ledger Live mobile app is compatible with **iOS** and **Android**.
 
 ### Ledger Live architecture
 
+The Ledger Live application act as a relay between the different blockchains, and the hardware wallets. 
+
+Its architecture is unconventional and may take some time to understand. Please take time to understand it because this will speed up your development. Please use the comment box at the bottom of the page for suggestions.
+
 <!-- ------------- Image ------------- -->
 [![Global Architecture](../images/global-architecture.png)](../images/global-architecture.png)
 <!-- --------------------------------- -->
-
-The Ledger Live application act as a relay between the different blockchains, and the hardware wallets.
 
 #### Live Common
 

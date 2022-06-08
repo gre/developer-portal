@@ -16,7 +16,12 @@ It is designed for the end user frontend interface and is agnostic of the way it
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
 
+<!--  -->
+  {% include alert.html style="important" text="If any of your operations takes longer than the times stated below, get in touch with us on Discord." %}
+<!--  -->
+
 ![account bridge flow](../images/account-bridge-flow.png)
+
 
 ### Receive
 
