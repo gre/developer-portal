@@ -144,7 +144,7 @@ Here the app has been updated to support the protocol and the advanced users in 
 
 So you need **8 different flows**. That escalated quickly! Indeed, for every little <i>upgrade</i>, the number of flows is doubled. Soon enough you'll end up with 16 or even 32 different flows. Notice that whilst the number of flows will grow exponentially, the number of different steps will only grow linearly (one for every new feature).
 
-To fix this problem, you would need to define the `UX\_FLOW` at runtime, cherry-picking which steps you wish to include depending on the details of our transaction.
+To fix this problem, you would need to define the `UX_FLOW` at runtime, cherry-picking which steps you wish to include depending on the details of our transaction.
 
 Don't worry, Ledger has got your back! The fix is quite simple, so let's dive right into it.
 
@@ -152,14 +152,14 @@ Don't worry, Ledger has got your back! The fix is quite simple, so let's dive ri
 
 The idea is to create an array of steps that is big enough to fit all the steps. Since steps grow linearly, this array won't get too big. Once this array created, you simply need to fill it with the steps you wish to include. Finally, you need to add a last step `FLOW_END_STEP` for it to work properly.
 
-You can then call the `ux_init_flow` and pass in you array as argument.
+You can then call the `ux_flow_init` and pass in you array as argument.
 
 ``` c
 // The maximum number of steps you will ever need. Here it's 8: step_review, step_amount,
 // step_fee, step_address, step_arbitrary_data, step_nonce, step_accept, step_reject.
 #define MAX_NUM_STEPS 8
 
-// The array of steps. Notice the type used, as it's important if you wish to use ux_init_flow.
+// The array of steps. Notice the type used, as it's important if you wish to use ux_flow_init.
 // Add `+ 1` to ensure there always is extra room for the last step, FLOW_END_STEP.
 const ux_flow_step_t *ux_signature_flow[MAX_NUM_STEPS + 1];
 ```
@@ -189,7 +189,7 @@ void start_display() {
    ux_signature_flow[index++] = FLOW_END_STEP;
 
    // Start the display!
-   ux_init_flow(0, ux_signature_flow, NULL);
+   ux_flow_init(0, ux_signature_flow, NULL);
 }
 ```
 
@@ -307,68 +307,67 @@ void bnnn_paging_edgecase() {
 
 // Main function that handles all the business logic for our new display architecture.
 void display_next_state(bool is_upper_delimiter) {
-    if (is_upper_delimiter) { // We're called from the upper delimiter.
-        if (global.current_state == STATIC_SCREEN) {
-            // Fetch new data.
-            bool dynamic_data = get_next_data(&global.title, &global.text, true);
+   if (is_upper_delimiter) { // We're called from the upper delimiter.
+      if (global.current_state == STATIC_SCREEN) {
+         // Fetch new data.
+         bool dynamic_data = get_next_data(&global.title, &global.text, true);
 
-            if (dynamic_data) {
-                // We found some data to display so we now enter in dynamic mode.
-                global.current_state = DYNAMIC_SCREEN;
-            }
+         if (dynamic_data) {
+             // We found some data to display so we now enter in dynamic mode.
+             global.current_state = DYNAMIC_SCREEN;
+         }
 
-            // Move to the next step, which will display the screen.
-            ux_flow_next();
-        } else {
-            // The previous screen was NOT a static screen, so we were already in a dynamic screen.
+         // Move to the next step, which will display the screen.
+         ux_flow_next();
+      } else {
+         // The previous screen was NOT a static screen, so we were already in a dynamic screen.
 
-            // Fetch new data.
-            bool dynamic_data = get_next_data(&global.title, &globa.text, false);
-            if (dynamic_data) {
-                // We found some data so simply display it.
-                ux_flow_next();
-            }
-            else {
-                // There's no more dynamic data to display, so
-                // update the current state accordingly.
-                global.current_state = STATIC_SCREEN;
+         // Fetch new data.
+         bool dynamic_data = get_next_data(&global.title, &global.text, false);
+         if (dynamic_data) {
+             // We found some data so simply display it.
+             ux_flow_next();
+         } else {
+             // There's no more dynamic data to display, so
+             // update the current state accordingly.
+             global.current_state = STATIC_SCREEN;
 
-                // Display the previous screen which should be a static one.
-                ux_flow_prev();
-            }
-        } else {
+             // Display the previous screen which should be a static one.
+             ux_flow_prev();
+         }
+      }
+   } else {
             // We're called from the lower delimiter.
 
-            if (global.current_state == STATIC_SCREEN) {
-                // Fetch new data.
-                bool dynamic_data = get_next_data(&global.title, &global.text, false);
+      if (global.current_state == STATIC_SCREEN) {
+         // Fetch new data.
+         bool dynamic_data = get_next_data(&global.title, &global.text, false);
 
-                if (dynamic_data) {
-                    // We found some data to display so enter in dynamic mode.
-                    global.current_state = DYNAMIC_SCREEN;
-                }
+         if (dynamic_data) {
+           // We found some data to display so enter in dynamic mode.
+           global.current_state = DYNAMIC_SCREEN;
+         }
 
-                // Display the data.
-                ux_flow_prev();
-            } else {
-                // We're being called from a dynamic screen, so the user was already browsing the array.
+         // Display the data.
+         ux_flow_prev();
+      } else {
+         // We're being called from a dynamic screen, so the user was already browsing the array.
 
-                // Fetch new data.
-                bool dynamic_data = get_next_data(&global.title, &global.text, true);
-                if (dynamic_data) {
-                    // We found some data, so display it.
-                    // Similar to `ux_flow_prev()` but updates layout to account for `bnnn_paging`'s weird behaviour.
-                    bnnn_paging_edgecase();
-                } else {
-                    // We found no data so make sure we update the state accordingly.
-                    global.current_state = STATIC_SCREEN;
+         // Fetch new data.
+         bool dynamic_data = get_next_data(&global.title, &global.text, true);
+         if (dynamic_data) {
+           // We found some data, so display it.
+           // Similar to `ux_flow_prev()` but updates layout to account for `bnnn_paging`'s weird behaviour.
+           bnnn_paging_edgecase();
+         } else {
+           // We found no data so make sure we update the state accordingly.
+           global.current_state = STATIC_SCREEN;
 
-                    // Display the next screen
-                    ux_flow_next();
-                }
-            }
-        }
-    }
+           // Display the next screen
+           ux_flow_next();
+         }
+      }
+   }
 }
 ```
 
