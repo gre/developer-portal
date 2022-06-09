@@ -10,7 +10,9 @@ layout: doc
 
 ## Introduction
 
-Ledger Live Common is the shared core library used by Ledger Live Desktop and Mobile, that also includes a CLI for testing purpose or for using Ledger Live features directly from a terminal (in a limited way).
+All the JavaScript code related to the Ledger Live applications is in the `ledger-live` monorepository. The work to integrate a Blockchain in Ledger Live will all happen in this monorepository.
+
+Ledger Live Common (`./libs/ledger-live-common`) is the shared core library used by Ledger Live Desktop and Mobile, that also includes a CLI for testing purpose or for using Ledger Live features directly from a terminal (in a limited way).
 
 This library is built upon a pretty standard ES6 + Typescript stack and relies on a bunch of [ledgerjs](https://github.com/LedgerHQ/ledgerjs) packages, [RxJS 6.x](https://github.com/ReactiveX/rxjs/tree/6.x), [bignumber.js](https://github.com/MikeMcl/bignumber.js) and [React](https://github.com/facebook/react/) + [Redux](https://github.com/reduxjs/redux) for some front-end utilities and hooks.
 
@@ -23,8 +25,8 @@ All integrated coins are implemented in a `libs/ledger-live-common/src/families`
 
 ### Requirements
 
-- [NodeJS LTS/Fermium (Node 14.x)](https://nodejs.org/)
-- [Yarn](https://classic.yarnpkg.com/lang/en/) 1.x (Classic)
+- [Node.js@14.x.x](https://nodejs.org/)
+- [PnPm@7.x.x](https://pnpm.io/)
 - Python 2.7 or 3.5+
 - A C/C++ toolchain (see node-gyp documentation)
 
@@ -42,9 +44,12 @@ All integrated coins are implemented in a `libs/ledger-live-common/src/families`
 
 ### Installation
 
-- Clone project [https://github.com/LedgerHQ/ledger-live-common](https://github.com/LedgerHQ/ledger-live-common)
-- `yarn install` will install all dependencies
-- `yalc publish --push` will build and link ledger-live-common
+- Fork and clone the `ledger-live` repository [https://github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
+- `cd` to the folder
+- Install with `pnpm i`
+
+
+**ASK HAKIM: should we add ledger-live-common installation**
 
 ## Structure
 
@@ -78,19 +83,29 @@ Here is a typical family folder structure (TS integration):
 ```
 
 <!--  -->
-{% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live/tree/master/libs/ledger-live-common/src/families/polkadot'>Polkadot integration</a>" %}
+{% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot'>Polkadot integration</a>" %}
 <!--  -->
 
 ## Building the CLI for Development
 
-Do not forget to build before testing:
+To install the CLI do:
 
 ```sh
-yalc publish --push
-# if not yarn watch
-cd cli
-yarn build
+npm i --global @ledgerhq/live-cli
 ```
+
+To publish:
+
+```sh
+# build the cli for publishing
+pnpm build:cli
+```
+
+You will find [the compete documentation here](https://github.com/LedgerHQ/ledger-live/tree/develop/apps/cli).
+
+
+
+**ASK HAKIM: are the following information up to date and where they should be**
 
 ### Environment Variables
 

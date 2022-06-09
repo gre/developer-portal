@@ -12,14 +12,10 @@
   - coin/prerequisites
   - coin/required-skills
 
-- title: Tools
-  docs:
-  - coin/ledger-live-cli
-  - coin/yalc
-
-- title: Setup
+- title: Setup and build
   docs:
   - coin/live-common
+  - coin/ll-setup
 
 - title: Coding
   docs:
@@ -31,10 +27,6 @@
   - coin/sync
   - coin/send
   - coin/desktop-mobile
-
-- title: Building locally
-  docs:
-  - coin/ll-setup
 
 - title: Testing
   docs:

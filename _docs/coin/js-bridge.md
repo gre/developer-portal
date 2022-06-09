@@ -263,7 +263,7 @@ In some cases, you might need to do a `postSync` patch to add some update logic 
 ### Reconciliation
 
 Currently, Ledger Live Desktop executes this bridge in a separate thread. Thus, the "avoid race condition" aspect of sync might not be respected since the UI renderer thread does not share the same objects.
-This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
+This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
 
 Since we might have added some coin-specific data in `Account`, we must also reconciliate it:
 
@@ -867,7 +867,7 @@ export default {
 };
 ```
 
-Of course if <i>MyCoin</i> has more complex transactions, you can add many arguments to CLI. You can also define you own cli commands for any specific data you would like to fetch. See [Polkadot CLI commands](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/polkadot/cli-transaction.ts).
+Of course if <i>MyCoin</i> has more complex transactions, you can add many arguments to CLI. You can also define you own cli commands for any specific data you would like to fetch. See [Polkadot CLI commands](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot/cli-transaction.ts).
 
 Now you can try a `getTransactionStatus` or a `send`:
 
@@ -984,4 +984,4 @@ export const hydrate = (data: any) => {
 };
 ```
 
-Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/docs/CurrencyBridge.md).
+Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/docs/CurrencyBridge.md).

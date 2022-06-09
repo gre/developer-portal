@@ -11,4 +11,4 @@ If you are adding specific features to Ledger Live (like staking), you may need 
 
 You are then free to add them in a `libs/ledger-live-common/src/families/mycoin/react.ts` file.
 
-See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live/tree/main/libs/ledger-live-common/src/families/polkadot/react.ts).
+See examples like sorting and filtering validators, subscribing to preloaded data observable, or waiting for a transaction to be reflected in account, in the [Polkadot React hooks](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot/react.ts).
