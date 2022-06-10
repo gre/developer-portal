@@ -9,8 +9,9 @@
 
 - title: Prerequisites
   docs:
-  - coin/prerequisites
   - coin/required-skills
+  - coin/prerequisites
+  - coin/application-form
 
 - title: Tools
   docs:

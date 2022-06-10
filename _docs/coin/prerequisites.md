@@ -14,28 +14,15 @@ Nowadays, they are also functionally complex: it’s no longer just about sendin
 Therefore, every new blockchain integration calls for a preliminary analysis, to gather all information about the blockchain and its coin before being able to start coding and make sure nothing is left in the shadow. In order to do so, this pre-analysis has to cover both the functional and technical aspects of the coin.
 
 ***
-## Technical Assessment
+## The application form
 
-<!-- ------------- Image ------------- -->
-<a href="../images/technical-assessment.png">
-	<img width="395" height="548" src="../images/technical-assessment.png" style="float:right">
-</a>
-<!-- --------------------------------- -->
-
-The Technical assessment phase consists firstly in acquiring a thorough understanding of the blockchain protocol, considering the generic and specific aspects.
-
-This filled out form is an example of how you can do this first step: [technical_assessment_polkadot_v2.pdf](../files/technical_assessment_polkadot_v2.pdf)
-
-Secondly, choices must be made concerning the Specific features.
-
-And lastly, special care and careful consideration must be given to providing the Indexer Solution.
+This phase consists in acquiring a thorough understanding of your blockchain protocol, considering the generic and specific aspects. 
 
 The output of this phase is a detailed proposition of choices made and discussed with Ledger for agreement, before coding starts. This is done at a joint meeting to agree on the Acceptance Plan.
 
-To submit the Technical Assessment for your Blockchain:  
-1.  Make a copy of this [Technical Assessment]( https://docs.google.com/document/d/1pIk-TtmVtgBeyrUY8EyVjknkk-zoVUAXdxyDHluJSiM) locally. <br> (Please do not request edit access of the original file).  
-2.  Carefully answer the questions in the form. <br> They will help you and Ledger to be more efficient in the integration of your Coin.
-3.  After you have filled it in, please inform Ledger by contacting us in the usual way. 
+To submit the application form for your Blockchain:  
+1.  Make sure you have [all the required information](../application-form)
+2.  Carefully answer the questions in [the form](https://ledger.typeform.com/to/loUoDiVY). <br> They will help you and Ledger to be more efficient in the integration of your Coin.
 
 ***
 ## Choice of Specific features
