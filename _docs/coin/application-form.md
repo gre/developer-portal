@@ -11,6 +11,13 @@ layout: doc
 
 ## Introduction
 
+Your answer to this form will help our team get a better understanding on the following aspects of your project:
+- Technical specificities of your Blockchain and its ecosystem
+- Connectivity to third party services
+- Scope of the desired integration
+
+If you are not on our Discord server yet, please [join](https://discord.gg/Ledger) and introduce yourself and your project.
+
 ## Section details
 
 ### General information
