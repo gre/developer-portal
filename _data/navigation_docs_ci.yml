@@ -29,7 +29,7 @@
 - title: Testing
   docs:
   - coin/tests
-  - coin/run-ledger-live
+  - coin/writing-tests
   - coin/build-ios-devapp
   - coin/build-android-devapp
   - coin/run-ios-android-devapp
