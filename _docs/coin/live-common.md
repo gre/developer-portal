@@ -101,6 +101,11 @@ To publish:
 pnpm build:cli
 ```
 
+To use it:
+```sh
+pnpm run:cli <command> args
+```
+
 You will find [the compete documentation here](https://github.com/LedgerHQ/ledger-live/tree/develop/apps/cli).
 
 
