@@ -9,9 +9,9 @@ layout: doc
 
 ## Start here
 
-1. Clone the Ethereum application: `git clone https://github.com/LedgerHQ/app-ethereum.git`
-
-2. Before commiting your changes remember to sign your commits.
+- Clone the Ethereum application: `git clone https://github.com/LedgerHQ/app-ethereum.git`
+- Before commiting your changes remember to sign your commits.
+- Please make your changes to the `develop` branch
 
 {% include alert.html style="important" text="For security reasons, the repository is set up to accept only pull requests with signed commits. To sign your commits, use the -S flag : <code>$ git commit -S -m your commit message</code>" %}
 
