@@ -1,7 +1,7 @@
 matrix:
 - name: Markdown
   sources:
-  - '**/*.md|!_docs/nano-app/crypto-api/**'
+  - '_docs/**/*.md|!_docs/nano-app/crypto-api/**'
   default_encoding: utf-8
   aspell:
     lang: en
@@ -16,3 +16,4 @@ matrix:
       ignores:
       - code
       - pre
+      - highlight

@@ -26,8 +26,8 @@ You must download the template on the page, fill it it with your Icon, and inclu
 
 There are 2 mandatory icons that should be provided for Ledger to release an app:
 
--   The Device icon, displayed on the Nano dashboard
 -   The Manager icon, displayed in the Manager application list in Ledger Live
+-   The Device icon, displayed on the Nano dashboard (this consists in 1 icon for the Nano S and one Icon for the Nano S Plus and the Nano X)
 
 #### General
 
@@ -35,19 +35,20 @@ There are 2 mandatory icons that should be provided for Ledger to release an app
 - Gradients are not allowed
 - The background color should be solid
 
+#### Manager icon
+
+- RVB colors only
+- Pictogram color should be white
+- Pictrogram stroke should be 4pt
+
 #### Device icon
 
 - Pixel art icon
 - Black and white only
 - Safe area: 2px
 
- Nano X and S Plus icons are 14x14 px in size. Developers can create their Nano X or S Plus icons from the 16x16 px Nano S one with the following command on Linux (install the package **imagemagick** first): `convert nanos_app_<token>.gif -crop 14x14+1+1 +repage -negate nanox_app_<token>.gif`
-
-#### Manager icon
-
-- RVB colors only
-- Pictogram color should be white
-- Pictrogram stroke should be 4pt
+1. Create the 16x16px Nano S icon using the template below
+2. Create the 14x14 Nano S Plus and Nano X icon on Linux by installing the **imagemagick** package and running: `convert nanos_app_<token>.gif -crop 14x14+1+1 +repage -negate nanox_app_<token>.gif`
 
 #### Icon templates
 
@@ -56,16 +57,16 @@ There are 2 mandatory icons that should be provided for Ledger to release an app
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
 <figure>
-<a href="https://drive.google.com/a/ledger.fr/file/d/1FVUWDGYPvLuyiwDFgGYiwfwk7YGsxzJ0/view?usp=sharing" title="Device template">
-<img src="../images/device_template.png" class="align-center" alt="Device icon template (click to access Illustrator file)" /><figcaption aria-hidden="true">Device icon template (click to access Illustrator file)</figcaption>
+<a href="https://drive.google.com/a/ledger.fr/file/d/1OOAZWlnLlBSpScPnF5NGJ4AfczB3D591/view?usp=sharing" title="Manager template">
+<img src="../images/manager-icon-template.png" class="align-center" alt="Manager icon template (click to access Illustrator file)" /><figcaption aria-hidden="true">Manager icon template (click to access Illustrator file)</figcaption>
 </a>
 </figure>
 
 <!-- ------------- Image ------------- -->
 <!-- --------------------------------- -->
 <figure>
-<a href="https://drive.google.com/a/ledger.fr/file/d/1OOAZWlnLlBSpScPnF5NGJ4AfczB3D591/view?usp=sharing" title="Manager template">
-<img src="../images/manager_template.png" class="align-center" alt="Manager icon template (click to access Illustrator file)" /><figcaption aria-hidden="true">Manager icon template (click to access Illustrator file)</figcaption>
+<a href="https://drive.google.com/a/ledger.fr/file/d/1FVUWDGYPvLuyiwDFgGYiwfwk7YGsxzJ0/view?usp=sharing" title="Device template">
+<img src="../images/nano-icon-template.png" class="align-center" alt="Device icon template (click to access Illustrator file)" /><figcaption aria-hidden="true">Device icon template (click to access Illustrator file)</figcaption>
 </a>
 </figure>
 
