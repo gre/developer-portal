@@ -1,7 +1,7 @@
 matrix:
 - name: Markdown
   sources:
-  - '_docs/**/*.md|!_docs/nano-app/crypto-api/**'
+  - '_docs|!_docs/nano-app/crypto-api/**'
   default_encoding: utf-8
   aspell:
     lang: en
@@ -14,6 +14,5 @@ matrix:
   - pyspelling.filters.html:
       comments: false
       ignores:
-      - code
-      - pre
-      - highlight
+      - :matches(code, pre)
+      - :matches(.highlight)
