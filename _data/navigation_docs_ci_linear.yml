@@ -16,6 +16,7 @@
   docs:
   - coin/live-common
   - coin/ll-setup
+  - coin/ledger-live-cli
 
 - title: Coding
   docs:
