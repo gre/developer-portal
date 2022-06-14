@@ -35,8 +35,8 @@ pnpm run:cli <command> args
 You can test that your local Live Common and your device works correctly by executing a CLI command like:
 
 ```sh
-ledger-live version      # should print live-common version
-ledger-live deviceInfo   # should display information about connected device
+pnpm run:cli version      # should print live-common version
+pnpm run:cli deviceInfo   # should display information about connected device
 ```
 
 <!--  -->
@@ -51,9 +51,9 @@ If everything is fine, you are ready to start integrating your blockchain!
 Do not forget to clean dbdata and libcoredb directories between cmds.
 
 ```sh
-ledger-live sync -c bitcoin -i 0 -s native_segwit   # using device
-ledger-live sync -c bitcoin --xpub 'xpub......'    # using xpub
-ledger-live getAddress -c bitcoin --path "84'/0'/0'/0/0" --derivationMode ''
-ledger-live send -i 0 -s segwit --recipient 13LcRWZyZnZu1xrABuAK9Ayftg4kfVs1AA --amount 0.00056 --feePerByte 5
+pnpm run:cli sync -c bitcoin -i 0 -s native_segwit   # using device
+pnpm run:cli sync -c bitcoin --xpub 'xpub......'    # using xpub
+pnpm run:cli getAddress -c bitcoin --path "84'/0'/0'/0/0" --derivationMode ''
+pnpm run:cli send -i 0 -s segwit --recipient 13LcRWZyZnZu1xrABuAK9Ayftg4kfVs1AA --amount 0.00056 --feePerByte 5
 ```
 
