@@ -227,7 +227,7 @@ Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-
 A mock will help you test different UI flows on Desktop and Mobile.
 It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
 
-For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
+For example you can use it by doing `MOCK=1 pnpm dev:lld` on `ledger-live-desktop`
 
 ```ts
 import { BigNumber } from "bignumber.js";

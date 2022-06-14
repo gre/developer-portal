@@ -45,11 +45,8 @@ All integrated coins are implemented in a `libs/ledger-live-common/src/families`
 ### Installation
 
 - Fork and clone the `ledger-live` repository [https://github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
-- `cd` to the folder
+- `cd ledger-live` 
 - Install with `pnpm i`
-
-
-**ASK HAKIM: should we add ledger-live-common installation**
 
 ## Structure
 
@@ -109,9 +106,6 @@ pnpm run:cli <command> args
 You will find [the compete documentation here](https://github.com/LedgerHQ/ledger-live/tree/develop/apps/cli).
 
 
-
-**ASK HAKIM: are the following information up to date and where they should be**
-
 ### Environment Variables
 
 Ledger Live provides a lot of flexibility through ENV variables. You can export them, define them before calling cli or use a tool like [direnv](https://direnv.net/).
@@ -119,7 +113,7 @@ Ledger Live provides a lot of flexibility through ENV variables. You can export 
 To list them all, you can execute:
 
 ```sh
-ledger-live envs
+pnpm run:cli envs
 ```
 
 The one you will use the most before releasing you integration is:
@@ -130,12 +124,12 @@ EXPERIMENTAL_CURRENCIES=mycoin
 
 to use them : 
 ```sh
-EXPERIMENTAL_CURRENCIES=mycoin ledger-live send -c mycoin --amount 0.1 ---recipient mycoinaddr -i 0
+EXPERIMENTAL_CURRENCIES=mycoin pnpm run:cli -c mycoin --amount 0.1 ---recipient mycoinaddr -i 0
 ```
 
 or for LLD :
 ```sh
-EXPERIMENTAL_CURRENCIES=mycoin yarn start
+EXPERIMENTAL_CURRENCIES=mycoin pnpm dev:lld
 ```
 
 It will consider `mycoin` as supported (you can also add it to the supported currencies in `src/ledger-live-common-setup-base.ts`).
