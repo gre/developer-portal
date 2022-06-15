@@ -31,15 +31,9 @@ nvm install 12 (if not already done)
 nvm use 12
 ```
 
-Then clone the ledger-live-common repo:
+At this point, you should have ledger-live forked, cloned and the CLI built, but if not, [check this documentation](../live-common/).
 
-```sh
-git clone https://github.com/LedgerHQ/ledger-live-common
-cd ledger-live-common/cli
-yarn
-```
-
-Now, launch the ledger-live-common proxy command:
+Then, launch the ledger-live-common proxy command:
 
 ```sh
 node bin/index.js proxy

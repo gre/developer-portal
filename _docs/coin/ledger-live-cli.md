@@ -1,5 +1,5 @@
 ---
-title: Ledger Live CLI
+title: Building de CLI for development
 subtitle:
 tags: [clone ledger live]
 category: Blockchain Support
@@ -14,37 +14,82 @@ Using a local version of Ledger Live to test your integration can be time consum
 
 ### Set up
 
-Clone [ledger-live-common](https://github.com/LedgerHQ/ledger-live-common) repository
+To install the CLI do:
 
 ```sh
-cd ledger-live-common
-yarn
-cd cli
-yarn
+npm i --global @ledgerhq/live-cli
+```
+
+To publish:
+
+```sh
+# build the cli for publishing
+pnpm build:cli
+```
+
+To use it:
+```sh
+pnpm run:cli <command> args
 ```
 
 You can test that your local Live Common and your device works correctly by executing a CLI command like:
 
 ```sh
-ledger-live version      # should print live-common version
-ledger-live deviceInfo   # should display information about connected device
+pnpm run:cli version      # should print live-common version
+pnpm run:cli deviceInfo   # should display information about connected device
 ```
-
-<!--  -->
-{% include alert.html style="tip" text="Ensure <code>yarn global bin</code> is in your $PATH. You can build automatically the CLI by running <code>yarn watch</code> in a separate terminal to ensure <code>ledger-live</code> bin is always up-to-date with your work." %}
-<!--  -->
 
 If everything is fine, you are ready to start integrating your blockchain!
 
 
-#### Ledger Live CLI cmd example
-
-Do not forget to clean dbdata and libcoredb directories between cmds.
+### Ledger Live CLI cmd example
 
 ```sh
-ledger-live sync -c bitcoin -i 0 -s native_segwit   # using device
-ledger-live sync -c bitcoin --xpub 'xpub......'    # using xpub
-ledger-live getAddress -c bitcoin --path "84'/0'/0'/0/0" --derivationMode ''
-ledger-live send -i 0 -s segwit --recipient 13LcRWZyZnZu1xrABuAK9Ayftg4kfVs1AA --amount 0.00056 --feePerByte 5
+pnpm run:cli sync -c bitcoin -i 0 -s native_segwit   # using device
+pnpm run:cli sync -c bitcoin --xpub 'xpub......'    # using xpub
+pnpm run:cli getAddress -c bitcoin --path "84'/0'/0'/0/0" --derivationMode ''
+pnpm run:cli send -i 0 -s segwit --recipient 13LcRWZyZnZu1xrABuAK9Ayftg4kfVs1AA --amount 0.00056 --feePerByte 5
+```
+
+### Environment Variables
+
+Ledger Live provides a lot of flexibility through ENV variables. You can export them, define them before calling cli or use a tool like [direnv](https://direnv.net/).
+
+To list them all, you can execute:
+
+```sh
+pnpm run:cli envs
+```
+
+The one you will use the most before releasing you integration is:
+
+```sh
+EXPERIMENTAL_CURRENCIES=mycoin
+```
+
+to use them : 
+```sh
+EXPERIMENTAL_CURRENCIES=mycoin pnpm run:cli -c mycoin --amount 0.1 ---recipient mycoinaddr -i 0
+```
+
+or for LLD :
+```sh
+EXPERIMENTAL_CURRENCIES=mycoin pnpm dev:lld
+```
+
+It will consider `mycoin` as supported (you can also add it to the supported currencies in `src/ledger-live-common-setup-base.ts`).
+
+**For clarity, we will omit this environment variable in this document.**
+
+If needed, you can add your own in `src/env.ts` (always try to add a MYCOIN\_ prefix to avoid collisions):
+
+```ts
+// const envDefinitions = { ...
+  MYCOIN_API_ENDPOINT: {
+    def: "https://mycoin.coin.ledger.com",
+    parser: stringParser,
+    desc: "API for mycoin",
+  },
+// }
 ```
 

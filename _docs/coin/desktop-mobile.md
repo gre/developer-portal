@@ -8,13 +8,10 @@ toc: true
 layout: doc
 ---
 
-## Ledger Live Desktop
-
-1. Fork [github.com/LedgerHQ/ledger-live-desktop](https://github.com/LedgerHQ/ledger-live-desktop)
+1. Fork [github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
 2. Clone the repo
 
-The clone will be used to test your modifications locally, using `yalc`.
-
+## Ledger Live Desktop
 
 ### Adding the crypto in LLD
 
@@ -24,25 +21,11 @@ The clone will be used to test your modifications locally, using `yalc`.
 ### Running the Desktop project
 
 ```sh
-git clone <fork-live-desktop>
-cd ledger-live-desktop
-yalc add @ledgerhq/live-common
-yarn install
-```
-
-If it is the first time you use `yalc` for live-common do this:
-
-```sh
-cd ledger-live-common
-yalc publish
+cd ledger-live
+pnpm dev:lld
 ```
 
 ## Ledger Live Mobile
-
-1. Fork [github.com/LedgerHQ/ledger-live-mobile](https://github.com/LedgerHQ/ledger-live-mobile)
-2. Clone the repo
-
-The clone will be used to test your modifications locally, using `yalc`.
 
 ### Adding the crypto in LLM
 
@@ -54,24 +37,23 @@ The clone will be used to test your modifications locally, using `yalc`.
 The prerequisites to running the project are found in the README file.
 
 ```sh
-git clone <fork-live-mobile>
-cd ledger-live-mobile
-yalc add @ledgerhq/live-common
-yarn install
-yarn run ios
-yarn start
+cd ledger-live
+pnpm dev:llm
 ```
 
-### Running the Mobile project on Android
+### Running the Mobile project on Android or iOS
 
-1. Launch the emulator or plug-in your telephone.
-2. Use an Android environment such as Android Studio
+#### Android
 
 ```sh
-git clone <fork-live-mobile>
-cd ledger-live-mobile
-yalc add @ledgerhq/live-common
-yarn install
-yarn run android
-yarn start
+pnpm mobile android
 ```
+or open `android/` in Android Studio.
+
+#### iOS
+
+```sh
+pnpm mobile ios
+```
+or open `ios/ledgerlivemobile.xcworkspace`
+

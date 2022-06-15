@@ -30,15 +30,15 @@
 
 - title: Ledger Live Common
   desc: Common library of Ledger Live compatible with both desktop and mobile versions
-  url: https://github.com/LedgerHQ/ledger-live-common
+  url: https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common
 
 - title: Ledger Live Desktop
   desc: Desktop front end
-  url: https://github.com/LedgerHQ/ledger-live-desktop
+  url: https://github.com/LedgerHQ/ledger-live/tree/develop/apps/ledger-live-desktop
 
 - title: Ledger Live Mobile
   desc: Mobile front end
-  url: https://github.com/LedgerHQ/ledger-live-mobile
+  url: https://github.com/LedgerHQ/ledger-live/tree/develop/apps/ledger-live-mobile
 
 
 

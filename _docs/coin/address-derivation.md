@@ -8,17 +8,15 @@ toc: true
 layout: doc
 ---
 
-From step 3 to step 6, you work will be implemented in the [Ledger Live repository](https://github.com/LedgerHQ/ledger-live-common). 
+From step 3 to step 6, you work will be implemented in the [Ledger Live repository](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common). 
 
 ### Derive Address from device
 
-<!--  -->
-{% include alert.html style="tip" text="If your app <a href='../js-bindings'>JS bindings</a> are not yet published in <a href='https://github.com/LedgerHQ/ledgerjs'>LedgerJS</a>, use <a href='../yalc'>yalc</a> to link your local packages." %}
-<!--  -->
+Before starting this step, make sure [you have setup your environment](../live-common/) to work with `ledger-live`.
 
 First and easiest step is to get an address from the device for <i>MyCoin</i>, by creating the `hw-getAddress.ts` Resolver:
 
-`src/families/mycoin/hw-getAddress.js`:
+`apps/ledger-live-common/src/families/mycoin/hw-getAddress.js`:
 
 ```ts
 import type { Resolver } from "../../hw/getAddress/types";
@@ -52,7 +50,7 @@ If <i>MyCoin</i> has a conventional derivation path (BIP44), Ledger Live should 
 
 **If you need to use another derivation mode:**
 
-Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live-common/tree/master/src/derivation.ts):
+Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/derivation.ts):
 
 1. Add a new derivation mode with `overridesDerivation`:
   ```ts
@@ -78,7 +76,7 @@ Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live-co
   // };
   ```
 
-See [Derivation documentation](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/derivation.md) for further details.
+See [Derivation documentation](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/docs/derivation.md) for further details.
 
 You can check that the derivationMode is correct by executing:
 

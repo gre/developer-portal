@@ -8,25 +8,6 @@ toc: true
 layout: doc
 ---
 
-## Getting started
-
-To start, fork and clone git@github.com:LedgerHQ/ledger-live-common.git
-```bash
-cd ledger-live-common
-yarn install
-yalc publish
-cd cli
-yalc add @ledgerhq/live-common
-yarn install
-```
-
-
-
-> CLI ready to be used based on local live-common
-
-***
-
-
 ## test-dataset
 
 This file allows us to simulate some transactions of our implementation.

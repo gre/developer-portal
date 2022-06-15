@@ -15,7 +15,7 @@ layout: doc
 
 ### 1. Is my ERC20, BEP20 or Polygon token listed?
 
-First, make sure your token isn’t already listed by checking this table of the [supported crypto-assets](https://github.com/LedgerHQ/ledger-live-desktop/blob/develop/cryptoassets.md).
+First, make sure your token isn’t already listed by checking this table of the [supported crypto-assets](https://github.com/LedgerHQ/ledger-live/blob/develop/apps/ledger-live-desktop/cryptoassets.md).
 
 Please note you can easily change the tag version to check the content of a specific Ledger Live version. 
 

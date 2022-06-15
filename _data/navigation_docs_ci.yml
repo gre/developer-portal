@@ -9,15 +9,11 @@
   - coin/prerequisites
   - coin/required-skills
 
-- title: Tools
-  docs:
-  - coin/ledger-live-cli
-  - coin/yalc
-
-
-- title: Setup
+- title: Setup and build
   docs:
   - coin/live-common
+  - coin/ledger-live-cli
+  - coin/ll-setup
 
 - title: Coding
   docs:
@@ -30,10 +26,11 @@
   - coin/send
   - coin/desktop-mobile
 
+
 - title: Testing
   docs:
   - coin/tests
-  - coin/run-ledger-live
+  - coin/writing-tests
   - coin/build-ios-devapp
   - coin/build-android-devapp
   - coin/run-ios-android-devapp

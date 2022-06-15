@@ -26,13 +26,13 @@ It is designed for the end user frontend interface and is agnostic of the way it
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
-As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
+As you may see in `libs/ledger-live-common/src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
 
 ### Synchronization
 
 We usually group the `scanAccounts` and `sync` into the same file `js-synchronisation.ts` as they both use similar logic as a `getAccountShape` function passed to helpers.
 
-`src/families/mycoin/js-synchronisation.ts`:
+`libs/ledger-live-common/src/families/mycoin/js-synchronisation.ts`:
 
 ```ts
 import type { Account } from "../../types";
@@ -95,12 +95,12 @@ Under the hood of the `makeSync` helper, the returned value is an Observable of 
 - the updater is called in a reducer, and allows to produce an immutable state by applying the update to the latest account instance (with reconciliation on Ledger Live Desktop)
 - it's an observable, so we can interrupt it when/if multiple updates occurs
 
-In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `src/families/mycoin/js-postSyncPatch.js` file.
+In some cases, you might need to do a `postSync` patch to add some update logic after sync (<i>before the reconciliation that occurs on Ledger Live Desktop</i>). If this `postSync` function is complex, you should split this function in a `libs/ledger-live-common/src/families/mycoin/js-postSyncPatch.js` file.
 
 ### Reconciliation
 
 Currently, Ledger Live Desktop executes this bridge in a separate thread. Thus, the "avoid race condition" aspect of sync might not be respected since the UI renderer thread does not share the same objects.
-This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
+This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
 
 Since we might have added some coin-specific data in `Account`, we must also reconciliate it:
 
@@ -150,7 +150,8 @@ This cache contains the JSON serialized response from `preload` which is then hy
 
 Live-Common features will then be able to reuse those data anywhere (e.g. validating transactions) with `getCurrentMyCoinPreloadData`, or by subscribing to `getMyCoinPreloadDataUpdates` observable.
 
-`src/families/mycoin/preload.ts`:
+
+`libs/ledger-live-common/src/families/mycoin/preload.ts`:
 
 ```ts
 import { Observable, Subject } from "rxjs";
@@ -218,7 +219,7 @@ export const hydrate = (data: any) => {
 };
 ```
 
-Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/CurrencyBridge.md).
+Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live/wiki/LLC:CurrencyBridge).
 
 
 ## Starting with a mock
@@ -226,7 +227,7 @@ Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-
 A mock will help you test different UI flows on Desktop and Mobile.
 It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
 
-For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
+For example you can use it by doing `MOCK=1 pnpm dev:lld` on `ledger-live-desktop`
 
 ```ts
 import { BigNumber } from "bignumber.js";

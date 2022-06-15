@@ -10,7 +10,7 @@ layout: doc
 We call it JS Bridge because historically we used to write the support of blockchain in C++. It’s a bridge in JavaScript for the currency to communicate with the Live environment.
 
 
-`src/families/mycoin/bridge/js.ts` is the entry point of a coin integration. It must export two bridges:
+`libs/ledger-live-common/src/families/mycoin/bridge/js.ts` is the entry point of a coin integration. It must export two bridges:
 
 - a CurrencyBridge
 - an AccountBridge
@@ -20,7 +20,7 @@ We call it JS Bridge because historically we used to write the support of blockc
 A mock will help you test different UI flows on Desktop and Mobile.
 It's connected to any indexer / explorer and gives you a rough idea on how it will look like when connected to the UI.
 
-For example you can use it by doing `MOCK=1 yarn start` on `ledger-live-desktop`
+For example you can use it by doing `MOCK=1 pnpm dev:lld` on `ledger-live-desktop`
 
 ```ts
 import { BigNumber } from "bignumber.js";
@@ -263,7 +263,7 @@ In some cases, you might need to do a `postSync` patch to add some update logic 
 ### Reconciliation
 
 Currently, Ledger Live Desktop executes this bridge in a separate thread. Thus, the "avoid race condition" aspect of sync might not be respected since the UI renderer thread does not share the same objects.
-This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
+This may be improved in the future, but for updates to be reflected during sync, we implemented reconciliation in [src/reconciliation.js](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/reconciliation.ts), between the account that is in the renderer and the new account produced after sync.
 
 Since we might have added some coin-specific data in `Account`, we must also reconciliate it:
 
@@ -867,7 +867,7 @@ export default {
 };
 ```
 
-Of course if <i>MyCoin</i> has more complex transactions, you can add many arguments to CLI. You can also define you own cli commands for any specific data you would like to fetch. See [Polkadot CLI commands](https://github.com/LedgerHQ/ledger-live-common/blob/master/src/families/polkadot/cli-transaction.ts).
+Of course if <i>MyCoin</i> has more complex transactions, you can add many arguments to CLI. You can also define you own cli commands for any specific data you would like to fetch. See [Polkadot CLI commands](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot/cli-transaction.ts).
 
 Now you can try a `getTransactionStatus` or a `send`:
 
@@ -984,4 +984,4 @@ export const hydrate = (data: any) => {
 };
 ```
 
-Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live-common/blob/master/docs/CurrencyBridge.md).
+Read more on [Currency Bridge documentation](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/docs/CurrencyBridge.md).
