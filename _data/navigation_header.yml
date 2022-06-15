@@ -5,9 +5,6 @@ left:
   - title: Nano App
     url: /docs/nano-app/start-here
 
-  - title: Connect your app
-    url: /docs/transport/overview
-
   - title: Blockchain Support
     url: /docs/coin/general-process
 
@@ -17,10 +14,11 @@ left:
   - title: Live App
     url: /docs/live-app/start-here
 
-  - title: Tools
-    dropdown:
-    - title: Emulator
-      url: /docs/speculos/introduction
+  - title: Connect your app
+    url: /docs/transport/overview
+
+  - title: Ledger Connect
+    url: /docs/connect/introduction
 
   - title: Integration Stories
     url: https://blog.ledger.com/tag/stories/
