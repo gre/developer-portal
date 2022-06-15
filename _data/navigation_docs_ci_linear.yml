@@ -32,11 +32,11 @@
 - title: Testing
   docs:
   - coin/tests
+  - coin/general-cli-checklist
+  - coin/specific-cli-checklist
   - coin/writing-tests
+  - coin/bridge-test
   - coin/build-ios-devapp
   - coin/build-android-devapp
   - coin/run-ios-android-devapp
-  - coin/general-cli-checklist
-  - coin/specific-cli-checklist
   - coin/test-emulated-mobile
-  - coin/bridge-test

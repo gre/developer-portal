@@ -10,11 +10,9 @@ layout: doc
 
 ## Setting up the Test Toolchain
 
-Testing the Live-common Bridge [here](../bridge-test)
+Before testing, make sure you have [set up the CLI](./ledger-live-cli).
 
 ## What to test
 
-See General CLI Checklist - User tests [here](../general-cli-checklist)
-
-See Specific CLI Checklist - User tests [here](../specific-cli-checklist)
+[Click here](./writing-tests) to see how to write your tests.
 
