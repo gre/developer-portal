@@ -1,5 +1,5 @@
 ---
-title: Live Common Bridge Test Framework
+title: Live Common Bridge Test
 subtitle:
 tags: [transaction status, account synchronisation, accounts, run tests]
 category: Blockchain Support
@@ -10,27 +10,10 @@ layout: doc
 
 <!-- 2021-03-30 based on 1809613975 in Confluence -->
 
-Live-common lib is used to test Ledger Live in a headless way:
+This page describes how tests are implemented in order to test live-common bridge.
 
--   Currency Bridge: Scan accounts
-
--   Account Bridge: Sync, Check transaction status
-
-
-<!-- ------------- Image ------------- -->
-<div class="uk-text-center">
-    <a href="../images/bridge-test-framework.png" style="border-bottom:none;">
-      <img width="50%" src="../images/bridge-test-framework.png">
-    </a>
-</div>
-<!-- --------------------------------- -->
-
-
-This document describes how tests are implemented in order to test live-common bridge.
-<ul>
-<li>Transaction status</li>
-<li>Account synchronisation</li>
-</ul>
+- Transaction status
+- Account synchronisation
 
 
 The approach is to test transactions and accounts synchronisation for the different currencies supported in Ledger Live. The transactions are not Broadcasted to the blockchain. We just verify that the bridge behave properly regarding to a tx inputs (recipient address, amount, fee…).
@@ -145,10 +128,9 @@ const dataset: CurrenciesData<Transaction> = {
 For some currencies, more specific tests are specified in: `ledger-live/libs/ledger-live-common/src/families/<currency>/test-specifics.js`
 
 
-After adding or modify a test you must run:
+After adding or modify a test you must run from the root of `ledger-live`:
 ```sh
-cd cli && yarn build
-cd .. && yarn build
+pnpm build:cli
 ```
 
 
@@ -156,12 +138,12 @@ cd .. && yarn build
 
 The following command will produce snapshots used as expected results for the tests.
 ```sh
-yarn test -u
+pnpm common jest test -u
 ```
 
 **Run tests**:
 
 ```sh
-yarn test -t <currency>   #specific currency
-yarn test                 #all
+pnpm common jest test -t <currency>   #specific currency
+pnpm common jest test                 #all
 ```

@@ -8,7 +8,7 @@ toc: true
 layout: doc
 ---
 
-## test-dataset
+## Writing test-dataset
 
 This file allows us to simulate some transactions of our implementation.
 
@@ -29,7 +29,7 @@ export default dataset: DatasetTest<Transaction> = {
 
 Then connect your nano with a seed that you want to freeze (that means you don't want to do anymore transaction with that seed, or you will need to regenerate the snapshot everytime) and execute in the CLI the command :
 ```sh
-`ledger-live generateTestScanAccounts -c mycoin`
+pnpm cli:run generateTestScanAccounts -c mycoin
 ```
 
 The expected output is:
@@ -153,7 +153,7 @@ const dataset: DatasetTest<Transaction> = {
 export default dataset;
 ```
 
-## How does a test work?
+### How does a test work?
 
 The test-dataset simulates an object `Transaction` that we have as input, and a `TransactionStatus` as an output that we compare with an expected status.
 
@@ -178,30 +178,30 @@ type TestTransaction =
 
 This `TestTransaction` uses as mainAccount the account that we have set before and then execute the command `getTransactionStatus` by using the `transaction` object as input.
 
-## What are the focus when testing?
+### Using test-specifics if you need more flexibility
 
 We tried to cover as many cases as possible that are in `getTransactionStatus`.
 
 You can also check `test-specifics.ts` if you want to mock some specific part that is not covered by transactionStatus.
 
+## Testing the transaction broadcast with the bot
+
 Transaction broadcast is an exception, it is tested differently, by a tool that we call "the bot". See below.
 
---------------
-
-Requirement :
+### Requirements
 
 - Docker
 - An elf of the Nano app for LNS (create a empty folder with like : `<device>/<firmware version>/<appName>` example `nanos/1.6.1/mycoin`. The build of your Nano app must have the following format: `app_VERSION.elf`, for example `app_1.2.3.elf`)
 - Some currencies of the coin
 
-## What is this testing?
+### What is this testing?
 
 We are testing the broadcast part and sync part.
 
-## How it works
+### How it works
 
 ```sh
-ledger-live cleanSpeculos && SEED="generate a seed for testing" COINAPPS="/path/to/coin/apps/folder" ledger-live bot -c mycoin
+pnpm cli:run cleanSpeculos && SEED="generate a seed for testing" COINAPPS="/path/to/coin/apps/folder" ledger-live bot -c mycoin
 ```
 
 - Generate a SEED, [iancoleman.io/bip39/](https://iancoleman.io/bip39/). Use this seed for testing purpose only, then use the command before to have an adresse and send some currencies into it
@@ -210,7 +210,7 @@ ledger-live cleanSpeculos && SEED="generate a seed for testing" COINAPPS="/path/
 
 - You also need to specify how the bot will react when he encounter certain screen, create `speculos-deviceActions.ts`
 
-## How to define a test
+### How to define a test
 
 `speculos-deviceActions.ts`
 
@@ -347,9 +347,4 @@ const mycoin: AppSpec<Transaction> = {
 
 export default { mycoin };
 ```
-
-
-[//]: > ** **Internal Note ** **
-[//]: >
-[//]: > Still useful? <https://github.com/LedgerHQ/ledger-live-common/tree/master/cli>
 
