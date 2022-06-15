@@ -9,7 +9,7 @@ hero:
     icon: cogs
 ---
 
-{% include boxes_gen.html columns="4" %}
+{% include boxes_gen.html columns="5" %}
 
 <!-- <div class="uk-visible@m">
 {% include home-video.html %}
