@@ -15,8 +15,8 @@
 - title: Setup and build
   docs:
   - coin/live-common
-  - coin/ll-setup
   - coin/ledger-live-cli
+  - coin/ll-setup
 
 - title: Coding
   docs:

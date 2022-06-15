@@ -1,5 +1,5 @@
 ---
-title: Ledger Live Setup
+title: Requirements and installation
 subtitle:
 tags: [Ledger Live Common, typescript, environment variables, local packages]
 category: Blockchain Support
@@ -83,67 +83,3 @@ Here is a typical family folder structure (TS integration):
 {% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot'>Polkadot integration</a>" %}
 <!--  -->
 
-## Building the CLI for Development
-
-To install the CLI do:
-
-```sh
-npm i --global @ledgerhq/live-cli
-```
-
-To publish:
-
-```sh
-# build the cli for publishing
-pnpm build:cli
-```
-
-To use it:
-```sh
-pnpm run:cli <command> args
-```
-
-You will find [the compete documentation here](https://github.com/LedgerHQ/ledger-live/tree/develop/apps/cli).
-
-
-### Environment Variables
-
-Ledger Live provides a lot of flexibility through ENV variables. You can export them, define them before calling cli or use a tool like [direnv](https://direnv.net/).
-
-To list them all, you can execute:
-
-```sh
-pnpm run:cli envs
-```
-
-The one you will use the most before releasing you integration is:
-
-```sh
-EXPERIMENTAL_CURRENCIES=mycoin
-```
-
-to use them : 
-```sh
-EXPERIMENTAL_CURRENCIES=mycoin pnpm run:cli -c mycoin --amount 0.1 ---recipient mycoinaddr -i 0
-```
-
-or for LLD :
-```sh
-EXPERIMENTAL_CURRENCIES=mycoin pnpm dev:lld
-```
-
-It will consider `mycoin` as supported (you can also add it to the supported currencies in `src/ledger-live-common-setup-base.ts`).
-
-**For clarity, we will omit this environment variable in this document.**
-
-If needed, you can add your own in `src/env.ts` (always try to add a MYCOIN\_ prefix to avoid collisions):
-
-```ts
-// const envDefinitions = { ...
-  MYCOIN_API_ENDPOINT: {
-    def: "https://mycoin.coin.ledger.com",
-    parser: stringParser,
-    desc: "API for mycoin",
-  },
-// }
-```
