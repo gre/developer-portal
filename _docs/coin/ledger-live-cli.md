@@ -48,8 +48,6 @@ If everything is fine, you are ready to start integrating your blockchain!
 
 #### Ledger Live CLI cmd example
 
-Do not forget to clean dbdata and libcoredb directories between cmds.
-
 ```sh
 pnpm run:cli sync -c bitcoin -i 0 -s native_segwit   # using device
 pnpm run:cli sync -c bitcoin --xpub 'xpub......'    # using xpub
