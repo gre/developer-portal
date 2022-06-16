@@ -44,7 +44,7 @@ There are 2 mandatory icons that should be provided for Ledger to release an app
 #### Device icon
 
 - Pixel art icon
-- Black and white only
+- Black on a white background for Nano S and white on a black background for Nano S Plus and X
 - Safe area: 2px
 
 1. Create the 16x16px Nano S icon using the template below
