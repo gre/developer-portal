@@ -2,7 +2,7 @@
 title: Sell
 subtitle:
 tags: [non dapp, live app, ledger live app]
-category: Live Application
+category: "Live Application: Non-DApp integration"
 toc: true
 layout: doc
 ---

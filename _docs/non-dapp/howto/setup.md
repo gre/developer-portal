@@ -2,7 +2,7 @@
 title: Setup
 subtitle:
 tags: []
-category: Live Application
+category: "Live Application: Non-DApp integration"
 toc: true
 layout: doc
 ---
