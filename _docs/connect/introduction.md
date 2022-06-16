@@ -9,6 +9,10 @@ layout: doc
 
 ## Introduction
 
+- Intro written by Noe (in lieu of FAQ) (TBD)
+- How it is different to the other integrations here (TBD by us)
+
+
 Ledger Connect allows you to use any Web3 Apps with your Ledger Nano X to prevent hacks, scams, and keep your crypto and NFTs secure.
 
 This version supports Safari on iOS only. It is released as a Safari Web Extension, but will be shipped together with the Ledger Live mobile app in the future. We’re currently in beta, via the Apple TestFlight app.
