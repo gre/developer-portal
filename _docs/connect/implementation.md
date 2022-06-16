@@ -10,7 +10,7 @@ layout: doc
 
 ## 1- Join Discord
 
-Go to [Ledger OP3N discord server](https://discord.gg/Ledger), and head over to the Ledger Connect channel
+Go to the [Ledger OP3N discord server](https://discord.gg/Ledger), and head over to the Ledger Connect channel
 
 ## 2- APIs
 
