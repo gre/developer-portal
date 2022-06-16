@@ -10,7 +10,7 @@ layout: doc
 
 ## 1- Join Discord
 
-Go to [Ledger OP3N discord server](https://discord.gg/Ledger), and head to the Ledger Connect channel
+Go to [Ledger OP3N discord server](https://discord.gg/Ledger), and head over to the Ledger Connect channel
 
 ## 2- APIs
 
@@ -41,7 +41,7 @@ Connect injects a web3 provider (EIP-1193) similar to other extensions and suppo
 
 ## 3- Web3Checks (optional)
 
-You can be added to this Web3Checks whitelist to avoid users receiving a warning. Please send us your DApp domain name, DApp name and token name if any, using the form below.
+You can be added to the Web3Checks whitelist to avoid users receiving a warning. Please send us your DApp domain name, DApp name and token name if any, using the form below.
 
 <div data-tf-widget="XaCLvew6" data-tf-iframe-props="title=My typeform" data-tf-medium="snippet" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 
@@ -53,5 +53,5 @@ You can be added to this Web3Checks whitelist to avoid users receiving a warning
 
 ## 6- Communication
 
-When you have finished the development of your DApp, please go to Discord and contact us. We will then agree with you on how and when to make announcements on social networks.
+When you have finished the development of your DApp, please go over to Discord and contact us. We will then agree with you on how and when to make announcements on social networks.
 
