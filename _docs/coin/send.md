@@ -427,7 +427,7 @@ import { FeeNotLoaded } from "@ledgerhq/errors";
 import type { Transaction } from "./types";
 import type { Account, Operation, SignOperationEvent } from "../../types";
 
-import { open, close } from "../../hw";
+import { withDevice } from "../../hw/deviceAccess";
 import { encodeOperationId } from "../../operation";
 import MyCoin from "./hw-app-mycoin/MyCoin";
 
@@ -481,11 +481,12 @@ const signOperation = ({
   deviceId: *,
   transaction: Transaction,
 }): Observable<SignOperationEvent> =>
-  new Observable((o) => {
-    async function main() {
-      const transport = await open(deviceId);
-      try {
-        o.next({ type: "device-signature-requested" });
+  withDevice(deviceId)((transport) =>
+    Observable.create((o) => {
+      async function main() {
+        o.next({
+          type: "device-signature-requested",
+        });
 
         if (!transaction.fees) {
           throw new FeeNotLoaded();
@@ -518,15 +519,14 @@ const signOperation = ({
             expirationDate: null,
           },
         });
-      } finally {
-        close(transport, deviceId);
-      }
-    }
+      } 
+
     main().then(
       () => o.complete(),
       (e) => o.error(e)
     );
-  });
+  })
+);
 
 export default signOperation;
 ```
