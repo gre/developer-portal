@@ -11,6 +11,7 @@
   docs:
   - speculos/user/usage
   - speculos/user/docker
+  - speculos/user/macm1
   - speculos/user/clients
   - speculos/user/debug
   - speculos/user/api
