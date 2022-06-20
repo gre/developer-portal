@@ -2,7 +2,7 @@
 title: Swap (TDB)
 subtitle:
 tags: []
-category: Live Application
+category: "Live Application: Non-DApp integration"
 layout: doc
 ---
 

@@ -2,7 +2,7 @@
 title: Release
 subtitle:
 tags: []
-category: Live Application
+category: "Live Application: Non-DApp integration"
 layout: doc
 toc: true
 ---

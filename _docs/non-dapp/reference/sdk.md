@@ -2,7 +2,7 @@
 title: Live App SDK
 subtitle:
 tags: [non dapp, live app, ledger live app, live application, SDK]
-category: Live Application
+category: "Live Application: Non-DApp integration"
 toc: true
 layout: doc
 ---
