@@ -6,7 +6,7 @@ category: Speculos
 author:
 toc: true
 layout: doc
-sort: 5
+sort: 4
 ---
 
 Clients can communicate with the emulated device using APDUs, as usual. Speculos
