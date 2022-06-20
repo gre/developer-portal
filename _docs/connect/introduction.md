@@ -13,7 +13,7 @@ layout: doc
 - How it is different to the other integrations here (TBD by us)
 
 
-Ledger Connect allows you to use any Web3 Apps with your Ledger Nano X to prevent hacks, scams, and keep your crypto and NFTs secure.
+Ledger Connect allows you to use any Web3 App with your Ledger Nano X to prevent hacks, scams, and keep your crypto and NFTs secure.
 
 This version supports Safari on iOS only. It is released as a Safari Web Extension, but will be shipped together with the Ledger Live mobile app in the future. We’re currently in beta, via the Apple TestFlight app.
 
@@ -26,7 +26,7 @@ The only prerequisites concern the Blockchains & Networks which are currently su
 - Ethereum (EIP-712, EIP-191, and EIP-1193)
 - Solana
 
-More platforms and blockchains to come at a later date.
+More blockchains to come at a later date.
 
 
 ## Summary of actions
@@ -36,5 +36,6 @@ More platforms and blockchains to come at a later date.
 3. Web3Checks (optional): Add your DApp to the whitelist using the form.
 4. Add the Ledger logo to your DApp
 5. Testing (TBD)
-6. Go to Discord and agree on an announcement on socials
+6. Go to Discord to discuss announcements on social networks
 
+These actions are detailed on the next page.
