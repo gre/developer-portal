@@ -1,5 +1,5 @@
 ---
-title: Docker
+title: Docker with an M1 chip
 subtitle:
 tags: [use speculos, emulate, emulator, Nano X emulator]
 category: Speculos
