@@ -46,7 +46,7 @@ You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/pack
 [In this folder](https://drive.google.com/drive/folders/1KWQwTQJTnBMESyrpt17Cn0hT1HmQ_8BH?usp=sharing) your will find Ledger's logo to display in your application. 
 
 
-## 4- Web3Checks (optional)
+## 4- Web3Checks (recommended)
 
 You can be added to the Web3Checks whitelist to avoid users receiving a warning. Please send us your DApp domain name, DApp name and token name if any, using the form below.
 
