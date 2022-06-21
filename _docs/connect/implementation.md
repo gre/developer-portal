@@ -43,7 +43,7 @@ You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/pack
 
 ## 3- Ledger logo
 
-[In this folder](https://drive.google.com/drive/folders/1NxfzuhheZ__RgVTFEgGxnY-E3PvK4YHI?usp=sharing ) your will find Ledger's logo to display in your application. 
+[In this folder](https://drive.google.com/drive/folders/1KWQwTQJTnBMESyrpt17Cn0hT1HmQ_8BH?usp=sharing) your will find Ledger's logo to display in your application. 
 
 
 ## 4- Web3Checks (optional)
