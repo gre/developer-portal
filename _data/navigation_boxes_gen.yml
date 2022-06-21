@@ -6,12 +6,6 @@
   doc: nano-app/start-here
   image: /uploads//images/home-covers/nano-app.jpg
 
-- title: Connect your app
-  desc: Support a Nano on your desktop/web app
-  icon: connect
-  doc: transport/overview
-  image: /uploads//images/home-covers/connect-app.jpg
-
 - title: Blockchain support
   desc: How to get your currency supported on Ledger Live
   icon: coin
@@ -24,3 +18,8 @@
   doc: live-app/start-here
   image: /uploads//images/home-covers/live-app.jpg
 
+- title: Connect your app
+  desc: Support a Nano on your desktop/web app
+  icon: connect
+  doc: transport/overview
+  image: /uploads//images/home-covers/connect-app.jpg
