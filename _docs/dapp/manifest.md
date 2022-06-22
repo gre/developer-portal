@@ -92,7 +92,7 @@ Here is the list of the mandatory fields required in your Manifest file:
         </tr>
         <tr>
             <td><code>name</code></td>
-            <td>The name of your application ("Lido" in this example). </td>
+            <td>The name of your application ("Lido" in this example).</td>
             <td>String</td>
         </tr>
         <tr>
@@ -122,7 +122,7 @@ Here is the list of the mandatory fields required in your Manifest file:
         </tr>
         <tr>
             <td><code>apiVersion</code></td>
-            <td>The API version, by default "0.0.1"..</td>
+            <td>The API version, by default "0.0.1".</td>
             <td>String</td>
         </tr>
         <tr>
@@ -137,13 +137,12 @@ Here is the list of the mandatory fields required in your Manifest file:
         </tr>
         <tr>
             <td><code>categories</code></td>
-            <td>A JSON array of metadata information about your application. For instance : ["staking","defi" ]
-Type: list(string).</td>
+            <td>A JSON array of metadata information about your application. For instance : ["staking","defi" ]. You can add as many as you want. It is not used for the moment but will be used for filtering in the future.</td>
             <td>List(string)</td>
         </tr>
         <tr>
             <td><code>currencies</code></td>
-            <td>A JSON array of the currency/network being used by your application. For instance ["ethereum",”polygon”].</td>
+            <td>A JSON array of the currency/network being used by your application. For instance ["ethereum",”polygon”]. Leave blank if the App does not require any currency.</td>
             <td>List(string)</td>
         </tr>
         <tr>
@@ -154,12 +153,12 @@ Type: l18n strings.</td>
         </tr>
         <tr>
             <td><code>permissions</code></td>
-            <td></td>
+            <td>Leave blank for now.</td>
             <td></td>
         </tr>
         <tr>
             <td><code>domains</code></td>
-            <td></td>
+            <td>Leave blank for now.</td>
             <td></td>
         </tr>
     </tbody>
