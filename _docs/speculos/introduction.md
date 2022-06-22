@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Speculos emulator
 subtitle:
 tags: [speculos, emulate, emulator, Nano X emulator]
 category: Speculos

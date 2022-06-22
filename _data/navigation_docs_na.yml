@@ -17,6 +17,7 @@
   - nano-app/load
   - nano-app/troubleshooting
   - nano-app/debug
+  - speculos/introduction
 
 - title: Requirements
   docs:
