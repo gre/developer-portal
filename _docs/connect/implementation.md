@@ -18,7 +18,7 @@ Go to the [Ledger OP3N discord server](https://discord.gg/Ledger), and head over
 
 Connect injects a web3 provider (EIP-1193) similar to other extensions and supports the same APIs. [add details]
 
-1. Call `ethereum.isLedgerConnect` to determine if the user has the extension installed
+1. Check if `ethereum.isLedgerConnect` is true to determine if the user has the extension installed
 
 2. Use common Ethereum APIs. We currently support the following:
 	- net_version
@@ -33,8 +33,7 @@ Connect injects a web3 provider (EIP-1193) similar to other extensions and suppo
 
 ### Web3-react NPM package
 
-You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/package/@ledgerhq/web3-react-ledgerconnect-connector) in your Web3-react project
-
+You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/package/@ledgerhq/web3-react-ledgerconnect-connector) together with the Web3-react wallet library in your project.
 
 <!--  -->
 {% include alert.html style="tip" text="Eventually, you will be able to integrate Ledger Connect to your DApp either with our APIs and a SDK or with wallet librairies. You will be informed on Discord when this will be available." %}
