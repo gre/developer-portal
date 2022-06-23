@@ -8,10 +8,6 @@ toc: true
 layout: doc
 ---
 
-To be able to test and integrate your application, you first need to write your application Manifest file.
-This file must contain some mandatory information, such as the app package names, the components, the permissions needed, the hardware and software features, etc.
-
-
 If you have followed instructions on the previous page, you should now be ready to interact with the Dapp directly from Ledger Live interface to make sure all the basic features work as expected.
 
 To test and integrate your application, you first need to write your application Manifest file.
