@@ -26,7 +26,7 @@ Launching Ledger Connect doesn’t mean that we are stopping or reducing collabo
 
 ### What is the difference with "Connect your app"?
 
-The [**Connect your app**](../transport/overview/) section helps you build the compatibility between a DApp, a non-DApp or wallet and a Ledger device, while this section helps you build the compatibility bewteen your DApp and the Ledger Connect browser extension.
+The [**Connect your app**](../../transport/overview/) section helps you build the compatibility between a DApp, a non-DApp or wallet and a Ledger device, while this section helps you build the compatibility bewteen your DApp and the Ledger Connect browser extension.
 
 Ledger Connect will eventually replace the need to implement a custom integration for your DApp. The custom integration will still be useful for wallets and non-DApp or for other types of connectivity than Bluetooth
 
