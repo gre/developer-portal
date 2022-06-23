@@ -8,7 +8,7 @@ toc: true
 layout: doc
 ---
 
-From step 3 to step 6, you work will be implemented in the [Ledger Live repository](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common). 
+From step 3 to step 6, you work will be implemented in the [Ledger Live repository](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common).
 
 ### Derive Address from device
 
@@ -61,18 +61,25 @@ Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live/tr
     },
   // });
   ```
-2. add the mode to family in `legacyDerivations`:
+2. Add the mode to family in `legacyDerivations`:
   ```ts
   // const legacyDerivations: $Shape<CryptoCurrencyConfig<DerivationMode[]>> = {
   // ...
     mycoin: ["mycoinbip44h"],
   // };
   ```
-3. disable the default use of BIP44 in `disableBIP44`:
+3. Disable the default use of BIP44 in `disableBIP44`:
   ```ts
   // const disableBIP44 = {
   // ...
     mycoin: true,
+  // };
+  ```
+4. Add the coin to `seedIdentifierPath`:
+  ```ts
+  // const seedIdentifierPath = {
+  // ...
+    mycoin: `${purpose}'/${coinType}'/0'/0'/0'`,
   // };
   ```
 
