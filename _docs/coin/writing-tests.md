@@ -8,26 +8,30 @@ toc: true
 layout: doc
 ---
 
-## Writing test-dataset
+## Writing bridge.integration.test.ts
 
-This file allows us to simulate some transactions of our implementation.
+Any test that requires HTTP to work should be moved in an integration test using file name convention `.integration.test.ts`. In the case of testing a coin integration, we usually will name that file `bridge.integration.test.ts` and we recommend to use the `testBridge` utility.
 
-First, create a `test-dataset.ts` file and fill it with this empty template :
+`testBridge` utility takes a "DatasetTest" in parameter which will drives many kind of integration tests.
+
+First, create a `bridge.integration.test.ts` file and fill it with this empty template:
 
 ```ts
+import "../../__tests__/test-helpers/setup";
+import { testBridge } from "../../__tests__/test-helpers/bridge";
 import type { DatasetTest } from "../../types";
 import type { Transaction } from "./types";
 
-export default dataset: DatasetTest<Transaction> = {
+const dataset: DatasetTest<Transaction> = {
   implementations: ["js"],
   currencies: {
-    mycoin: {
-    }
-  }
-}
+    mycoin: {},
+  },
+};
 ```
 
-Then connect your nano with a seed that you want to freeze (that means you don't want to do anymore transaction with that seed, or you will need to regenerate the snapshot everytime) and execute in the CLI the command :
+You can also generate it with a Ledger device with a seed that you want to freeze (that means you don't want to do anymore transaction with that seed, or you will need to regenerate the snapshot everytime) and execute in the CLI the command:
+
 ```sh
 pnpm cli:run generateTestScanAccounts -c mycoin
 ```
@@ -35,6 +39,8 @@ pnpm cli:run generateTestScanAccounts -c mycoin
 The expected output is:
 
 ```ts
+import "../../__tests__/test-helpers/setup";
+import { testBridge } from "../../__tests__/test-helpers/bridge";
 import type { CurrenciesData } from "../../../types";
 import type { Transaction } from "../types";
 
@@ -57,13 +63,14 @@ const dataset: CurrenciesData<Transaction> = {
   ],
 };
 
-export default dataset;
+testBridge(dataset);
 ```
 
 Just keep the part with the scanAccounts and put it the `mycoin` part :
 
 ```ts
-
+import "../../__tests__/test-helpers/setup";
+import { testBridge } from "../../__tests__/test-helpers/bridge";
 import type { DatasetTest } from "../../types";
 import type { Transaction } from "./types";
 
@@ -91,14 +98,15 @@ const dataset: DatasetTest<Transaction> = {
   },
 };
 
-export default dataset;
+testBridge(dataset);
 ```
 
 Then, get info on the accounts that you want to freeze, they will be used as references for our tests.
 It should look something like this:
 
 ```ts
-
+import "../../__tests__/test-helpers/setup";
+import { testBridge } from "../../__tests__/test-helpers/bridge";
 import type { DatasetTest } from "../../types";
 import type { Transaction } from "./types";
 
@@ -150,39 +158,38 @@ const dataset: DatasetTest<Transaction> = {
   },
 };
 
-export default dataset;
+testBridge(dataset);
 ```
 
 ### How does a test work?
 
-The test-dataset simulates an object `Transaction` that we have as input, and a `TransactionStatus` as an output that we compare with an expected status.
+The transaction tests will simulates an object `Transaction` that we have as input, and a `TransactionStatus` as an output that we compare with an expected status.
 
 There's some generic tests that are already made in `src/__tests__/test-helpers/bridge.ts` that are mandatory to pass.
 
 To implement your own test in `test-dataset.ts`, add an Object typed like this in the array of `transactions`:
 
 ```ts
-import Transaction from "./types"
+import Transaction from "./types";
 
-type TestTransaction =
-    {
-        name: string,
-        transaction: Transaction,
-        expectedStatus: {
-            amount: BigNumber,
-            errors: {},
-            warnings: {}
-        }
-    }
+type TestTransaction = {
+  name: string;
+  transaction: Transaction;
+  expectedStatus: {
+    amount: BigNumber;
+    errors: {};
+    warnings: {};
+  };
+};
 ```
 
 This `TestTransaction` uses as mainAccount the account that we have set before and then execute the command `getTransactionStatus` by using the `transaction` object as input.
 
-### Using test-specifics if you need more flexibility
+### Use regular Jest tests if you need more flexibility
 
 We tried to cover as many cases as possible that are in `getTransactionStatus`.
 
-You can also check `test-specifics.ts` if you want to mock some specific part that is not covered by transactionStatus.
+You are free to define your own extra tests in `bridge.integration.test.ts` (or any other integration test file) for more advanced tests that wouldn't be covered by the bridge generic tests.
 
 ## Testing the transaction broadcast with the bot
 
@@ -225,7 +232,6 @@ expectedValue: string of what we want to compare
 You can use the following example to help you start to write how the bot will react :
 
 ```ts
-
 import type { DeviceAction } from "../../bot/types";
 import type { Transaction } from "./types";
 import { formatCurrencyUnit } from "../../currencies";
@@ -347,4 +353,3 @@ const mycoin: AppSpec<Transaction> = {
 
 export default { mycoin };
 ```
-

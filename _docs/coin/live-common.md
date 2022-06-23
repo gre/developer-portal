@@ -45,7 +45,7 @@ All integrated coins are implemented in a `libs/ledger-live-common/src/families`
 ### Installation
 
 - Fork and clone the `ledger-live` repository [https://github.com/LedgerHQ/ledger-live](https://github.com/LedgerHQ/ledger-live)
-- `cd ledger-live` 
+- `cd ledger-live`
 - Install with `pnpm i`
 
 ## Structure
@@ -74,12 +74,13 @@ Here is a typical family folder structure (TS integration):
 ├── react.ts
 ├── specs.ts
 ├── speculos-deviceActions.ts
-├── test-dataset.ts
+├── bridge.integration.test.ts
 ├── test-specifics.ts
 └── types.ts
 ```
 
 <!--  -->
-{% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot'>Polkadot integration</a>" %}
-<!--  -->
 
+{% include alert.html style="note" text="You can refer to existing implementations to complete given examples, like <a href='https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/polkadot'>Polkadot integration</a>" %}
+
+<!--  -->
