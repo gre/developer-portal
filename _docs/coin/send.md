@@ -597,6 +597,9 @@ export default getDeviceTransactionConfig;
 {% include alert.html style="important" text="Since a not-well-informed user could be tricked to sign transaction with wrong recipients, we never show the <code>destination</code> fields in Ledger Live applications, in order for users to get used to always verify it externally." %}
 <!--  -->
 
+<!--  -->
+{% include alert.html style="tip" text="If extra values are being calculated, make sure they match what appears on the device (i.e. numerical precision)." %}
+<!--  -->
 
 ### Broadcast
 
@@ -680,6 +683,10 @@ const estimateMaxSpendable = async ({
 
 export default estimateMaxSpendable;
 ```
+
+<!--  -->
+{% include alert.html style="tip" text="If it takes a long time for transactions to be confirmed on-chain and included in a sync, you might need to include the pending operations in this calculation." %}
+<!--  -->
 
 Here, we only return the spendableBalance, but without the fees. Since Fee estimation can be used elsewhere (like in the `prepareTransaction`), you can put it's logic in a dedicated `js-getFeesForTransaction.ts` file. Here is an example for a fee fetched from network from an unsigned transaction (a bit like Polkadot), but you can also have specific calculation, with fee-per-byte value provided by the blockchain.
 

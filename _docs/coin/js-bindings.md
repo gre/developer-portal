@@ -18,7 +18,11 @@ The app implementation should provide at least 2 methods:
 * `signTransaction(path: string, message)`: sign a raw message for provided BIP32 path
 
 <!--  -->
-{% include alert.html style="tip" text="Arguments are provided as example, but try to follow as much as possible other implementations for easy integration." %}
+{% include alert.html style="important" text="If the <code>display</code> argument in <code>getAddress</code> doesn't work, get in touch with us - a necessary change may need to be made to the Nano app." %}
+<!--  -->
+
+<!--  -->
+{% include alert.html style="tip" text="Arguments are provided as example, but try to follow as much as possible other implementations for easy integration. If stuck, find and read your coin's Nano app documentation (<code>doc/api.asc</code>)." %}
 <!--  -->
 
 Any features provided by the Nano App should be provided through these JS bindings, such as `getAppConfiguration` or any blockchain-specific capabilities.
