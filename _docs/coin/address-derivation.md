@@ -88,7 +88,6 @@ See [Derivation documentation](https://github.com/LedgerHQ/ledger-live/wiki/LLC:
 You can check that the derivationMode is correct by executing:
 
 ```sh
-ledger-live derivation --currency mycoin
-
-#>  default: MyCoin 1: 44'/8008'/<account>'/<change>/<address>
+pnpm build:cli
+pnpm run:cli  getAddress --currency=mycoin --path="44'/8008'/0'/0/0" --derivationMode=""
 ```
