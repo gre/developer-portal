@@ -1,5 +1,5 @@
 ---
-title: Building de CLI for development
+title: Building the CLI for development
 subtitle:
 tags: [clone ledger live]
 category: Blockchain Support
