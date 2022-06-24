@@ -50,7 +50,7 @@ If <i>MyCoin</i> has a conventional derivation path (BIP44), Ledger Live should 
 
 **If you need to use another derivation mode:**
 
-Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/derivation.ts):
+Make changes to [`libs/ledger-live-common/src/derivation.ts`](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/derivation.ts):
 
 1. Add a new derivation mode with `overridesDerivation`:
   ```ts
@@ -83,7 +83,7 @@ Make changes to [`src/derivation.ts`](https://github.com/LedgerHQ/ledger-live/tr
   // };
   ```
 
-See [Derivation documentation](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/docs/derivation.md) for further details.
+See [Derivation documentation](https://github.com/LedgerHQ/ledger-live/wiki/LLC:derivation) for further details.
 
 You can check that the derivationMode is correct by executing:
 
