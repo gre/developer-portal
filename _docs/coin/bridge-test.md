@@ -136,14 +136,8 @@ pnpm common build
 
 **Record new outputs**:
 
-The following command will produce snapshots used as expected results for the tests.
+When running the integration tests, new snapshots will be generated that you can commit as expected results for the tests.
 
 ```sh
-pnpm common test -u
-```
-
-**Run tests:**
-```sh
-pnpm common test -t <currency>   #specific currency
-pnpm common test                 #all
+pnpm common ci-test-integration <family>
 ```

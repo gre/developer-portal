@@ -10,9 +10,9 @@ layout: doc
 
 ## Writing bridge.integration.test.ts
 
-Any test that requires HTTP to work should be moved in an integration test using file name convention `.integration.test.ts`. In the case of testing a coin integration, we usually will name that file `bridge.integration.test.ts` and we recommend to use the `testBridge` utility.
+Any test that requires HTTP to work should be moved in an integration test using the file name convention `.integration.test.ts`. In the case of testing a coin integration, we usually name that file `bridge.integration.test.ts` and we recommend to use the `testBridge` utility.
 
-`testBridge` utility takes a "DatasetTest" in parameter which will drives many kind of integration tests.
+The `testBridge` utility takes a "DatasetTest" as a parameter which will conduct many kind of integration tests.
 
 First, create a `bridge.integration.test.ts` file and fill it with this empty template:
 
@@ -30,7 +30,7 @@ const dataset: DatasetTest<Transaction> = {
 };
 ```
 
-You can also generate it with a Ledger device with a seed that you want to freeze (that means you don't want to do anymore transaction with that seed, or you will need to regenerate the snapshot everytime) and execute in the CLI the command:
+You can also generate it with a Ledger device, with a seed that you want to freeze (meaning you don't want to do anymore transaction with that seed, or you will need to regenerate the snapshot everytime) and execute in the CLI the command:
 
 ```sh
 pnpm cli:run generateTestScanAccounts -c mycoin
@@ -163,7 +163,7 @@ testBridge(dataset);
 
 ### How does a test work?
 
-The transaction tests will simulates an object `Transaction` that we have as input, and a `TransactionStatus` as an output that we compare with an expected status.
+The transaction tests simulate an object `Transaction` as input, and a `TransactionStatus` as an output that we compare with an expected status.
 
 There's some generic tests that are already made in `src/__tests__/test-helpers/bridge.ts` that are mandatory to pass.
 
@@ -189,7 +189,7 @@ This `TestTransaction` uses as mainAccount the account that we have set before a
 
 We tried to cover as many cases as possible that are in `getTransactionStatus`.
 
-You are free to define your own extra tests in `bridge.integration.test.ts` (or any other integration test file) for more advanced tests that wouldn't be covered by the bridge generic tests.
+You are free to define your own extra tests in `bridge.integration.test.ts` (or any other integration test file) for more advanced tests that would not be covered by the bridge generic tests.
 
 ## Testing the transaction broadcast with the bot
 
