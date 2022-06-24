@@ -32,7 +32,6 @@ All integrated coins are implemented in a `libs/ledger-live-common/src/families`
 
 ### Development tools (used or required)
 
-- [yalc](../yalc) for locally linking ledger-live-common with other projects
 - [eslint](https://github.com/eslint/eslint) - ensure it's working in your IDE ([vscode plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint))
 - [prettier](https://github.com/prettier/prettier) - through an eslint-plugin
 - [typescript](https://www.typescriptlang.org/) - ensure it works fine with your IDE
