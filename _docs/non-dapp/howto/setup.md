@@ -7,7 +7,7 @@ toc: true
 layout: doc
 ---
 
-To develop an application able to communicate with Ledger Live, you will need to use our [Live App SDK](../reference/sdk/). 
+To develop an application able to communicate with Ledger Live, you will need to use our [Live App SDK](../../reference/sdk/). 
 
 ## Install the SDK npm dependency
 
