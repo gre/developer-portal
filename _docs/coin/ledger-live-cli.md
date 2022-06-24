@@ -67,17 +67,17 @@ The one you will use the most before releasing you integration is:
 EXPERIMENTAL_CURRENCIES=mycoin
 ```
 
-to use them : 
+to use them:
 ```sh
 EXPERIMENTAL_CURRENCIES=mycoin pnpm run:cli -c mycoin --amount 0.1 ---recipient mycoinaddr -i 0
 ```
 
-or for LLD :
+or for LLD:
 ```sh
 EXPERIMENTAL_CURRENCIES=mycoin pnpm dev:lld
 ```
 
-It will consider `mycoin` as supported (you can also add it to the supported currencies in `src/ledger-live-common-setup-base.ts`).
+It will consider `mycoin` as supported (you can also add it to the supported currencies in `cli/src/live-common-setup-base.ts`).
 
 **For clarity, we will omit this environment variable in this document.**
 
