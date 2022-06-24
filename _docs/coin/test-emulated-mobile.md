@@ -1,5 +1,5 @@
 ---
-title: Run tests on emulated Android and iOS
+title: Use your Nano device through HTTP proxy
 subtitle:
 tags: [emulator, live-common, ledger-live-mobile, llm]
 category: Blockchain Support
@@ -11,10 +11,7 @@ layout: doc
 <!-- 2021-03-30 based on 2548924630 in Confluence -->
 
 <!--  -->
-{% include alert.html style="tip" text="<b>Prerequisite</b> - Your computer is expected to have been set up accordingly. Please follow the following guides for this purpose:
-<ul>
-<li><a href='../build-android-devapp/' class='alert-link'>Building Android Dev App</a></li>
-<li><a href='../build-ios-devapp/' class='alert-link'>Building iOS Dev App</a></li></ul>" %}
+{% include alert.html style="tip" text="<b>Prerequisite</b> - Your computer is expected to have been set up accordingly. Please follow the following guides for [building on mobile](https://github.com/LedgerHQ/ledger-live/tree/develop/apps/ledger-live-mobile)." %}
 <!--  -->
 
 <!--  -->
