@@ -1,8 +1,8 @@
 name: Spellcheck
 on:
-  # pull_request:
-  #   paths:
-  #   - '**.md'
+  pull_request:
+    paths:
+    - '**.md'
 jobs:
   spelling:
     runs-on: ubuntu-latest
