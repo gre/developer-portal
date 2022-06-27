@@ -33,7 +33,7 @@ Functions</h2></td></tr>
 <tr class="memitem:af84bb8a8a7c1d8e98c59b00b7c629cdc"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__rng_8h#af84bb8a8a7c1d8e98c59b00b7c629cdc">cx_rng_u32_range</a> (uint32_t a, uint32_t b)</td></tr>
 <tr class="memdesc:af84bb8a8a7c1d8e98c59b00b7c629cdc"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Generates a random 32-bit unsigned integer.  <a href="#af84bb8a8a7c1d8e98c59b00b7c629cdc">More...</a><br /></td></tr>
 <tr class="memitem:ad47ac6596e715f2fb71117ca623ea222"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../cx__errors_8h#a06db7f567671764f4980db9bc828fa85">cx_err_t</a>&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__rng_8h#ad47ac6596e715f2fb71117ca623ea222">cx_rng_rfc6979</a> (<a class="el" href="../lcx__hash_8h#aac7f6b791a4df89ac2e67ee43d4021a2">cx_md_t</a> hash_id, const uint8_t *x, size_t x_len, const uint8_t *h1, size_t h1_len, const uint8_t *q, size_t q_len, uint8_t *out, size_t out_len)</td></tr>
-<tr class="memdesc:ad47ac6596e715f2fb71117ca623ea222"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Generates a random buffer according to <a href="https://tools.ietf.org/rfc6979">RFC6979 </a>.  <a href="#ad47ac6596e715f2fb71117ca623ea222">More...</a><br /></td></tr>
+<tr class="memdesc:ad47ac6596e715f2fb71117ca623ea222"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Generates a random buffer according to <a href="https://tools.ietf.org/html/rfc6979">RFC6979 </a>.  <a href="#ad47ac6596e715f2fb71117ca623ea222">More...</a><br /></td></tr>
 </table>
 <a name="details" id="details"></a>
 
@@ -206,7 +206,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Generates a random buffer according to <a href="https://tools.ietf.org/rfc6979">RFC6979 </a>. </p>
+<p>Generates a random buffer according to <a href="https://tools.ietf.org/html/rfc6979">RFC6979 </a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">hash_id</td><td colspan="4">Message digest algorithm identifier.</td></tr>

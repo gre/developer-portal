@@ -97,13 +97,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d4366ae761dac729bfc1c8ea38090f0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#a0d4366ae761dac729bfc1c8ea38090f0">cx_eddsa_get_public_key</a> (const <a class="el" href="../lcx__ecfp_8h#a0d6bfe95381fad6884d8aa21fd6446c4">cx_ecfp_private_key_t</a> *pvkey, <a class="el" href="../lcx__hash_8h#aac7f6b791a4df89ac2e67ee43d4021a2">cx_md_t</a> hashID, <a class="el" href="../lcx__ecfp_8h#ad678e5d35ae65cefb258de09588332ba">cx_ecfp_public_key_t</a> *pukey, unsigned char *a, unsigned int a_len, unsigned char *h, unsigned int h_len)</td></tr>
 <tr class="memdesc:a0d4366ae761dac729bfc1c8ea38090f0"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Retrieves an EDDSA public key.  <a href="#a0d4366ae761dac729bfc1c8ea38090f0">More...</a><br /></td></tr>
 <tr class="memitem:aacf15d95fb7384452b38bec8131230de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../cx__errors_8h#a06db7f567671764f4980db9bc828fa85">cx_err_t</a>&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#aacf15d95fb7384452b38bec8131230de">cx_edwards_compress_point_no_throw</a> (<a class="el" href="../ox__ec_8h#ada004671ae8fe2032d4c144ed6ebb837">cx_curve_t</a> curve, uint8_t *p, size_t p_len)</td></tr>
-<tr class="memdesc:aacf15d95fb7384452b38bec8131230de"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Compresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.  <a href="#aacf15d95fb7384452b38bec8131230de">More...</a><br /></td></tr>
+<tr class="memdesc:aacf15d95fb7384452b38bec8131230de"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Compresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>.  <a href="#aacf15d95fb7384452b38bec8131230de">More...</a><br /></td></tr>
 <tr class="memitem:abbe81f0cda9fbbc9b89a64b4245474ed"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#abbe81f0cda9fbbc9b89a64b4245474ed">cx_edwards_compress_point</a> (<a class="el" href="../ox__ec_8h#ada004671ae8fe2032d4c144ed6ebb837">cx_curve_t</a> curve, uint8_t *p, size_t p_len)</td></tr>
-<tr class="memdesc:abbe81f0cda9fbbc9b89a64b4245474ed"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Compresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.  <a href="#abbe81f0cda9fbbc9b89a64b4245474ed">More...</a><br /></td></tr>
+<tr class="memdesc:abbe81f0cda9fbbc9b89a64b4245474ed"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Compresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>.  <a href="#abbe81f0cda9fbbc9b89a64b4245474ed">More...</a><br /></td></tr>
 <tr class="memitem:a135c9e000dc82e000cb427788ba33bcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../cx__errors_8h#a06db7f567671764f4980db9bc828fa85">cx_err_t</a>&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#a135c9e000dc82e000cb427788ba33bcd">cx_edwards_decompress_point_no_throw</a> (<a class="el" href="../ox__ec_8h#ada004671ae8fe2032d4c144ed6ebb837">cx_curve_t</a> curve, uint8_t *p, size_t p_len)</td></tr>
-<tr class="memdesc:a135c9e000dc82e000cb427788ba33bcd"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Decompresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.  <a href="#a135c9e000dc82e000cb427788ba33bcd">More...</a><br /></td></tr>
+<tr class="memdesc:a135c9e000dc82e000cb427788ba33bcd"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Decompresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>.  <a href="#a135c9e000dc82e000cb427788ba33bcd">More...</a><br /></td></tr>
 <tr class="memitem:a94fcf19a2a1073ae043bbf9ecc4befcf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#a94fcf19a2a1073ae043bbf9ecc4befcf">cx_edwards_decompress_point</a> (<a class="el" href="../ox__ec_8h#ada004671ae8fe2032d4c144ed6ebb837">cx_curve_t</a> curve, uint8_t *p, size_t p_len)</td></tr>
-<tr class="memdesc:a94fcf19a2a1073ae043bbf9ecc4befcf"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Decompresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.  <a href="#a94fcf19a2a1073ae043bbf9ecc4befcf">More...</a><br /></td></tr>
+<tr class="memdesc:a94fcf19a2a1073ae043bbf9ecc4befcf"><td class="mdescLeft">&#160;</td><td colspan="3" class="mdescRight">Decompresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>.  <a href="#a94fcf19a2a1073ae043bbf9ecc4befcf">More...</a><br /></td></tr>
 <tr class="memitem:af618491194f35b79492ced3a6756f83f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#af618491194f35b79492ced3a6756f83f">cx_edward_compress_point</a> (<a class="el" href="../ox__ec_8h#ada004671ae8fe2032d4c144ed6ebb837">cx_curve_t</a> curve, uint8_t *p, size_t p_len)</td></tr>
 <tr class="memitem:a2084f9df08a0e0ea89481baf99f8e751"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td colspan="3" class="memItemRight" valign="bottom"><a class="el" href="../lcx__ecfp_8h#a2084f9df08a0e0ea89481baf99f8e751">cx_edward_decompress_point</a> (<a class="el" href="../ox__ec_8h#ada004671ae8fe2032d4c144ed6ebb837">cx_curve_t</a> curve, uint8_t *p, size_t p_len)</td></tr>
 </table>
@@ -1223,7 +1223,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves an EDDSA public key. </p>
-<p>Retrieves (a,h) = (Kr, Kl), such that (Kr, Kl) = Hash(pv_key) as specified at <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. This function throws an exception if the computation doesn't succeed.</p>
+<p>Retrieves (a,h) = (Kr, Kl), such that (Kr, Kl) = Hash(pv_key) as specified at <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>. This function throws an exception if the computation doesn't succeed.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It is recommended to use <a class="el" href="../lcx__ecfp_8h#ab940dccf0b90c362b2f033bc93d38283" title="Retrieves an EDDSA public key. ">cx_eddsa_get_public_key_no_throw</a> rather than this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1311,7 +1311,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Retrieves an EDDSA public key. </p>
-<p>Retrieves (a,h) = (Kr, Kl), such that (Kr, Kl) = Hash(pv_key) as specified at <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.</p>
+<p>Retrieves (a,h) = (Kr, Kl), such that (Kr, Kl) = Hash(pv_key) as specified at <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pvkey</td><td colspan="4">A private key fully initialized with <a class="el" href="../lcx__ecfp_8h#aa60ed5c59930e787f187df1802b84ab5" title="Initializes a private key. ">cx_ecfp_init_private_key_no_throw</a>.</td></tr>
@@ -1460,7 +1460,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Compresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. </p>
+<p>Compresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>. </p>
 <p>This function throws an exception if the computation doesn't succeed.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It is recommended to use <a class="el" href="../lcx__ecfp_8h#aacf15d95fb7384452b38bec8131230de" title="Compresses a point according to RFC8032 . ">cx_edwards_compress_point_no_throw</a> rather than this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1519,7 +1519,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Compresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. </p>
+<p>Compresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">curve</td><td colspan="4">Curve identifier. The curve must be a Twisted Edwards curve.</td></tr>
@@ -1581,7 +1581,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Decompresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. </p>
+<p>Decompresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>. </p>
 <p>This function throws an exception if the computation doesn't succeed.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It is recommended to use <a class="el" href="../lcx__ecfp_8h#a135c9e000dc82e000cb427788ba33bcd" title="Decompresses a point according to RFC8032 . ">cx_edwards_decompress_point_no_throw</a> rather than this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -1642,7 +1642,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Decompresses a point according to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. </p>
+<p>Decompresses a point according to <a href="https://tools.ietf.org/html/rfc8032">RFC8032 </a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">curve</td><td colspan="4">Curve identifier. The curve must be a Twisted Edwards curve.</td></tr>
