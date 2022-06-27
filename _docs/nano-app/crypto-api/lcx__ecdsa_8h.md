@@ -35,7 +35,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>ECDSA (Elliptic Curve Digital Signature Algorithm). </p>
-<p>ECDSA is a standard digital signature scheme relying on elliptic curves. It provides data integrity and verifiable authenticity. Refer to <a href="../https://tools.ietf.org/rfc6979">RFC6979 </a> for more details. </p>
+<p>ECDSA is a standard digital signature scheme relying on elliptic curves. It provides data integrity and verifiable authenticity. Refer to <a href="https://tools.ietf.org/rfc6979">RFC6979 </a> for more details. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a606d8101c109dbb15c8cc8449d936e17"></a>
 <h2 class="memtitle">cx_ecdsa_init_private_key</h2>

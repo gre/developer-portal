@@ -52,7 +52,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>SHA-3 (Secure Hash Algorithm 3) </p>
-<p>SHA-3 specifies a family of secure hash functions based on an instance of the KECCAK algorithm. Refer to <a href="../https://csrc.nist.gov/publications/detail/fips/202/final">FIPS 202 </a> for more details. </p>
+<p>SHA-3 specifies a family of secure hash functions based on an instance of the KECCAK algorithm. Refer to <a href="https://csrc.nist.gov/publications/detail/fips/202/final">FIPS 202 </a> for more details. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a2487acc2e3ae619e2916d6741ff9d96a"></a>
 <h2 class="memtitle">cx_sha3_t</h2>

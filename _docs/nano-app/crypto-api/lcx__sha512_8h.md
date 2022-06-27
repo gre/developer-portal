@@ -49,7 +49,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>SHA-2 (Secure Hash Algorithm 2) </p>
-<p>SHA-384 and SHA-512 are secure hash functions belonging to the SHA-2 family with a digest length of 384 and 512 bits, respectively. The message length should be less than 2<sup align="right">128</sup> bits. Refer to <a href="../https://csrc.nist.gov/publications/detail/fips/180/4/final">FIPS 180-4 </a> for more details. </p>
+<p>SHA-384 and SHA-512 are secure hash functions belonging to the SHA-2 family with a digest length of 384 and 512 bits, respectively. The message length should be less than 2<sup align="right">128</sup> bits. Refer to <a href="https://csrc.nist.gov/publications/detail/fips/180/4/final">FIPS 180-4 </a> for more details. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a31fde7c6974a7fe5cda7bde88d881d9a"></a>
 <h2 class="memtitle">CX_SHA384_SIZE</h2>

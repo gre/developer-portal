@@ -34,7 +34,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>EDDSA (Edwards Curve Digital Signature Algorithm) </p>
-<p>EDDSA is a digital signature scheme relying on Edwards curves, especially Ed25519 and Ed448. Refer to <a href="../https://tools.ietf.org/rfc8032">RFC8032 </a> for more details. </p>
+<p>EDDSA is a digital signature scheme relying on Edwards curves, especially Ed25519 and Ed448. Refer to <a href="https://tools.ietf.org/rfc8032">RFC8032 </a> for more details. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a0f57c52056f373f1a2c21f6d0c838a6f"></a>
 <h2 class="memtitle">cx_decode_coord()</h2>
@@ -155,7 +155,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Signs a message digest. </p>
-<p>The signature is done according to the EDDSA specification <a href="../https://tools.ietf.org/rfc8032">RFC8032 </a>. This function throws an exception if the computation doesn't succeed.</p>
+<p>The signature is done according to the EDDSA specification <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. This function throws an exception if the computation doesn't succeed.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It is recommended to use <a class="el" href="../lcx__eddsa_8h#af5baecd2ef3d0ca561059a38e3a0fbc0" title="Signs a message digest. ">cx_eddsa_sign_no_throw</a> rather than this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -249,7 +249,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Signs a message digest. </p>
-<p>The signature is done according to the EDDSA specification <a href="../https://tools.ietf.org/rfc8032">RFC8032 </a>.</p>
+<p>The signature is done according to the EDDSA specification <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pvkey</td><td colspan="4">Private key. This shall be initialized with <a class="el" href="../lcx__ecfp_8h#aa60ed5c59930e787f187df1802b84ab5" title="Initializes a private key. ">cx_ecfp_init_private_key_no_throw</a>.</td></tr>
@@ -360,7 +360,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifies a signature. </p>
-<p>The verification is done according to the specification <a href="../https://tools.ietf.org/rfc8032">RFC8032 </a>. This function throws an exception if the computation doesn't succeed.</p>
+<p>The verification is done according to the specification <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>. This function throws an exception if the computation doesn't succeed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pukey</td><td colspan="4">Public key. THis shall be initialized with <a class="el" href="../lcx__ecfp_8h#a9dba0fd71ca5df52eb27e3c4493e0371" title="Initializes a public key. ">cx_ecfp_init_public_key_no_throw</a>.</td></tr>
@@ -435,7 +435,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verifies a signature. </p>
-<p>The verification is done according to the specification <a href="../https://tools.ietf.org/rfc8032">RFC8032 </a>.</p>
+<p>The verification is done according to the specification <a href="https://tools.ietf.org/rfc8032">RFC8032 </a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pukey</td><td colspan="4">Public key. This shall be initialized with <a class="el" href="../lcx__ecfp_8h#a9dba0fd71ca5df52eb27e3c4493e0371" title="Initializes a public key. ">cx_ecfp_init_public_key_no_throw</a>.</td></tr>

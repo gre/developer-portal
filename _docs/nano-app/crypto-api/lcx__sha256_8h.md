@@ -49,7 +49,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>SHA-2 (Secure Hash Algorithm 2) </p>
-<p>SHA-224 and SHA-256 are secure hash functions belonging to the SHA-2 family with a digest length of 224 and 256 bits, respectively. The message length should be less than 2<sup align="right">64</sup> bits. Refer to <a href="../https://csrc.nist.gov/publications/detail/fips/180/4/final">FIPS 180-4 </a> for more details. </p>
+<p>SHA-224 and SHA-256 are secure hash functions belonging to the SHA-2 family with a digest length of 224 and 256 bits, respectively. The message length should be less than 2<sup align="right">64</sup> bits. Refer to <a href="https://csrc.nist.gov/publications/detail/fips/180/4/final">FIPS 180-4 </a> for more details. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1869f01a1fa5deb2845c93957e89be88"></a>
 <h2 class="memtitle">CX_SHA224_SIZE</h2>

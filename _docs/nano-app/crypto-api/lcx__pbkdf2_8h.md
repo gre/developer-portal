@@ -83,7 +83,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes a PBKDF2 bytes sequence with SHA512. </p>
-<p>It computes the bytes sequence according to <a href="../https://tools.ietf.org/rfc2898">RFC 2898 </a> with SHA512 as the underlying hash function.</p>
+<p>It computes the bytes sequence according to <a href="https://tools.ietf.org/rfc2898">RFC 2898 </a> with SHA512 as the underlying hash function.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">password</td><td colspan="4">Password used as a base key to compute the HMAC.</td></tr>
@@ -174,7 +174,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes a PBKDF2 bytes sequence. </p>
-<p>It computes the bytes sequence according to <a href="../https://tools.ietf.org/rfc2898">RFC 2898 </a>. This function throws an exception if the computation doesn't succeed.</p>
+<p>It computes the bytes sequence according to <a href="https://tools.ietf.org/rfc2898">RFC 2898 </a>. This function throws an exception if the computation doesn't succeed.</p>
 <dl class="section warning"><dt>Warning</dt><dd>It is recommended to use <a class="el" href="../lcx__pbkdf2_8h#aa8e83c16857155d23468877ca99b6bc1" title="Computes a PBKDF2 bytes sequence. ">cx_pbkdf2_no_throw</a> rather than this function.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -261,7 +261,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Computes a PBKDF2 bytes sequence. </p>
-<p>It computes the bytes sequence according to <a href="../https://tools.ietf.org/rfc2898">RFC 2898 </a>.</p>
+<p>It computes the bytes sequence according to <a href="https://tools.ietf.org/rfc2898">RFC 2898 </a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">md_type</td><td colspan="4">Message digest algorithm identifier.</td></tr>
