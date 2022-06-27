@@ -29,8 +29,7 @@
 
 - title: Testing
   docs:
-  - coin/tests
+  - coin/writing-tests
   - coin/general-cli-checklist
   - coin/specific-cli-checklist
-  - coin/writing-tests
   - coin/bridge-test

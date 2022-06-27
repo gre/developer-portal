@@ -8,6 +8,10 @@ toc: true
 layout: doc
 ---
 
+## Setting up the Test Toolchain
+
+Before testing, make sure you have [set up the CLI](../ledger-live-cli).
+
 ## Writing bridge.integration.test.ts
 
 Any test that requires HTTP to work should be moved in an integration test using the file name convention `.integration.test.ts`. In the case of testing a coin integration, we usually name that file `bridge.integration.test.ts` and we recommend to use the `testBridge` utility.
