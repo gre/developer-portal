@@ -57,7 +57,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>BLAKE2 crypographic hash function. </p>
-<p>BLAKE2b is a cryptographic hash function optimized for 64-bit platforms that produces digests of any size between 1 and 64 bytes. It is specified at <a href="../https://blake2.net">https://blake2.net</a>. </p>
+<p>BLAKE2b is a cryptographic hash function optimized for 64-bit platforms that produces digests of any size between 1 and 64 bytes. It is specified at <a href="https://blake2.net">https://blake2.net</a>. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
 <a id="a640fece84f56ea1882e236c855da2ca4"></a>
 <h2 class="memtitle">blake2b_state</h2>

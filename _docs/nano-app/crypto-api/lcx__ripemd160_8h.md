@@ -41,7 +41,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>RIPEMD-160 hash function. </p>
-<p>RIPEMD-160 is a 160-bit cryptographic hash function. Refer to <a href="../https://homes.esat.kuleuven.be/~bosselae/ripemd160">RIPEMD-160 </a> for more details. </p>
+<p>RIPEMD-160 is a 160-bit cryptographic hash function. Refer to <a href="https://homes.esat.kuleuven.be/~bosselae/ripemd160">RIPEMD-160 </a> for more details. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a0e819ee2f3468667284716213284e621"></a>
 <h2 class="memtitle">CX_RIPEMD160_SIZE</h2>

@@ -46,7 +46,7 @@ Functions</h2></td></tr>
 ## Detailed Description
 
 <div class="textblock"><p>GROESTL hash function. </p>
-<p>Refer to <a href="../https://www.groestl.info/">GROESTL info </a> for more details. </p>
+<p>Refer to <a href="https://www.groestl.info/">GROESTL info </a> for more details. </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2be10bd05295c6c427493bed3781f006"></a>
 <h2 class="memtitle">COLS1024</h2>
