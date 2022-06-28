@@ -21,6 +21,8 @@ To send some ethers on the Ropsten network, go to one of the ropsten faucet webs
 
 The Ropsten network is not visible on Ledger Live, you can then check the transaction passed on [ropsten.etherscan.io](https://ropsten.etherscan.io/). 
 
+If the Ropsten and Dimension faucets don't work or the queue is too long, please use another faucet of your choice to receive testnet Ether.
+
 #### Ropsten Ethereum Network
 Go to the [Ropsten Ethereum Faucet](https://faucet.ropsten.be/) website put your Wallet Public Key on the input and click on "Send me test Ether"
 
