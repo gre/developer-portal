@@ -31,5 +31,5 @@
   docs:
   - coin/writing-tests
   - coin/bridge-test
-  - coin/general-cli-checklist
-  - coin/specific-cli-checklist
+  - coin/generic-test-plan
+
