@@ -52,8 +52,8 @@ allows to use commands developed on the Nano app.
 
 #### Communication with the different blockchains
 
-The Ledger Live application wil retrieve transaction history and broadcast new transactions using different explorers.
+The Ledger Live application will retrieve transaction history and broadcast new transactions using different explorers.
 
-As part of a Ledger Live blockchain integration, you should provide a indexer allowing a Ledger Live user to synchronize his account in a timely manner. It can be an open source project or your own explorer.
+As part of a Ledger Live blockchain integration, you should provide an indexer allowing a Ledger Live user to synchronize his account in a timely manner. It can be an open source project or your own explorer.
 
 The Ledger Live application uses our own explorers for Bitcoin and Ethereum forks.
