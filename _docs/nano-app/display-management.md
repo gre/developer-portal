@@ -111,6 +111,7 @@ Notice that the **Nano X and S Plus can fit up to 4 lines**, whereas the **Nano 
 |---------------|---------------------------------------------------------------|---------------------------------------------------------------|
 | `pb`          | <img align="left" width="280" src="../images/nanos_approve.png">       | <img align="left" width="327" src="../images/nanox_approve.png">       |
 | `bn`          | <img align="left" width="280" src="../images/nanos_amount.png">        | <img align="left" width="327" src="../images/nanox_amount.png">        |
+| `nn`          | <img align="left" width="280" src="../images/nanos_ready.png">        | <img align="left" width="327" src="../images/nanox_ready.png">        |
 | `pnn`         | <img align="left" width="280" src="../images/nanos_boilerplate.png">   | <img align="left" width="327" src="../images/nanox_boilerplate.png">   |
 | `bnnn_paging` | <img align="left" width="280" src="../images/nanos_address_merged.png">| <img align="left" width="327" src="../images/nanox_address_merged.png">|
 |
@@ -124,7 +125,8 @@ Notice that the **Nano X and S Plus can fit up to 4 lines**, whereas the **Nano 
 Here's a typical flow for any app that will display its name (along with its logo), then its version, then the settings and finally a quit (along with a icon).
 
 ``` c
-UX_STEP_NOCB(step_menu, pnn, {&C_app_logo, "App", "is ready"});
+UX_STEP_NOCB(step_menu, pnn, {&C_app_logo, "App", "is ready"}); 
+/* OR UX_STEP_NOCB(step_menu, nn, {&C_app_logo, "Application", "is ready"}); */
 UX_STEP_NOCB(step_version, bn, {"Version", &g_version});
 UX_STEP_CB(step_settings, pb, ui_settings_menu(), {&C_icon_settings, "Settings"})
 UX_STEP_CB(step_exit_step, pb, os_sched_exit(-1), {&C_icon_dashboard_x, "Quit"});
