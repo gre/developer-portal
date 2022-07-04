@@ -17,7 +17,7 @@ Using a local version of Ledger Live to test your integration can be time consum
 To install the CLI do:
 
 ```sh
-npm i --global @ledgerhq/live-cli
+pnpm i
 ```
 
 To publish:
