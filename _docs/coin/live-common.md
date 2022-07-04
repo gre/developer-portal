@@ -25,7 +25,7 @@ All integrated coins are implemented in a `libs/ledger-live-common/src/families`
 
 ### Requirements
 
-- [Node.js@14.x.x](https://nodejs.org/)
+- [Node.js@16.x.x](https://nodejs.org/)
 - [PnPm@7.x.x](https://pnpm.io/)
 - Python 2.7 or 3.5+
 - A C/C++ toolchain (see node-gyp documentation)
