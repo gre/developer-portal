@@ -49,6 +49,8 @@ pnpm run:cli getAddress -c bitcoin --path "84'/0'/0'/0/0" --derivationMode ''
 pnpm run:cli send -i 0 -s segwit --recipient 13LcRWZyZnZu1xrABuAK9Ayftg4kfVs1AA --amount 0.00056 --feePerByte 5
 ```
 
+You will find a complete list of commands [here](https://github.com/LedgerHQ/ledger-live/tree/develop/apps/cli#documentation).
+
 ## Environment Variables
 
 Ledger Live provides a lot of flexibility through ENV variables. You can export them, define them before calling cli or use a tool like [direnv](https://direnv.net/).
