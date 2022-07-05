@@ -8,11 +8,9 @@ toc: true
 layout: doc
 ---
 
-### Introduction
-
 Using a local version of Ledger Live to test your integration can be time consuming. If you would rather have a faster process, you can use the CLI.
 
-### Set up
+## Set up
 
 To install the CLI do:
 
@@ -42,7 +40,7 @@ pnpm run:cli deviceInfo   # should display information about connected device
 If everything is fine, you are ready to start integrating your blockchain!
 
 
-### Ledger Live CLI cmd example
+## Ledger Live CLI cmd example
 
 ```sh
 pnpm run:cli sync -c bitcoin -i 0 -s native_segwit   # using device
@@ -51,7 +49,7 @@ pnpm run:cli getAddress -c bitcoin --path "84'/0'/0'/0/0" --derivationMode ''
 pnpm run:cli send -i 0 -s segwit --recipient 13LcRWZyZnZu1xrABuAK9Ayftg4kfVs1AA --amount 0.00056 --feePerByte 5
 ```
 
-### Environment Variables
+## Environment Variables
 
 Ledger Live provides a lot of flexibility through ENV variables. You can export them, define them before calling cli or use a tool like [direnv](https://direnv.net/).
 
@@ -93,3 +91,12 @@ If needed, you can add your own in `src/env.ts` (always try to add a MYCOIN\_ pr
 // }
 ```
 
+## Demo
+
+<div class="uk-text-center">
+  <video controls muted preload='none' poster='../images/cli-cover.png' ><source src="../videos/CLI.mp4" type='video/mp4'></video><br>
+</div>
+
+- **00:00** Ledger Live Installation
+- **00:38** CLI Build
+- **01:20** CLI Usage
