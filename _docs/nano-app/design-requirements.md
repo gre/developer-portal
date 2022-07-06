@@ -21,8 +21,9 @@ The requirements are to submit two icons and to follow the design instructions b
 
 ### Icons
 
-You must provide two icons that are compliant with the criteria established by our team.
-You must download the template on the page, fill it it with your Icon, and include filled template in your app submission form.
+<!--  -->
+{% include alert.html style="important" text="You must provide two icons that are compliant with the criteria established by our team. You must download the template on the page, fill it it with your Icon, and include the filled template in your app submission form. Submitting icons that are not compliant will slow down the process of publishing your Nano App." %}
+<!--  -->
 
 There are 2 mandatory icons that should be provided for Ledger to release an app:
 
