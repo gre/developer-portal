@@ -39,6 +39,10 @@ import type { Account } from "../../types";
 import type { GetAccountShape } from "../../bridge/jsHelpers";
 import { makeSync, makeScanAccounts, mergeOps } from "../../bridge/jsHelpers";
 
+import {
+  encodeAccountId
+} from "../../account";
+
 import { getAccount, getOperations } from "./api";
 
 const getAccountShape: GetAccountShape = async (info) => {
@@ -49,6 +53,14 @@ const getAccountShape: GetAccountShape = async (info) => {
   const startAt = oldOperations.length
     ? (oldOperations[0].blockHeight || 0) + 1
     : 0;
+
+  const accountId = encodeAccountId({
+    type: "js",
+    version: "2",
+    currencyId: currency.id,
+    xpubOrAddress: address,
+    derivationMode,
+  });
 
   // get the current account balance state depending your api implementation
   const { blockHeight, balance, additionalBalance, nonce } = await getAccount(
@@ -76,9 +88,9 @@ const getAccountShape: GetAccountShape = async (info) => {
 
 const postSync = (initial: Account, parent: Account) => parent;
 
-export const scanAccounts = makeScanAccounts(getAccountShape);
+export const scanAccounts = makeScanAccounts({ getAccountShape });
+export const sync = makeSync({ getAccountShape, postSync });
 
-export const sync = makeSync(getAccountShape, postSync);
 ```
 
 The `scanAccounts` function performs the derivation of addresses for a given `currency` and `deviceId`, and returns an Observable that will notify every `Account` that it discovered.
