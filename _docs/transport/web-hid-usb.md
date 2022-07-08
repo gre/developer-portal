@@ -78,7 +78,7 @@ In index.html copy-paste the following code :
 In main.js copy-paste the following code:
 
 <!--  -->
-{% include alert.html style="important" text="Comment out or remove the Transport package you are not using (@ledgerhq/hw-transport-webusb or @ledgerhq/hw-transport-webhid)." %}
+{% include alert.html style="important" text="Comment out or remove the Transport package you are not using (@ledgerhq/hw-transport-webusb or @ledgerhq/hw-transport-webhid) and the corresponding <code>const</code>." %}
 <!--  -->
 
 ```javascript
@@ -100,10 +100,10 @@ document.body.addEventListener("click", async () => {
   $main.innerHTML = initial;
   try {
 
-    //trying to connect to your Ledger device with USB protocol
+    // Keep if you chose the USB protocol
     const transport = await TransportWebUSB.create();
 
-    //trying to connect to your Ledger device with HID protocol
+    // Keep if you chose the HID protocol
     const transport = await TransportWebHID.create();
 
     //listen to the events which are sent by the Ledger packages in order to debug the app
