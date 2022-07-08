@@ -11,7 +11,7 @@ layout: doc
 ## Summary
 
 To connect your app you will need to install:
-- [Node and NPM](#node)
+- [Node (for Desktop apps) and NPM](#node)
 - [Ledger Live](#ledger-live-installation)
 - [The Nano App](#nano-app-installation) of the coin that you are going to use (to use this documentation you will need Bitcoin, Ethereum and Solana)
 - At least [one account](#account-creation) for each coin (except for Solana).
