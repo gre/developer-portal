@@ -11,12 +11,12 @@ layout: doc
 ## Summary
 
 To connect your app you will need to install:
-- [Node (for Desktop apps) and NPM](#node)
+- [Node (for Desktop apps) and NPM](#node-and-npm)
 - [Ledger Live](#ledger-live-installation)
 - [The Nano App](#nano-app-installation) of the coin that you are going to use (to use this documentation you will need Bitcoin, Ethereum and Solana)
 - At least [one account](#account-creation) for each coin (except for Solana).
 
-## Node
+## Node and NPM
 
 If not already installed, install <a href="https://nodejs.org/en/download/">Node & npm</a>, choose the LTS version of your operating system. You can check if you have it installed by checking the version with the following commands:
 
@@ -33,6 +33,11 @@ The commands should print the versions of Node.js and npm accordingly.
 <!--  -->
 {% include alert.html style="note" text="The integrations and tutorials should work with older versions of Node and npm but it has not been tested by our team." %}
 <!--  -->
+
+<!--  -->
+{% include alert.html style="important" text="Please remember that the React Native and the ledger packages have been updated since the creation of the documentation and there might be some breaking changes. If you encounter difficulties with more recent packages, you can downgrade to the versions used in the documentation." %}
+<!--  -->
+
 
 
 ---------------------------------
