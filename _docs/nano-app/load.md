@@ -49,7 +49,7 @@ While the container image is running:
 First, make sure you have installed the prerequisited packages:
   * libudev-dev
   * libusb-1.0-0-dev
-  * python-dev (python 2.7)
+  * python-dev (required only for python 2.7)
   * virtualenv
 
 #### ledgerblue package
