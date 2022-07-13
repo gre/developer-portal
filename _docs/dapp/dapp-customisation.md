@@ -24,6 +24,9 @@ There is a useful [reference article](https://blog.ledger.com/paraswap-defi/) on
 
 The package to add a [new web3 provider](https://www.npmjs.com/package/@ledgerhq/iframe-provider) is available here. This simply diverts all RPC calls made from the DApp to the parent window using the PostMessage API. It does not do any Ledger-specific computing. It could in the future become a development standard to work out-of-the-box with other wallets.
 
+Alternativelly, if you are using the [wagmi](https://github.com/tmm/wagmi) library to build your DApp, you can use our [ledger-live-wagmi-connector
+](https://www.npmjs.com/package/@ledgerhq/ledger-live-wagmi-connector) to seemlessly make it compatible with the Ledger Live wallet.
+
 A DApp must run differently if it is called from within an iframe or not. If it is, then directly initialize the web3 instance with the iframe provider. In this way, there is no web3modal connect flow at all, and users are automatically connected to the wallet of the parent window. To detect if a call is made from within an iframe or not, use a query param such as `?embed=true`.
 
 Feel free to check out how Lido did it [here](https://github.com/lidofinance/ledgerhq-frame-connector), it is later used in their sdk [here](https://github.com/lidofinance/lido-js-sdk/search?q=web3-ledgerhq-frame-connector)
