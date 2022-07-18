@@ -131,6 +131,11 @@ $alert-danger-color:                             $global-danger-background !defa
     @if(mixin-exists(hook-alert-danger)) {@include hook-alert-danger();}
 }
 
+.uk-alert-disclaimer {
+    background: #E5E5E5;
+    color: black;
+}
+
 
 // Hooks
 // ========================================================================
