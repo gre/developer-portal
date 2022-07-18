@@ -20,6 +20,8 @@
         <span> <svg class="svg-icon"><use xlink:href="#warning"></use></svg> &ensp; <b>Important</b><br> {{ include.text }}</span>
     {% elsif include.style == 'warning' %}
         <span> <svg class="svg-icon"><use xlink:href="#warning"></use></svg> &ensp; <b>Warning</b><br> {{ include.text }}</span>
+        {% elsif include.style == 'disclaimer' %}
+        <span> <b>Disclaimer</b><br> {{ include.text }}</span>
     {% else %}
         {{ include.text }}
     {% endif %}

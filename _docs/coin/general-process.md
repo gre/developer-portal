@@ -22,7 +22,7 @@ Having your blockchain supported on Ledger Live will allow the community of user
 
 Ledger Live offers a standardized UI combined with a high quality of service. It also offers several features that are not available through other wallets.
 
-These features include:
+**These features include:**
 - Sending & receiving the Blockchain native currency and its tokens
 - Displaying account balances and operation history
 - Staking cryptocurrency (where applicable) to earn rewards
@@ -75,11 +75,12 @@ In this questionnaire, you will answer a set of questions that will help our tea
 </ul>" %}
 <!--  -->
 
-**Disclaimer**
-
-- Please be mindful when filling in this questionnaire, any unanswered or unclear question will delay the review process. 
-- Ledger keeps the right to refuse and/or cancel any Participant Integration at any time without further notice or explanation.
-
+{% include alert.html style="disclaimer" text="<ul>
+    <li>Please be mindful when filling in this questionnaire, any unanswered or unclear question will delay the review process.</li>
+    <li>Ledger keeps the right to refuse and/or cancel any Participant Integration at any time without further notice or explanation.
+</li>
+</ul>
+" %}
 
 ### Phase 3 - Ledger reviews your project candidature
 
@@ -111,4 +112,17 @@ For example, we could reduce the scope to send & receive only if we identify tec
 This decision can be taken at Ledger sole discretion.
 
 
+### Phase 6 - Integration kickoff
 
+The Ledger team will plan a kickoff meeting in order to discuss the following:
+
+- Scope and Blockchain specificities
+- Integration steps and milestones
+- How to get support from the Ledger team
+- When to submit a PR
+- Code review
+- Maintenance
+
+Our team will also be able to answer all the questions you might have. 
+
+After this meeting, you are finally ready to start! 
