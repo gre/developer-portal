@@ -33,7 +33,7 @@ Connect injects a web3 provider (EIP-1193) similar to other extensions and suppo
 
 ### Web3-react NPM package
 
-You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/package/@ledgerhq/web3-react-ledgerconnect-connector) together with the Web3-react wallet library in your project.
+You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/package/@ledgerhq/web3-react-ledgerconnect-connector) together with the web3-react wallet library or [web3-onboard-ledgerconnect](https://www.npmjs.com/package/@ledgerhq/web3-onboard-ledgerconnect) with web3-onboard in your project.
 
 <!--  -->
 {% include alert.html style="tip" text="Eventually, you will be able to integrate Ledger Connect to your DApp either with our APIs and a SDK or with wallet librairies. You will be informed on Discord when this will be available." %}
