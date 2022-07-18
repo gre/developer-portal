@@ -29,7 +29,7 @@ Ledger Live offers a standardized UI combined with a high quality of service. It
 
 The Ledger Live application is available for Windows, Mac and Linux in its desktop version and on Android & iOS for mobile.
 
-To be officially released by Ledger, your protocol must be included on all five platforms Ledger Live.
+To be officially released by Ledger, your protocol must be included on all five platforms Ledger Live (Windows / MacOS / Linux / Android / iOS).
 
 
 ## Open source, but not Open bar
