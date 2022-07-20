@@ -31,7 +31,7 @@ Connect injects a web3 provider (EIP-1193) similar to other extensions and suppo
 	- eth_signTypedData_v4
 	- eth_sendTransaction
 
-### Web3-react NPM package
+### Supported wallet libraries
 
 You can use this [web3-react-ledgerconnect-connector](https://www.npmjs.com/package/@ledgerhq/web3-react-ledgerconnect-connector) together with the web3-react wallet library or [web3-onboard-ledgerconnect](https://www.npmjs.com/package/@ledgerhq/web3-onboard-ledgerconnect) with web3-onboard in your project.
 
