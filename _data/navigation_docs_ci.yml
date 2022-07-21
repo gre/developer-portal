@@ -17,7 +17,6 @@
 
 - title: Coding
   docs:
-  - coin/introduction
   - coin/cryptoassets-library
   - coin/js-bindings
   - coin/address-derivation
