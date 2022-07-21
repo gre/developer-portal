@@ -10,4 +10,4 @@ layout: doc
 |             Development step             |                  Required skills                 |
 |------------------------------------------|--------------------------------------------------|
 | Live App                                 | JavaScript and TypeScript                        | 
-| Nano Plugin 							   | [Bolos](../../nano-app/bolos-introduction) and C |
+| Nano Plugin (For DApps only)			   | [Bolos](../../nano-app/bolos-introduction) and C |

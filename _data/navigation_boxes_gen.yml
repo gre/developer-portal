@@ -13,7 +13,7 @@
   image: /uploads//images/home-covers/blockchain-support.jpg
 
 - title: Live App
-  desc: Turn your DApp or regular app into a Live App in Ledger Live
+  desc: Integrate your DApp or Web app as a Live App in Ledger Live
   icon: dapp
   doc: live-app/start-here
   image: /uploads//images/home-covers/live-app.jpg
