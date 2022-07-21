@@ -13,7 +13,7 @@
   - non-dapp/tutorial/4-test
   - non-dapp/tutorial/conclusion
 
-- title: How to
+- title: How-to
   docs:
   - non-dapp/howto/setup
   - non-dapp/howto/sign
@@ -23,7 +23,7 @@
   - non-dapp/howto/test
   - non-dapp/howto/release
 
-- title: Reference
+- title: Docs
   docs:
   - non-dapp/reference/manifest
   - non-dapp/reference/sdk
