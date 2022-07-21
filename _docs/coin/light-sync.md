@@ -542,9 +542,11 @@ export const disconnect = async () => {
  */
 export const getAccount = async (addr: string) =>
   withApi(async (api) => {
-    const { balance, additionalBalance } = await api.getBalances(addr);
-    const nonce = await api.getNonce(addr);
-    const blockHeight = await api.getBlockHeight();
+    const [balance, nonce, blockHeight] = await Promise.all([
+      api.getBalance(addr),
+      api.getTransactionCount(addr),
+      api.getBlockNumber(),
+    ]);
 
     return {
       blockHeight,
@@ -656,7 +658,7 @@ It is designed for the end user frontend interface and is agnostic of the way it
 ### Receive
 
 The `receive` method allows to derivatives address of an account with a Nano device but also display it on the device if verify is passed in.
-As you may see in `src/families/mycoin/bridge.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
+As you may see in `src/families/mycoin/bridge/js.ts`, Live Common provides a helper to implement it easily with `makeAccountBridgeReceive()`, and there is a very few reason to implement your own.
 
 ### Synchronization
 
