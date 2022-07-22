@@ -8,7 +8,7 @@ author:
 layout: doc
 ---
 
-## Introduction
+## Developer mode releases and public release
 
 There are different release types for an application:
 
@@ -17,13 +17,23 @@ There are different release types for an application:
     -   as an **audited** application  
 -   **Public release** (official Ledger support)  
 
-Ledger's release of a third party application must not be considered as any form of partnership or endorsement.
+### Warning message when using an unaudited applications
 
-Until the application is audited by Ledger security team (Audited and Public releases), the message `Pending Ledger Review` is displayed when the application is used. The user must acknowledge this warning by pressing both buttons to use the application, which is at their own risk. Unaudited applications are considered experimental and such application will be visible **only when the [developer mode](../../live-app/developer-mode) settings is enabled** in Ledger Live settings.
+Until the application is audited by Ledger security team (Audited Developer mode releases and Public releases), the message `Pending Ledger Review` is displayed when the application is used. The user must acknowledge this warning by pressing both buttons to use the application, which is at their own risk. 
+
+
+### The developer mode
+
+Unaudited applications are considered experimental and such application will be visible **only when the [developer mode](../../live-app/developer-mode) setting is enabled** in Ledger Live settings.
 
 Some applications are only visible if developer mode is enabled, not because of a lack of security review, but rather because they are considered too complex to use. For example, the mandatory compatible GUI may be missing, or perhaps the application is considered too technical for the majority of users.
 
 Of course, an application can go through Ledger acceptance several times, according to release type.
+
+### Disclaimer
+
+Ledger's release of a third party application must not be considered as any form of partnership or endorsement.
+
 
 ## Your Deliverables and Ledger processes
 
