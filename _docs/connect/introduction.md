@@ -48,4 +48,4 @@ Solana and more blockchains to come at a later date.
 4. Web3Checks (recommended): Add your DApp to the whitelist using the form
 5. Go to Discord to discuss announcements on social networks
 
-These actions are detailed on the next page.
+These actions are detailed [on the next page](../implementation).

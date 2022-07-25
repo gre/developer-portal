@@ -29,6 +29,20 @@ Fill in this form:
 
 <div data-tf-widget="Miekq8b2" style="width:100%;height:400px;"></div><script src="//embed.typeform.com/next/embed.js"></script>
 
+### 3. How to add token icon?
+
+To add the icon, you must open a Pull Request in the Ledger Live repository. You can [check this PR](https://github.com/LedgerHQ/ledger-live/pull/107) for an example.
+
+Some rules about the icon:
+- Don't use Linear gradients, defs, masks, clip-path, filters and inline styles
+- Only use svg, path, circle, ellipse, rect, polyline, line tags if needed and add fill="black"
+
+Feel free to look at the other icons to see what is expected. 
+
+<!--  -->
+{% include alert.html style="important" text="Before contributing to the Ledger Live repository, please read and follow <a href='https://github.com/LedgerHQ/ledger-live/blob/develop/CONTRIBUTING.md'>the guidelines</a> otherwise your PR will automatically be rejected." %}
+<!--  -->
+
 ### What next?
 
 This is all you need to do. We will review the list of tokens on a bi-montly basis and will apply our own internal signature process. Once signed, the new tokens will become available after a Ledger Live update. Ledger reserves the right to decide which token will be listed.
