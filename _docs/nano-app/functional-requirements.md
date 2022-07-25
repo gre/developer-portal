@@ -18,7 +18,7 @@ The requirement is to follow the guidelines for the app name and ticker, and to 
 
 ## App name guidelines
 
-Define the App name in the makefile with the same name you want to have displayed on the manager and on the device.
+Define the App name in the makefile with the same name you want to have displayed on the manager and on the device. Write the app name as you want it to be displayed on the Nano, for example: `APPNAME = "App Name".`
 
 
 ## Transaction display and blind signing
