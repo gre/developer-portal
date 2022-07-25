@@ -24,7 +24,7 @@ Until the application is audited by Ledger security team (Audited Developer mode
 
 ### The developer mode
 
-Unaudited applications are considered experimental and such application will be visible **only when the [developer mode](../../live-app/developer-mode) setting is enabled** in Ledger Live settings.
+Unaudited or audited developer mode applications are considered experimental and such application will be visible **only when the [developer mode](../../live-app/developer-mode) setting is enabled** in Ledger Live settings.
 
 Some applications are only visible if developer mode is enabled, not because of a lack of security review, but rather because they are considered too complex to use. For example, the mandatory compatible GUI may be missing, or perhaps the application is considered too technical for the majority of users.
 
