@@ -52,7 +52,7 @@ In most cases however, you will want to have your blockchain officially supporte
 <!-- --------------------------------- -->
 Assuming you are on course for a Participant Integration, here is how we suggest working together.
 
-### Phase 1 - You contact us on Discor
+### Phase 1 - You contact us on Discord
 
 - Unlock the dev oriented channels in [#get-role](https://discord.com/channels/885256081289379850/907595590962122802) and post a message in the [#blockchain](https://discord.com/channels/885256081289379850/907623688759803935) channel mentioning **@Dev Support** saying that you wish to be part of Ledger Live Participant integration
 - You will be contacted on Discord by a Blockchain support team member
