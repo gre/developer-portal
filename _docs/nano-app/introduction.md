@@ -55,6 +55,7 @@ Nano applications are [coded](../secure-app/) in C on the Blockchain Open Ledger
 To develop a Nano Application you will need to:
 - Have Linux (or a VM running Linux)
 - Set up the BOLOS environment (consisting of the Nano S, X or S Plus SDK, and two compilers)
+- Either get a physical device or use the [Speculos emulator](../../speculos/introduction)
 
 Other languages are possible (no details here).
 
