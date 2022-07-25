@@ -6,7 +6,6 @@
 
 - title: Prerequisites
   docs:
-  - coin/prerequisites
   - coin/required-skills
 
 - title: Setup and build
