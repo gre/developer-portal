@@ -31,6 +31,8 @@ A DApp must run differently if it is called from within an iframe or not. If it 
 
 Feel free to check out how Lido did it [here](https://github.com/lidofinance/ledgerhq-frame-connector), it is later used in their sdk [here](https://github.com/lidofinance/lido-js-sdk/search?q=web3-ledgerhq-frame-connector)
 
+The DApp can submit a tx with or without gas fee set. If it is set, Ledger Live will use it as is, otherwise, Ledger Live will propose low/medium/high based on gas fee estimations.
+
 
 ## 2. Smooth out user experience
 
