@@ -1,6 +1,7 @@
 - title: Integrating tokens
   docs:
   - token/introduction
+  - token/faq
   - subfolderitems:
     - title: ERC20, BEP20 and Polygon tokens
       docs:
