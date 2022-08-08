@@ -106,6 +106,7 @@ plugins:
   - jekyll-gist
   - jekyll-avatar
   - jekyll-toc
+  - jekyll-redirect-from
 exclude:
   - Gemfile
   - Gemfile.lock
