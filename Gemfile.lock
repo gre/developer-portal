@@ -316,6 +316,7 @@ DEPENDENCIES
   jekyll-gist
   jekyll-livereload
   jekyll-paginate (~> 1.1)
+  jekyll-redirect-from
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-toc

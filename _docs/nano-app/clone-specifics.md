@@ -34,4 +34,4 @@ If you want to publish a clone application, follow the process in [Publishing an
 
 ## Get in touch with the Ledger developer community
 
-Join us on the [Ledger's Discord server](https://discord.gg/Ledger) and introduce yourself to the developer community in the **#introductions** channel.
+Joing Discord is not required to code your Nano Application, but it will be easier to meet with our team and discuss the specifics of your project. Join us on the [Ledger's Discord server](https://developers.ledger.com/discord-pro) and introduce your project in the **#nano-app** channel.

@@ -29,7 +29,7 @@ First, make sure your token isn’t already listed by checking this table of the
 | 2. A specific signature is required on the [Tron Nano App](https://github.com/LedgerHQ/app-tron). | 2. Update both `src/tokens.c` and `src/tokens.h` in the [Tron Nano App](https://github.com/LedgerHQ/app-tron). |
 
 <!--  -->
-{% include alert.html style="important" text="To ensure both these topics are handled properly, we invite you to contact our engineering team through the <a href='https://discord.gg/Ledger'>Ledger's Discord server</a>" %}
+{% include alert.html style="important" text="To ensure both these topics are handled properly, we invite you to contact our engineering team through the <a href='https://developers.ledger.com/discord-pro'>Ledger's Discord server</a>" %}
 <!--  -->
 
 ### What next?

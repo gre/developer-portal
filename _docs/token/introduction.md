@@ -35,6 +35,3 @@ Follow the action for:
 
 Other types of tokens are not supported for the moment. This documentation will be updated when new types are supported.
 
-## Join us on Discord
-
-If you need help or information about a token addition, join us on Discord and make sure you've joined the **#Tokens** chan.

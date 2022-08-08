@@ -41,7 +41,7 @@ Ledger Personal Security Devices allows users to store cryptographic secrets and
 ## Things to do
 
 ### Get in touch with the Ledger developer community
-Join our [Discord server](https://discord.gg/Ledger) and introduce yourself to the developer community in the **#introductions** channel.
+Joing Discord is not required to code your Nano Application, but it will be easier to meet with our team and discuss the specifics of your project. Join us on the [Ledger's Discord server](https://developers.ledger.com/discord-pro) and introduce your project in the **#nano-app** channel.
 
 ### Process & Requirements
 Make sure you understand the [Process](../publish-introduction/) and follow the [Requirements](../requirements-intro) starting here. The [Guidelines](../display-management) will also help you on certain technical topics.  
