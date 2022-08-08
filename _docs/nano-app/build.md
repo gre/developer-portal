@@ -10,6 +10,12 @@ layout: doc
 
 [Ledger App Builder](https://github.com/LedgerHQ/ledger-app-builder) is a container image which holds the all dependencies to compile an application for Nano hardware wallets.
 
+You need to clone it with:
+
+```bash
+git clone https://github.com/LedgerHQ/ledger-app-builder 
+```
+
 <!--  -->
 {% include alert.html style="important" text="If you chose to build your app differently, please make sure you can still compile it with Ledger App Builder, as it will be required for deployment." %}
 <!--  -->
