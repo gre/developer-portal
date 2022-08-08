@@ -5,14 +5,11 @@ title: Get in touch with us on Discord
 permalink: /contact/
 ---
 
-#### If you are a developer
+#### If you are a developer and want to integrate your product with Ledger
 
-If **you are a developer** join us [on our Discord server](https://discord.gg/Ledger) and introduce yourself to the developer community in the **#introductions** channel.
+If **you are a developer** join us [on our Discord server](https://developers.ledger.com/discord-pro ) and introduce yourself to the developer community in the **#introductions** channel.
 
-[Read this](../discord) if you are new to Discord.
-
-
-#### If you need customer service
+#### If you need customer service for your Ledger device or Ledger Live
 
 If **you are a ledger customer** and you need some help with:
 - Your Ledger device, [click here](https://support.ledger.com/hc/en-us/requests/new?ticket_form_id=360001432938&support=true)
