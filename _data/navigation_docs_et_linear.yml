@@ -1,6 +1,7 @@
 - title: Integrating tokens
   docs:
   - token/introduction
+  - token/faq
   - token/erc20-bep20
   - token/token-form-content
   - token/asa
