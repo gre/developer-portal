@@ -8,9 +8,9 @@ layout: doc
 ---
 
 
-## 1- Join Discord
+## 1- Discord
 
-Go to the [Ledger OP3N discord server](https://discord.gg/Ledger), and head over to the Ledger Connect channel
+To get the extension, join our Discord server using [this link](https://developers.ledger.com/discord-pro) and head over to the Ledger Connect channel
 
 ## 2- Coding
 

@@ -38,5 +38,5 @@ Once Ledger finishes the review, your application is added to the Ledger Live �
 
 ## Contact us
 
-If you are a developer and wish to get in touch with our engineering team, don’t wait and reach out to us [on Discord](https://discord.gg/Ledger). Please introduce yourself to the developer community in the **#introductions** channel.
+If you are a developer and wish to get in touch with our engineering team, don’t wait and reach out to us [on Discord](https://developers.ledger.com/discord-pro). Please introduce your project to the developer community in the **#introductions** channel.
 

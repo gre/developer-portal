@@ -9,7 +9,7 @@ toc: true
 
 ## Contact us
 
-You can reach out to us [on Discord](https://discord.gg/Ledger). Please introduce yourself and your project to the developer community in the #introductions channel. You will provided with information about how to send your application.
+You can reach out to us [on Discord](https://developers.ledger.com/discord-pro). Please introduce yourself and your project to the developer community in the #introductions channel. You will be provided with information about how to send your application.
 
 
 ## Wait for the Ledger review

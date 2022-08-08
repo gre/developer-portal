@@ -40,6 +40,7 @@ group :jekyll_plugins do
    gem 'rouge'
    gem 'jekyll-environment-variables'
    gem 'jekyll-algolia', '~> 1.0'
+   gem 'jekyll-redirect-from'
 end
 
 gem "nokogiri", ">= 1.13.4" 
