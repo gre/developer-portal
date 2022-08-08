@@ -199,7 +199,7 @@ And ensure you have this line in your package.json:
   },
 ```
 
-Your "package.json" should to look like this:
+Your "package.json" should look like this:
 
 ```javascript
 {
