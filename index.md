@@ -16,5 +16,5 @@ hero:
 </div>
 
 <div class="uk-visible@m">
-{% include repos.html columns="5" title="Github Repos " subtitle="Other sources to help you develop for Ledger Live" %}
+{% include repos.html columns="5" title="Github Repos " subtitle="Other sources to help you develop integrate your product with Ledger" %}
 </div>
