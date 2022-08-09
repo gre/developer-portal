@@ -541,6 +541,13 @@
     //     }
     // }
 
+
+    // For Next and Previous button to display on the same line on Mobile
+
+    .grid-exception {
+        flex-wrap: nowrap;
+    }
+
     // Boxes on the home page
 
     .title-box-gen {
