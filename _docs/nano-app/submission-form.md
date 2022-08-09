@@ -10,7 +10,7 @@ layout: doc
 
 ## Ready to submit your App for review?
 
-Once you have finished your work and you have collected all the App items (use the [Submission form Content](../deliverables-checklist) as a checklist), you must enter them in the [form](https://ledger.typeform.com/to/ZFVKrEHN).
+Once you have finished your work and you have collected all the App items (use the [Submission form Content](../deliverables-checklist) as a checklist), you must enter them in the [form](https://ledger.typeform.com/Nano-App).
 
 Make sure you thoroughly complete the form to ensure a speedy release process.
 

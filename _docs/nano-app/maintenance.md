@@ -24,7 +24,7 @@ Every update will go through Ledger reviews:
 </div>
 <!-- --------------------------------- -->
 
-Please [fill in this form](https://ledger.typeform.com/to/ZFVKrEHN) for any updates to your Nano App code.
+Please [fill in this form](https://ledger.typeform.com/Nano-App) for any updates to your Nano App code.
 
 To have your application updates released on time, we recommend you inform Ledger as soon as possible and submit the changes at least one month before the desired release date.
 
