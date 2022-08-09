@@ -6,6 +6,12 @@
         </div>
         <div class="uk-container">
             <div data-uk-navbar>
+                {% if site.data.translation[site.lang].mobile_nav_site and page.layout == 'doc' %}
+                    <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas-left" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">{{ site.data.translation[site.lang].mobile_nav_site }}</span></a>
+                {% elsif page.layout == 'doc' %}
+                    <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas-left" data-uk-navbar-toggle-icon data-uk-toggle></a>
+                {% endif %}
+
                 <div class="uk-navbar-left">
                     <a class="uk-navbar-item uk-logo uk-visible@l" style="width:220px;" href="{{ "/" | relative_url }}"><img src="{{ site.uploads | absolute_url }}{{ site.logo }}" alt="{{ site.title | escape }}"></a>
                     <!--<a class="uk-navbar-item uk-logo uk-visible@l" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>-->
@@ -157,7 +163,6 @@
                     {% else %}
                         <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
                     {% endif %}
-
                 </div>
             </div>
         </div>
