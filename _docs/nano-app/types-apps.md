@@ -11,8 +11,7 @@ layout: doc
 ## Types of apps
 
 ### Nano App
-This is the application that allows the users to manage their crypto-assets with their Ledger devices. It is the first step to an integration of your coin or token to the Ledger environment and to an integration of your blockchain to Ledger Live.
-The following sections will help you develop this type of application.
+This is the application that allows the users to manage their crypto-assets with their Ledger devices. It is the first step to an integration of your coin or token to the Ledger environment and to an integration of your blockchain to Ledger Live. The following sections will help you develop this type of application. For more information about the role of the Nano Apps, read [this Academy article](https://www.ledger.com/academy/hardwarewallet/what-are-ledger-applications-and-why-do-i-need-them).
 
 ### DApp plugins
 DApp Plugins are developed to integrate an Ethereum DApp to Ledger live. Ledger Live has a DApp browser where your DApp will be visible and usable through an iframe. Ethereum DApps can be developed for example to lend or borrow, swap, trade, pay with cryptoassets or manage your portfolio.
