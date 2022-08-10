@@ -75,7 +75,7 @@ git clone https://github.com/LedgerHQ/app-boilerplate.git
 
 #### For the Nano S
 
-In the source folder of the application:
+In the source folder of the application (replace 'realpath' with your app's local path):
 
 ```bash
 $ # docker can be replaced with podman or buildah without sudo
@@ -83,11 +83,12 @@ $ sudo docker run --rm -ti -v "$(realpath .):/app" ledger-app-builder:latest
 root@656be163fe84:/app# make
 ```
 
+
 #### For the Nano X and Nano S Plus
 
 For Nano X and S Plus, specify the `BOLOS_SDK` environment variable before building your app, in the source folder of the app:
 
-For Nano X:
+For Nano X (replace 'realpath' with your app's local path):
 
 ```bash
 $ # docker can be replaced with podman or buildah without sudo
@@ -95,7 +96,7 @@ $ sudo docker run --rm -ti -v "$(realpath .):/app" ledger-app-builder:latest
 root@656be163fe84:/app# BOLOS_SDK=$NANOX_SDK make
 ```
 
-For Nano S Plus:
+For Nano S Plus (replace 'realpath' with your app's local path):
 
 ```bash
 $ # docker can be replaced with podman or buildah without sudo
@@ -111,7 +112,7 @@ root@656be163fe84:/app# BOLOS_SDK=$NANOSP_SDK make
 
 #### Using the Clang Static Analyzer
 
-The Docker image includes the [Clang Static Analyzer](https://clang-analyzer.llvm.org/), which can be invoked with:
+The Docker image includes the [Clang Static Analyzer](https://clang-analyzer.llvm.org/), which can be invoked with (replace 'realpath' with your app's local path):
 
 ```bash
 $ # docker can be replaced with podman or buildah without sudo
