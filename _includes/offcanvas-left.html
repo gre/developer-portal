@@ -1,0 +1,108 @@
+{% assign url = page.url | split: "/" %}
+{% assign category = url[2] %}
+{% assign sub_category = url[3] %}
+
+{% if category == "nano-app" %}
+  {% assign docs = site.data.navigation_docs_na %}
+  {% assign section_title = "Nano Apps" %}
+{% elsif category == "coin"  %}
+  {% assign docs = site.data.navigation_docs_ci %}
+  {% assign section_title = "Blockchain support" %}
+{% elsif category == "speculos"  %}
+  {% assign docs = site.data.navigation_docs_sp %}
+  {% assign section_title = "Speculos" %}
+{% elsif category == "token"  %}
+  {% assign docs = site.data.navigation_docs_et %}
+  {% assign section_title = "Tokens" %}
+{% elsif category == "transport"  %}
+  {% assign docs = site.data.navigation_docs_tr %}
+  {% assign section_title = "Connect your app" %}
+{% elsif category == "dapp"  %}
+  {% assign docs = site.data.navigation_docs_da %}
+  {% assign section_title = "DApps" %}
+{% elsif category == "non-dapp"  %}
+  {% assign docs = site.data.navigation_docs_pa %}
+  {% assign section_title = "Non-Dapps" %}
+{% elsif category == "swap"  %}
+  {% assign docs = site.data.navigation_docs_sw %}
+  {% assign section_title = "Swap" %}
+{% elsif category == "developer-mode"  %}
+  {% assign docs = site.data.navigation_docs_dm %}
+  {% assign section_title = "Developer Mode" %}
+{% elsif category == "live-app"  %}
+  {% assign docs = site.data.navigation_docs_la %}
+  {% assign section_title = "Live App" %}
+{% elsif category == "connect"  %}
+  {% assign docs = site.data.navigation_docs_lc %}
+  {% assign section_title = "Ledger Connect" %}
+{% endif %}
+
+
+<div id="offcanvas-left" data-uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+
+        <h3>{{section_title}}</h3>
+
+        <button class="uk-offcanvas-close" type="button" data-uk-close></button>
+
+        <ul class="uk-nav uk-nav-primary uk-margin-top">
+			{% for section in docs %}
+                      <h5>{{ section.title }}</h5>
+                        <ul class="uk-nav uk-nav-default doc-nav">
+                        {% for doc in section.docs %}
+                          {% if doc.subfolderitems%}
+                            {% for section in doc.subfolderitems %}
+                              <li>{{ section.title }}</li>
+                              <ul class="uk-nav uk-nav-default doc-nav">
+                                      {% for doc in section.docs %}
+                                      {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                                      {% assign p = site.docs | where:"url", doc_url | first %}
+                                      <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                                      {% endfor %}
+                              </ul>
+                            {% endfor %}
+                          {% else %}
+                            {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                            {% assign p = site.docs | where:"url", doc_url | first %}
+                            <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                        </ul>
+                        {% if section.subfolderitems %}
+                          <ul class="uk-nav uk-nav-default doc-nav">
+                            {% for entry in section.subfolderitems %}
+                            <li>{{entry.title}}</li>
+                              <ul class="uk-nav uk-nav-default doc-nav">
+                                {% for doc in entry.docs %}
+                                  {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                                  {% assign p = site.docs | where:"url", doc_url | first %}
+                                  {% if p.title %}
+                                      <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                                  {% else %}
+                                      {% for section in doc.subfolderitems %}
+                                          <li>{{ section.title }}</li>
+                                          <ul class="uk-nav uk-nav-default doc-nav">
+                                                  {% for doc in section.docs %}
+                                                  {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
+                                                  {% assign p = site.docs | where:"url", doc_url | first %}
+                                                  <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                                                  {% endfor %}
+                                          </ul>
+                                      {% endfor %}
+                                  {% endif %}
+                                {% endfor %}
+                              </ul>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+            {% endfor %}
+        </ul>
+
+        <div class="uk-margin-top uk-text-center">
+            <div data-uk-grid class="uk-child-width-auto uk-grid-small uk-flex-center uk-grid">
+                {% include social-networks.html %}
+            </div>
+        </div>
+
+    </div>
+</div>

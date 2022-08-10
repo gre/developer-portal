@@ -541,6 +541,13 @@
     //     }
     // }
 
+
+    // For Next and Previous button to display on the same line on Mobile
+
+    .grid-exception {
+        flex-wrap: nowrap;
+    }
+
     // Boxes on the home page
 
     .title-box-gen {
@@ -636,6 +643,12 @@
       margin-bottom: 2.5px;
       margin-right: -10px;
     }
+
+    .arrow-icon {
+        fill: black;
+        width: 1em;
+        height: 1em;
+    } 
 
     // Suggestion links at end of doc pages 
     .suggestion {

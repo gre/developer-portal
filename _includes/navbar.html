@@ -6,6 +6,13 @@
         </div>
         <div class="uk-container">
             <div data-uk-navbar>
+                <!-- To change the follow icon, check the list here https://getuikit.com/docs/icon -->
+                {% if site.data.translation[site.lang].mobile_nav_site and page.layout == 'doc' %}
+                    <a class="uk-navbar-toggle uk-hidden@l" style="padding-left:5px" href="#offcanvas-left" data-uk-toggle><span uk-icon="icon: more-vertical; ratio: 1.2"></span> <span class="uk-margin-small-left">{{ site.data.translation[site.lang].mobile_nav_site }}</span></a>
+                {% elsif page.layout == 'doc' %}
+                    <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas-left" data-uk-toggle><span uk-icon="icon: more-vertical; ratio: 1.2"></span></a>
+                {% endif %}
+
                 <div class="uk-navbar-left">
                     <a class="uk-navbar-item uk-logo uk-visible@l" style="width:220px;" href="{{ "/" | relative_url }}"><img src="{{ site.uploads | absolute_url }}{{ site.logo }}" alt="{{ site.title | escape }}"></a>
                     <!--<a class="uk-navbar-item uk-logo uk-visible@l" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>-->
@@ -152,12 +159,12 @@
                         {% endfor %}
                     </ul>
 
+                    <!-- To change the follow icon, check the list here https://getuikit.com/docs/icon -->
                     {% if site.data.translation[site.lang].mobile_nav_site %}
-                        <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas" data-uk-toggle><span data-uk-navbar-toggle-icon></span> <span class="uk-margin-small-left">{{ site.data.translation[site.lang].mobile_nav_site }}</span></a>
+                        <a class="uk-navbar-toggle uk-hidden@l" style="padding-left:5px" href="#offcanvas" data-uk-toggle><span uk-icon="icon: thumbnails; ratio: 1.2"></span> <span class="uk-margin-small-left">{{ site.data.translation[site.lang].mobile_nav_site }}</span></a>
                     {% else %}
-                        <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas" data-uk-navbar-toggle-icon data-uk-toggle></a>
+                        <a class="uk-navbar-toggle uk-hidden@l" href="#offcanvas" data-uk-toggle><span uk-icon="icon: thumbnails; ratio: 1.2"></span></a>
                     {% endif %}
-
                 </div>
             </div>
         </div>
