@@ -54,3 +54,8 @@ This setting will enable opening the platform apps dev tools window, which can b
 This option will allow you to browse for local files and add a local app using a local manifest.
 With it you can be autonomous in testing your application.
 You’ll have to load your own manifest to make your application appear in the Discover section.
+
+
+## Disabling the developer mode
+
+If you want to disable the developer mode, you will need to uninstall and reinstall Ledger Live.
