@@ -199,6 +199,14 @@ And ensure you have this line in your package.json:
   },
 ```
 
+Add this at the end of the script:
+
+```javascript
+  "alias": {
+    "@ledgerhq/devices": "@ledgerhq/devices/lib-es"
+  }
+```
+
 Your "package.json" should look like this:
 
 ```javascript
@@ -223,6 +231,10 @@ Your "package.json" should look like this:
   },
   "author": "",
   "license": "ISC"
+
+  "alias": {
+    "@ledgerhq/devices": "@ledgerhq/devices/lib-es"
+  }
 }
 ```
 
