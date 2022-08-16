@@ -215,7 +215,7 @@ We are testing the broadcast part and sync part.
 pnpm cli:run cleanSpeculos && SEED="generate a seed for testing" COINAPPS="/path/to/coin/apps/folder" ledger-live bot -c mycoin
 ```
 
-- Generate a SEED, [iancoleman.io/bip39/](https://iancoleman.io/bip39/). Use this seed for testing purpose only, then use the command before to have an adresse and send some currencies into it
+- Generate a 24 words SEED, [iancoleman.io/bip39/](https://iancoleman.io/bip39/). Use this seed for testing purpose only, then use the command before to have an adresse and send some currencies into it
 
 - The bot will execute each scenario if it met the requirement, then it will wait until the sync find the broadcasted transaction
 
