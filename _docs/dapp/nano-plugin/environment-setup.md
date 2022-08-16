@@ -21,14 +21,15 @@ cd plugin_dev
 ```
 ## Clone repositories
 
-In the `plugin_dev/` folder, clone the Ethereum-app 
+In the `plugin_dev/` folder, clone the Ethereum-app:
 ```sh
 git clone https://github.com/LedgerHQ/app-ethereum
 cd app-ethereum
 git checkout master
 ```
-And the Plugin-tools
+And the Plugin-tools (`cd` back to the `plugin_dev/` first):
 ```sh
+cd ..
 git clone https://github.com/LedgerHQ/plugin-tools
 ```
 The plugin-tools repository contains tools for your plugin development, 
