@@ -25,7 +25,7 @@ First, make sure your token isn’t already listed by checking this table of the
 
 |     TRC10       |     TRC20     |
 |-----------------|---------------|
-| 1. Update the [ledgerjs package](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/data/trc10.js).| 1. Update the [ledgerjs package](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/data/trc20.js).|
+| 1. Update the [ledgerjs package](https://github.com/LedgerHQ/ledger-live/blob/develop/libs/ledgerjs/packages/cryptoassets/data/trc10.js).| 1. Update the [ledgerjs package](https://github.com/LedgerHQ/ledger-live/blob/develop/libs/ledgerjs/packages/cryptoassets/data/trc20.js).|
 | 2. A specific signature is required on the [Tron Nano App](https://github.com/LedgerHQ/app-tron). | 2. Update both `src/tokens.c` and `src/tokens.h` in the [Tron Nano App](https://github.com/LedgerHQ/app-tron). |
 
 <!--  -->

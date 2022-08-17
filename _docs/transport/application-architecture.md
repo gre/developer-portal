@@ -37,7 +37,7 @@ The Nano API role is to help you to carry out operations in the "Nano Apps" (rf.
 
 The APIs are not written in the same way for all Nano apps. In addition, while some of them are provided by ledger, others are written by the various crypto communities.
 
-You can have a look at how they are coded and documented at the <a href='https://github.com/LedgerHQ/ledgerjs'>LedgerHQ repository</a>.
+You can have a look at how they are coded and documented at the <a href='https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs'>LedgerHQ repository</a>.
 You can also see the different Nano API provided by Ledger below.
 
 ### Nano APIs provided by Ledger
@@ -46,17 +46,17 @@ Here is the list of all the APIs provided by Ledger.
 
 | Blockchain | Nano API |
 |-------------|--------------|
-|Algorand | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-algorand.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-algorand) [@ledgerhq/hw-app-algorand](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-algorand)   |
-|Bitcoin | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-btc.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-btc) [@ledgerhq/hw-app-btc](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-btc)   |
-|Cosmos | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-cosmos.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-cosmos) [@ledgerhq/hw-app-cosmos](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-cosmos)   |
+|Algorand | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-algorand.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-algorand) [@ledgerhq/hw-app-algorand](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-algorand)   |
+|Bitcoin | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-btc.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-btc) [@ledgerhq/hw-app-btc](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-btc)   |
+|Cosmos | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-cosmos.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-cosmos) [@ledgerhq/hw-app-cosmos](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-cosmos)   |
 |Elrond | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-elrond.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-elrond) [@ledgerhq/hw-app-elrond](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledger-live-common/src/families/elrond/hw-app-elrond)   |
-|Ethereum | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-eth.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-eth) [@ledgerhq/hw-app-eth](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-eth)   |
-|Polkadot | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-polkadot.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-polkadot) [@ledgerhq/hw-app-polkadot](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-polkadot)   |
-|Solana | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-solana.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-solana) [@ledgerhq/hw-app-solana](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-solana)   |
-|Stellar | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-str.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-str) [@ledgerhq/hw-app-str](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-str)   |
-|Tezos | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-tezos.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-tezos) [@ledgerhq/hw-app-tezos](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-tezos)   |
-|Tron | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-trx.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-trx) [@ledgerhq/hw-app-trx](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-trx)   |
-|Ripple | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-xrp.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-xrp) [@ledgerhq/hw-app-xrp](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-xrp)   |
+|Ethereum | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-eth.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-eth) [@ledgerhq/hw-app-eth](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-eth)   |
+|Polkadot | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-polkadot.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-polkadot) [@ledgerhq/hw-app-polkadot](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-polkadot)   |
+|Solana | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-solana.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-solana) [@ledgerhq/hw-app-solana](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-solana)   |
+|Stellar | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-str.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-str) [@ledgerhq/hw-app-str](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-str)   |
+|Tezos | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-tezos.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-tezos) [@ledgerhq/hw-app-tezos](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-tezos)   |
+|Tron | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-trx.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-trx) [@ledgerhq/hw-app-trx](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-trx)   |
+|Ripple | [![npm](https://img.shields.io/npm/v/@ledgerhq/hw-app-xrp.svg)](https://www.npmjs.com/package/@ledgerhq/hw-app-xrp) [@ledgerhq/hw-app-xrp](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-xrp)   |
 
 
 ### Nano APIs provided by the crypto-asset community

@@ -10,7 +10,7 @@ layout: doc
 ## Introduction
 In this section, we will guide you through the creation of a web application. This application will connect to your Nano to display the address of a Bitcoin account. If you want it for Ethereum you can easily modify it.
 
-Web USB and Web HID applications are implemented with [@ledgerhq/hw-transport-webusb](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webusb) and [@ledgerhq/hw-transport-webhid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webhid) respectively.
+Web USB and Web HID applications are implemented with [@ledgerhq/hw-transport-webusb](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webusb) and [@ledgerhq/hw-transport-webhid](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webhid) respectively.
 
 ## Prerequisites
 Before starting ensure you have gone through the [prerequisites](../prerequisites).
@@ -168,7 +168,7 @@ npm install --save @ledgerhq/hw-app-btc
             <td colspan="2">It is a build tool that will help you package your application to run it in the browser.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-btc">@ledgerhq/hw-app-btc</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-btc">@ledgerhq/hw-app-btc</a></td>
             <td colspan="2">It will help you ask your Nano to access the Bitcoin address.</td>
         </tr>
     </tbody>
@@ -177,11 +177,11 @@ npm install --save @ledgerhq/hw-app-btc
 
 #### Install the Transport HID or USB package
 Then depending on your choice install one of the corresponding packages:
-- Install the Ledger package [@ledgerhq/hw-transport-webhid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webhid) which provide you with all the methods to interact with your Nano with an HID connection:
+- Install the Ledger package [@ledgerhq/hw-transport-webhid](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webhid) which provide you with all the methods to interact with your Nano with an HID connection:
     ```console
     npm install --save @ledgerhq/hw-transport-webhid
     ```
-- Install the Ledger package [@ledgerhq/hw-transport-webusb](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webusb) which provide you with all the methods to interact with your Nano with a USB connection:
+- Install the Ledger package [@ledgerhq/hw-transport-webusb](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webusb) which provide you with all the methods to interact with your Nano with a USB connection:
     ```console
     npm install --save @ledgerhq/hw-transport-webusb
     ``` 

@@ -44,7 +44,7 @@ The Common library of Ledger Live is called [Ledger-live-common](https://github.
 
 #### Communication with the Device
 
-[ledgerjs](https://github.com/LedgerHQ/ledgerjs) is a set of packages. It allows a JavaScript
+[ledgerjs](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs) is a set of packages. It allows a JavaScript
 application to use the API of a Nano app. Nano apps are using APDU to
 transfer data and commands to and from the external world. `ledgerjs` only
 allows to use commands developed on the Nano app.

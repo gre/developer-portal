@@ -15,7 +15,7 @@ Before starting, make sure you have gone through the [prerequisites](../prerequi
 
 ## Implementation for Web USB and Web HID on Nano S/X/S Plus
 
-For this application we will use the Ledger node hid package which is [@ledgerhq/hw-transport-node-hid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-node-hid).
+For this application we will use the Ledger node hid package which is [@ledgerhq/hw-transport-node-hid](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-node-hid).
 
 ### Project Initialization
 First, open a terminal and create a new folder. For this tutorial the folder will be named “examples-node-electron-hid”.
@@ -250,7 +250,7 @@ npm install --save @ledgerhq/hw-transport-node-hid
             <td colspan="2">It provides you with the log of all the error from your connexion with your Ledger device that may appear when developing. </td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-btc">@ledgerhq/hw-app-btc</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-btc">@ledgerhq/hw-app-btc</a></td>
             <td colspan="2">It helps you ask your Ledger Nano to access the bitcoin address.</td>
         </tr>
         <tr>
@@ -258,7 +258,7 @@ npm install --save @ledgerhq/hw-transport-node-hid
             <td colspan="2">It helps you use "require" like Node does.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-node-hid">@ledgerhq/hw-transport-node-hid</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-node-hid">@ledgerhq/hw-transport-node-hid</a></td>
             <td colspan="2">It provides you with all the methods to interact with your Nano with an HID connexion.</td>
         </tr>
     </tbody>

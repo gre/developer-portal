@@ -8,7 +8,7 @@ toc: true
 layout: doc
 ---
 ## Introduction
-In this section, you will see how to create a React Native application using the [@ledgerhq/react-native-hw-transport-ble](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/react-native-hw-transport-ble).
+In this section, you will see how to create a React Native application using the [@ledgerhq/react-native-hw-transport-ble](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-web-ble).
 For this project some general prerequisites are mandatory and you can find them [here](../prerequisites).
 
 Then you can now go through the prerequisite for iOS development below.
@@ -531,7 +531,7 @@ npm install --save @ledgerhq/hw-app-eth
             <td colspan="2">It is a rewrite of "Reactive-Extensions/RxJS" and is the latest production-ready version of RxJS. </td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/react-native-hw-transport-ble">@ledgerhq/react-native-hw-transport-ble</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/react-native-hw-transport-ble">@ledgerhq/react-native-hw-transport-ble</a></td>
             <td colspan="2">It provides you with all the methods to interact with  your Ledger Nano X with a Bluetooth connexion. </td>
         </tr>
         <tr>
@@ -543,7 +543,7 @@ npm install --save @ledgerhq/hw-app-eth
             <td colspan="2"></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-eth">It helps you ask your Ledger device to access the ethereum address. </a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-eth">It helps you ask your Ledger device to access the ethereum address. </a></td>
             <td colspan="2"></td>
         </tr>
     </tbody>

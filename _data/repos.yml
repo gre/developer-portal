@@ -26,7 +26,7 @@
 
 - title: Ledger JS
   desc: Communicate with the hardware wallet
-  url: https://github.com/LedgerHQ/ledgerjs
+  url: https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs
 
 - title: Ledger Live Common
   desc: Common library of Ledger Live compatible with both desktop and mobile versions

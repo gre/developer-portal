@@ -9,7 +9,7 @@ layout: doc
 ---
 
 ## Introduction
-In this section, you will see how to create a React Native application using the [@ledgerhq/react-native-hid](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/react-native-hid) (Only on Android).
+In this section, you will see how to create a React Native application using the [@ledgerhq/react-native-hid](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/react-native-hid) (Only on Android).
 For this project some general prerequisites are mandatory and you can find them [here](../prerequisites).
 
 Then you can now go through the prerequisite for Android development below.
@@ -263,11 +263,11 @@ npm install --save @ledgerhq/hw-transport-webusb
             <td colspan="2">It helps you ask your Ledger device to access the ethereum address.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-eth">@ledgerhq/hw-app-eth</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-eth">@ledgerhq/hw-app-eth</a></td>
             <td colspan="2">It helps you ask your Ledger device to access the ethereum address.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/react-native-hid">@ledgerhq/react-native-hid</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/react-native-hid">@ledgerhq/react-native-hid</a></td>
             <td colspan="2">It provides you with all the methods to interact with  your Ledger with an HID connexion.</td>
         </tr>
     </tbody>

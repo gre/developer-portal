@@ -8,12 +8,12 @@ toc: true
 layout: doc
 ---
 
-The [@ledgerhq/cryptoassets](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/cryptoassets) package contains all definitions of cryptoassets that could be useful to Ledger Live.
+The [@ledgerhq/cryptoassets](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/cryptoassets) package contains all definitions of cryptoassets that could be useful to Ledger Live.
 
 Ledger Live deals with different kinds of currencies and assets: fiat currencies, cryptocurrencies, and tokens.
 They all share similar concepts but have specifics, which are defined as a Currency model.
 
-All types can be found in [@ledgerhq/cryptoassets/src/types.ts](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/cryptoassets/src/types.ts)
+All types can be found in [@ledgerhq/cryptoassets/src/types.ts](https://github.com/LedgerHQ/ledger-live/blob/develop/libs/ledgerjs/packages/cryptoassets/src/types.ts)
 
 ## The Currency model
 
@@ -168,7 +168,7 @@ type TokenCurrency = CurrencyCommon & {
 
 ## Adding MyCoin
 
-Ensure that before integrating your coin to Ledger Live, your coin is well defined in [`@ledgerhq/cryptoassets/src/currencies.js`](https://github.com/LedgerHQ/ledgerjs/blob/master/packages/cryptoassets/src/currencies.js)
+Ensure that before integrating your coin to Ledger Live, your coin is well defined in [`@ledgerhq/cryptoassets/src/currencies.js`](https://github.com/LedgerHQ/ledger-live/blob/develop/libs/ledgerjs/packages/cryptoassets/src/currencies.ts)
 
 
 ```js

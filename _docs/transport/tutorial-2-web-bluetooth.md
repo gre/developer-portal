@@ -359,11 +359,11 @@ npm install --save buffer
             <td colspan="2">It provides you with all the methods to interact with the Ethereum blockchain</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-eth">@ledgerhq/hw-app-eth</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-eth">@ledgerhq/hw-app-eth</a></td>
             <td colspan="2">It will help you ask your Nano to access the ethereum address.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-web-ble">@ledgerhq/hw-transport-web-ble</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-web-ble">@ledgerhq/hw-transport-web-ble</a></td>
             <td colspan="2">It provides you with all the methods to interact with your Ledger Nano X with a Bluetooth connexion.</td>
         </tr>
         <tr>

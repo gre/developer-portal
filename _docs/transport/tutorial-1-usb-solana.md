@@ -19,7 +19,7 @@ First you need to install the Solana Nano App from Ledger Live as shown in the [
 
 ## Tutorial implementation
 
-In this implementation, we will be building a web application with vanilla javascript that uses the USB protocol from a [Ledger package](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webusb) to communicate with the ledger.
+In this implementation, we will be building a web application with vanilla javascript that uses the USB protocol from a [Ledger package](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webusb) to communicate with the ledger.
 
 ### Project Initialization
 It is time to implement the application and test it. First, open a terminal and create a new folder. For this tutorial, the folder will be named "e2e-sol-tutorial”.
@@ -286,11 +286,11 @@ npm install --save bs58
             <td colspan="2">It is a build tool that will help you package your application to run it in the browser.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-solana">@ledgerhq/hw-app-solana</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-solana">@ledgerhq/hw-app-solana</a></td>
             <td colspan="2">It will help you ask your Ledger Nano to access the solana application on the Ledger Nano.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webusb">@ledgerhq/hw-transport-webusb</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webusb">@ledgerhq/hw-transport-webusb</a></td>
             <td colspan="2">It provides you with all the methods to interact with your Ledger with an USB connexion.  </td>
         </tr>
         <tr>

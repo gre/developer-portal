@@ -42,7 +42,7 @@ Go to the [Dimensions Network](https://faucet.dimensions.network/) website put y
 
 ## Tutorial implementation
 
-In this implementation, we will be building a web application with vanilla javascript that uses the HID protocol from a [Ledger package](https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webhid) to communicate with the ledger.
+In this implementation, we will be building a web application with vanilla javascript that uses the HID protocol from a [Ledger package](https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webhid) to communicate with the ledger.
 
 ### Project Initialization
 It is time to implement the application and test it. First, open a terminal and create a new folder. For this tutorial, the folder will be named "e2e-eth-tutorial”.
@@ -308,11 +308,11 @@ npm install --save ethers
             <td colspan="2">It is a build tool that will help you package your application to run it in the browser.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-app-eth">@ledgerhq/hw-app-eth</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-app-eth">@ledgerhq/hw-app-eth</a></td>
             <td colspan="2">It will help you ask your Ledger Nano to access the ethereum address.</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/LedgerHQ/ledgerjs/tree/master/packages/hw-transport-webhid">@ledgerhq/hw-transport-webhid</a></td>
+            <td><a href="https://github.com/LedgerHQ/ledger-live/tree/develop/libs/ledgerjs/packages/hw-transport-webhid">@ledgerhq/hw-transport-webhid</a></td>
             <td colspan="2">It provides you with all the methods to interact with your Ledger with an HID connexion.</td>
         </tr>
         <tr>
