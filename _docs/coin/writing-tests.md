@@ -357,3 +357,25 @@ const mycoin: AppSpec<Transaction> = {
 
 export default { mycoin };
 ```
+
+### Optional parameters
+
+Some optional parameters can be configured in the bot spec.
+
+For instance you can customize the Nano app version using the `appQuery` object:
+
+```ts
+  // a query to select one nano app. the most up to date version is selected when fields aren't set.
+  appQuery: {
+    model?: DeviceModelId;
+    appName?: string;
+    firmware?: string;
+    appVersion?: string;
+  };
+```
+
+<!--  -->
+{% include alert.html style="important" text="You should force a specific Nano version only if mandatory, in general it is always better to let the bot target the latest version." %}
+<!--  -->
+
+You can find the full list of available parameters [here](https://github.com/LedgerHQ/ledger-live/blob/develop/libs/ledger-live-common/src/bot/types.ts) for AppSpec and MutationSpec.
