@@ -230,7 +230,7 @@ Your "package.json" should look like this:
     "start": "parcel"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
 
   "alias": {
     "@ledgerhq/devices": "@ledgerhq/devices/lib-es"

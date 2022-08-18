@@ -361,7 +361,7 @@ Your file should now look like this:
       "@ledgerhq/hw-app-eth": "^6.26.0",
       "@ledgerhq/hw-transport-webhid": "^6.24.1",
       "ethers": "^5.5.4"
-    }
+    },
     "alias": {
       "@ledgerhq/devices": "@ledgerhq/devices/lib-es"
     }

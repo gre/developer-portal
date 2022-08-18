@@ -351,8 +351,7 @@ Your file should know look like this:
         "@ledgerhq/logs": "^6.10.0",
         "@solana/web3.js": "^1.36.0",
         "bs58": "^5.0.0"
-    }
-
+    },
     "alias": {
         "@ledgerhq/devices": "@ledgerhq/devices/lib-es"
     }
