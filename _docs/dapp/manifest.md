@@ -10,7 +10,7 @@ layout: doc
 
 If you have followed instructions on the previous page, you should now be ready to interact with the Dapp directly from Ledger Live interface to make sure all the basic features work as expected.
 
-Your DApp will be ran inside the [Ethereum Dapp Browser](<(https://github.com/LedgerHQ/eth-dapp-browser)>), which is a separate application loaded inside Ledger Live to handle interactions between a Dapp and the Ledger Live application. Don't hesitate to have a look at this project's [Readme](https://github.com/LedgerHQ/eth-dapp-browser#readme) to have more information on how to use it and what are the currently supported RPC calls.
+Your DApp will be ran inside the [Ethereum Dapp Browser](https://github.com/LedgerHQ/eth-dapp-browser), which is a separate application loaded inside Ledger Live to handle interactions between a Dapp and the Ledger Live application. Don't hesitate to have a look at this project's [Readme](https://github.com/LedgerHQ/eth-dapp-browser#readme) to have more information on how to use it and what are the currently supported RPC calls.
 
 To test and integrate your application, you first need to write your application Manifest file.
 This file must contain some mandatory information, such as the app package names, the components, the permissions needed, the hardware and software features, etc.
