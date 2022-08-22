@@ -63,6 +63,61 @@ Once all the problems have been fixed, we recommend integrating this check in yo
 
 Rationale: Problems identified by `make scan-build` are easy to fix, and allow the security team to detect the more obvious vulnerabilities. Moreover, it prevents developers from using unsafe string manipulation functions such as `strcpy`. Using such tool improves code quality over time.
 
+### Automate Security Check with CodeQL
+
+In order to increase code security, static analysis based on [CodeQL](https://codeql.github.com/docs/) can be used to perform security checks.
+CodeQL can be directly integrated into your project by creating a new YAML file: `.github/workflows/codeql-workflow.yaml` in your repository.
+
+A complete [codeql-workflow.yml](https://github.com/LedgerHQ/app-boilerplate/blob/0cdb0059e4f374b796b25ed347202c5e4e3e558a/.github/workflows/codeql-workflow.yml) file is available in the repository of the Boilerplate app.
+
+The first part of the file consists of an initialization of elements needed to build your Ledger app and a declaration of languages used in your code so CodeQL could analyze it in the right way.
+
+```yaml
+jobs:
+  analyse:
+    name: Analyse
+    strategy:
+      matrix:
+        sdk: [ "$NANOS_SDK", "$NANOX_SDK", "$NANOSP_SDK" ]
+        language: [ 'cpp' ]
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/ledgerhq/ledger-app-builder/ledger-app-builder:latest
+```
+
+The action part needs 4 steps:
+
+- Clone your repository
+- Initialize CodeQL:
+	- Declaration of which language will be used and what the queries you want to run are. Please choose the `security-and-quality` queries.
+- Build the app. Be careful the initialization of CodeQL needs to be done before building the app so that CodeQL will make the code dictionary during the building stage.
+- Perform the CodeQL analysis
+
+```yaml
+    steps:
+      - name: Clone
+        uses: actions/checkout@v3
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-and-quality
+
+      - name: Build
+        run: |
+          make BOLOS_SDK=${{ matrix.sdk }}
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
+```
+
+Next the results of CodeQL analysis are displayed on your GitHub security view, in the “Code scanning alerts” panel. If CodeQL is configured to be run when a pull request (PR) on some branches is made, the results will also be shown in the “Checks” parts of the PR.
+
+![Code Scanning view](images/codeql_codescanning_view.png)
+
+![Pull request view](images/codeql_pr_view.png)
+
 ### Avoid Warnings During compilation
 
 Apps must build with no warnings using the container image intended for that purpose, [Ledger App Builder](../build).
