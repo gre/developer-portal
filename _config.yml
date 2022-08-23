@@ -87,7 +87,7 @@ algolia:
       - title    
 
 # Path to post content assets directory i.e post images, pdfs etc
-uploads:            /uploads/
+uploads:            /uploads
 
 # Build settings
 markdown: kramdown
