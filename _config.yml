@@ -13,7 +13,7 @@ lang:               en
 permalink:          /:title/
 
 # Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
-logo:               ledger.png
+logo:               /ledger.png
 
 navbar:
     sticky:         true

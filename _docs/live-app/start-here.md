@@ -10,7 +10,7 @@ layout: doc
 ## What is a Live App?
 
 <div class="uk-text-center">
-    <video controls muted preload='none' poster='/uploads//videos/covers/LiveApp.png' ><source src="/uploads//videos/LiveApp.mp4" type='video/mp4'></video><br>
+    <video controls muted preload='none' poster='/uploads/videos/covers/LiveApp.png' ><source src="/uploads/videos/LiveApp.mp4" type='video/mp4'></video><br>
 </div>
 
 Live Apps are displayed in the discover section of Ledger Live on desktop (Windows, Mac, Linux) and mobile (Android only, iOS is not currently included).    

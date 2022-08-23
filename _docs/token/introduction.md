@@ -9,7 +9,7 @@ layout: doc
 ---
 
 <div class="uk-text-center">
-    <video controls muted preload='none' poster='/uploads//videos/covers/Tokens.png' ><source src="/uploads//videos/Tokens.mp4" type='video/mp4'></video><br>
+    <video controls muted preload='none' poster='/uploads/videos/covers/Tokens.png' ><source src="/uploads/videos/Tokens.mp4" type='video/mp4'></video><br>
 </div>
 
 Similarly to transferring native assets, transferring tokens requires the end-user to confirm the transaction details on the Nano devices’ screens. Such verification is a security requirement and must be made available before the application is released by Ledger. Expected information to verify are (at least) : the amount transferred, the token name and/or ticker, the recipient address.

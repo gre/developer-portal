@@ -9,7 +9,7 @@ layout: doc
 ---
 
 <div class="uk-text-center">
-    <video controls muted preload='none' poster='/uploads//videos/covers/BlockchainSupport.png' ><source src="/uploads//videos/BlockchainSupport.mp4" type='video/mp4'></video><br>
+    <video controls muted preload='none' poster='/uploads/videos/covers/BlockchainSupport.png' ><source src="/uploads/videos/BlockchainSupport.mp4" type='video/mp4'></video><br>
 </div>
 
 ## General Ledger Live Overview
