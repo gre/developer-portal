@@ -22,7 +22,7 @@ jobs:
         ruby-version: '3.0'
         bundler-cache: true
     - name: Build
-      run: bundle exec jekyll build --url=http://developers.ledger.com --baseurl=/
+      run: bundle exec jekyll build --url http://developers.ledger.com --baseurl /
       env:
         JEKYLL_ENV: production
    # - name: Build
