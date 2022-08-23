@@ -142,7 +142,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /uploads//images/portal-intro.jpg
+      image: /uploads/images/portal-intro.jpg
 
 # Site subpath, e.g. /blog
 # Site base hostname & protocol, e.g. http://example.com
