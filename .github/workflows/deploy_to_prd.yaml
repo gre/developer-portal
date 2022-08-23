@@ -1,0 +1,36 @@
+name: Deploy `developers.ledger.com`
+
+on:
+  push:
+    branches:
+    - main
+
+env:
+  AWS_S3_BUCKET: ledger-developers-prd
+  AWS_REGION: 'eu-west-1'
+  AWS_DESTRIBUTION_ID: 'E26Z7VYP01SF30'
+
+jobs:
+  sync-to-s3:
+    runs-on: [ubuntu-latest]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.0'
+        bundler-cache: true
+    - name: Build Site
+      run: bundle exec jekyll build
+      env:
+        JEKYLL_ENV: production
+    - uses: actions/upload-artifact@v3
+      with:
+        name: _site
+        path: _site
+
+    #- name: "Deploy to AWS S3"
+    #  run: aws s3 sync ./_site/ s3://${AWS_S3_BUCKET} --delete --cache-control max-age=604800
+    #- name: Invalidade CDN cache
+    #  run: aws cloudfront create-invalidation --distribution-id ${AWS_DESTRIBUTION_ID} --paths "/*"
