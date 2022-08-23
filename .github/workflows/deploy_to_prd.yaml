@@ -33,8 +33,6 @@ jobs:
         build_revision: main
         verbose: true
         token: ${{ secrets.GITHUB_TOKEN }}
-      env:
-        URL: developers.ledger.com
     - name: Compress site
       run: zip -r _site.zip _site
     - uses: actions/upload-artifact@v3
