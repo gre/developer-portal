@@ -35,10 +35,12 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
       env:
         URL: developers.ledger.com
+    - name: Compress site
+      run: zip -r _site.zip _site
     - uses: actions/upload-artifact@v3
       with:
         name: _site
-        path: _site
+        path: _site.zip
 
     #- name: "Deploy to AWS S3"
     #  run: aws s3 sync ./_site/ s3://${AWS_S3_BUCKET} --delete --cache-control max-age=604800
