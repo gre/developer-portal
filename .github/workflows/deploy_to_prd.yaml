@@ -11,20 +11,30 @@ env:
   AWS_DESTRIBUTION_ID: 'E26Z7VYP01SF30'
 
 jobs:
-  sync-to-s3:
+  build-and-deploy:
     runs-on: [ubuntu-latest]
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+    #- name: Set up Ruby
+    #  uses: ruby/setup-ruby@v1
+    #  with:
+    #    ruby-version: '3.0'
+    #    bundler-cache: true
+    #- name: Build Site
+    #  run: bundle exec jekyll build
+    #  env:
+    #    JEKYLL_ENV: production
+    - name: Build
+      uses: actions/jekyll-build-pages@v1
       with:
-        ruby-version: '3.0'
-        bundler-cache: true
-    - name: Build Site
-      run: bundle exec jekyll build
+        source: .
+        destination: ./_site
+        build_revision: main
+        verbose: true
+        token: ${{ secrets.GITHUB_TOKEN }}
       env:
-        JEKYLL_ENV: production
+        URL: developers.ledger.com
     - uses: actions/upload-artifact@v3
       with:
         name: _site
