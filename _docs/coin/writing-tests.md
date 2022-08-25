@@ -299,7 +299,7 @@ import invariant from "invariant";
 import type { AppSpec } from "../../bot/types";
 import type { Transaction } from "./types";
 import type { Account } from "../../types";
-import { pickSiblings } from "../../bot/specs";
+import { pickSiblings, botTest } from "../../bot/specs";
 import { isAccountEmpty } from "../../account";
 
 // Ensure that, when the recipient corresponds to an empty account,
@@ -344,11 +344,10 @@ const mycoin: AppSpec<Transaction> = {
         };
       },
       test: ({ account, accountBeforeTransaction, operation }) => {
-        const rewards =
-          accountBeforeTransaction.algorandResources?.rewards || 0;
-
-        expect(account.balance.plus(rewards).toString()).toBe(
-          accountBeforeTransaction.balance.minus(operation.value).toString()
+        botTest("account balance decreased with operation value", () =>
+          expect(account.balance.toString()).toBe(
+            accountBeforeTransaction.balance.minus(operation.value).toString()
+          )
         );
       },
     },
